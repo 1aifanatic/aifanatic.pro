@@ -47,7 +47,7 @@ It's like riding a bike. If you try to go slow, you wobble and fall. **Going fas
 
 ## The Verdict: Become an "Agentic Architect"
 
-This is why I pivoted my entire career to **Agentic AI Architecture.**
+This is why I pivoted my entire career toward **solution architecture and enterprise AI.**
 
 I'm not interested in being the best coder or the best prompt engineer. I am building the frameworks that govern how these agents work together.
 *   **The Agent Assessment Framework:** How do we know an agent is ready for the enterprise?

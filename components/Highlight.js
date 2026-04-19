@@ -1,5 +1,51 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
+import Image from "next/image";
 import userData from "@constants/data";
+
+const PLACEHOLDER = "/images/highlight-placeholder.svg";
+
+/** YouTube video id: 11 chars from [A-Za-z0-9_-] */
+const YT_ID_RE = /^[a-zA-Z0-9_-]{11}$/;
+
+/** Extract YouTube video id from common URL shapes. */
+function getYoutubeVideoId(url) {
+  if (!url || typeof url !== "string") return null;
+  try {
+    const normalized = /^https?:\/\//i.test(url) ? url : `https://${url}`;
+    const parsed = new URL(normalized);
+    const host = parsed.hostname.replace(/^www\./, "");
+
+    if (host === "youtu.be") {
+      const seg = parsed.pathname.split("/").filter(Boolean)[0] || "";
+      const id = seg.split("?")[0];
+      return id && YT_ID_RE.test(id) ? id : null;
+    }
+
+    const isYoutubeHost =
+      host === "youtube.com" ||
+      host === "m.youtube.com" ||
+      host === "www.youtube.com" ||
+      host.endsWith(".youtube.com");
+
+    if (isYoutubeHost) {
+      if (parsed.pathname.startsWith("/watch")) {
+        const v = parsed.searchParams.get("v");
+        if (v && YT_ID_RE.test(v)) return v;
+      }
+      const embed = parsed.pathname.match(/^\/embed\/([a-zA-Z0-9_-]{11})/);
+      if (embed) return embed[1];
+      const shorts = parsed.pathname.match(/^\/shorts\/([a-zA-Z0-9_-]{11})/);
+      if (shorts) return shorts[1];
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+function youtubeImgYoutubeCom(videoId) {
+  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+}
 
 function inferKind(proj) {
   if (proj.kind) return proj.kind;
@@ -38,7 +84,7 @@ function KindBadge({ kind }) {
 function PlayOverlay() {
   return (
     <div
-      className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       aria-hidden
     >
       <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black/55 text-white shadow-lg ring-2 ring-white/30 backdrop-blur-sm md:h-20 md:w-20">
@@ -53,6 +99,49 @@ function PlayOverlay() {
 function HighlightCard({ proj, featured }) {
   const kind = inferKind(proj);
   const isYoutube = kind === "youtube";
+  const videoId = useMemo(() => getYoutubeVideoId(proj.link), [proj.link]);
+
+  const [imgSrc, setImgSrc] = useState(() => {
+    if (videoId) return youtubeImgYoutubeCom(videoId);
+    return proj.imgUrl || PLACEHOLDER;
+  });
+
+  const handleImgError = () => {
+    setImgSrc((prev) => {
+      if (prev === PLACEHOLDER) return prev;
+
+      if (videoId) {
+        if (prev.includes("img.youtube.com")) {
+          return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+        }
+        if (prev.includes("i.ytimg.com") && prev.endsWith("/hqdefault.jpg")) {
+          return `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
+        }
+        if (prev.includes("i.ytimg.com") && prev.endsWith("/mqdefault.jpg")) {
+          return `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`;
+        }
+        if (prev.includes("i.ytimg.com") && prev.endsWith("/sddefault.jpg")) {
+          return `/api/yt-thumbnail?id=${encodeURIComponent(videoId)}`;
+        }
+        if (prev.includes("/api/yt-thumbnail")) {
+          if (
+            proj.imgUrl &&
+            !String(proj.imgUrl).includes("ytimg") &&
+            !String(proj.imgUrl).includes("youtube")
+          ) {
+            return proj.imgUrl;
+          }
+          return PLACEHOLDER;
+        }
+        return PLACEHOLDER;
+      }
+
+      if (proj.imgUrl && prev === proj.imgUrl) {
+        return PLACEHOLDER;
+      }
+      return PLACEHOLDER;
+    });
+  };
 
   return (
     <a
@@ -65,19 +154,25 @@ function HighlightCard({ proj, featured }) {
       aria-label={proj.title}
     >
       <div
-        className={`relative w-full shrink-0 overflow-hidden bg-gray-900 ${
+        className={`relative isolate w-full min-h-[14rem] shrink-0 overflow-hidden bg-slate-900 ${
           featured ? "aspect-video md:min-h-[17rem]" : "aspect-[16/10] md:aspect-video"
         }`}
       >
-        <img
-          src={proj.imgUrl}
+        <Image
+          key={imgSrc}
+          src={imgSrc}
           alt=""
-          className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
-          loading={featured ? "eager" : "lazy"}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 720px"
+          className="object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
+          unoptimized
+          priority={Boolean(featured)}
+          referrerPolicy="no-referrer"
+          onError={handleImgError}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black via-black/75 to-black/25" />
         {isYoutube ? <PlayOverlay /> : null}
-        <div className="absolute left-0 right-0 top-0 flex flex-wrap items-start justify-between gap-2 p-4 md:p-5">
+        <div className="absolute left-0 right-0 top-0 z-20 flex flex-wrap items-start justify-between gap-2 p-4 md:p-5">
           {proj.featured ? (
             <span className="rounded-full bg-amber-400/95 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-900 shadow-sm">
               Latest
@@ -87,15 +182,15 @@ function HighlightCard({ proj, featured }) {
           )}
           <KindBadge kind={kind} />
         </div>
-        <div className="absolute inset-x-0 bottom-0 p-4 md:p-6">
+        <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/90 to-transparent p-4 pt-10 md:p-6 md:pt-12">
           <h2
-            className={`font-semibold leading-snug text-white drop-shadow-md ${
+            className={`font-semibold leading-snug text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.85)] ${
               featured ? "text-xl md:text-2xl lg:text-3xl" : "text-base md:text-lg lg:text-xl"
             }`}
           >
             {proj.title}
           </h2>
-          <p className="mt-2 text-sm font-medium text-white/80">
+          <p className="mt-2 text-sm font-medium text-white/90 [text-shadow:0_1px_8px_rgba(0,0,0,0.8)]">
             {isYoutube ? "Watch on YouTube" : "Open event page"}
             <span className="ml-1 inline-block transition group-hover:translate-x-0.5">→</span>
           </p>

@@ -43,10 +43,10 @@ Keep animation + photo untouched.
 ### 2.1 Update hero text (do not move photo)
 
 Headline (example):
-Agentic AI Architect building enterprise-grade automation and AI agent systems.
+Manager of Solution Architecture building enterprise-grade automation and AI agent systems.
 
 Subheadline (example):
-Agentic AI Architect (Ashling Partners) • UiPath MVP • Community Leader • Awards Judge
+Manager of Solution Architecture (Ashling Partners) • UiPath MVP • Community Leader • Awards Judge
 
 ### 2.2 Add two buttons (no layout disruption)
 
@@ -269,7 +269,7 @@ Add JSON-LD Person schema (edit links):
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Naveen Chatlapalli",
-  "jobTitle": "Agentic AI Architect / Agentic AI Architect",
+  "jobTitle": "Manager of Solution Architecture",
   "url": "https://naveen.aifanatic.pro/",
   "sameAs": [
     "https://sessionize.com/aifanatic/",

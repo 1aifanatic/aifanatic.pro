@@ -3,8 +3,8 @@ import userData from "@constants/data";
 
 export default function Bio() {
   const focusAreas = [
-    "Enterprise automation and Agentic AI Architecture",
-    "Agentic AI systems and LLM workflows",
+    "Enterprise automation and solution architecture",
+    "AI systems, agents, and LLM workflows",
     "UiPath ecosystem strategy and delivery",
     "Tech writing and community education",
   ];
@@ -30,7 +30,7 @@ export default function Bio() {
           About Naveen
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-          Agentic AI Architect, Gen AI Engineer, and tech writer focused on building
+          Manager of Solution Architecture, Gen AI Engineer, and tech writer focused on building
           practical automation systems for enterprise teams.
         </p>
       </div>

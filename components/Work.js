@@ -7,7 +7,7 @@ export default function Work() {
       id: "risk-orbit",
       name: "Risk Orbit",
       problem: "Supply chain risk management requires real-time monitoring of multiple data sources and rapid assessment of potential disruptions.",
-      role: "Agentic AI Architect & Lead Developer",
+      role: "Manager of Solution Architecture & Lead Developer",
       built: [
         "Multi-agent system using UiPath Coded Agents with LangChain integration",
         "Context grounding with MCP (Model Context Protocol) for accurate risk assessment",

@@ -6,7 +6,7 @@ export default function work() {
   return (
     <ContainerBlock
       title="Work - Naveen Chatlapalli"
-      description="Selected work and projects by Naveen Chatlapalli, Agentic AI Architect and Agentic AI Architect."
+      description="Selected work and projects by Naveen Chatlapalli, Manager of Solution Architecture."
     >
       <Work />
     </ContainerBlock>

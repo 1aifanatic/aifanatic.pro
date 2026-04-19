@@ -41,7 +41,7 @@ export default function EB1Visa() {
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Professional Summary</h3>
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Naveen Chatlapalli is a distinguished Senior Agentic AI Architect with 12+ years of specialized expertise in RPA (Robotic Process Automation) and AI architecture. Based in Dallas, Texas, he serves as a Senior Agentic AI Architect at Ashling Partners, where he leads multimillion-dollar automation programs for Fortune 500 clients.
+                  Naveen Chatlapalli is a distinguished Manager of Solution Architecture with 12+ years of specialized expertise in RPA (Robotic Process Automation) and AI architecture. Based in Dallas, Texas, he serves as Manager of Solution Architecture at Ashling Partners, where he leads multimillion-dollar automation programs for Fortune 500 clients.
                 </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   His extraordinary ability in the field is evidenced by his recognition as a two-time UiPath Most Valuable Professional (MVP) for 2024 and 2025, placing him among an elite group of ~120 professionals worldwide who receive this prestigious, peer-reviewed award annually.
@@ -439,7 +439,7 @@ export default function EB1Visa() {
                   </span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 mt-2">
-                  Agentic AI Architect • Community Chapter Lead
+                  Manager of Solution Architecture • Community Chapter Lead
                 </p>
               </button>
               {expandedCriteria.criterion8 && (
@@ -447,7 +447,7 @@ export default function EB1Visa() {
                   <ul className="text-gray-600 dark:text-gray-300 space-y-2">
                     <li className="flex items-start">
                       <span className="text-green-500 mr-3">•</span>
-                       Agentic AI Architect leading multimillion-dollar automation programs for Fortune 500 clients
+                       Manager of Solution Architecture leading multimillion-dollar automation programs for Fortune 500 clients
                     </li>
                     <li className="flex items-start">
                       <span className="text-green-500 mr-3">•</span>
@@ -480,7 +480,7 @@ export default function EB1Visa() {
               {expandedCriteria.criterion9 && (
                 <div className="px-6 pb-6 space-y-4 border-t border-gray-200 dark:border-gray-600 pt-4">
                   <p className="text-gray-600 dark:text-gray-300">
-                    Total compensation falls in the 75th percentile for Agentic AI Architects in Irving, TX (salary survey evidence forthcoming).
+                    Total compensation falls in the 75th percentile for solution architecture leadership in Irving, TX (salary survey evidence forthcoming).
                   </p>
                   <div className="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
                     <p className="text-sm text-blue-600 dark:text-blue-400 italic">
@@ -512,7 +512,7 @@ export default function EB1Visa() {
               {expandedCriteria.criterion10 && (
                 <div className="px-6 pb-6 space-y-4 border-t border-gray-200 dark:border-gray-600 pt-4">
                   <p className="text-gray-600 dark:text-gray-300">
-                    Currently employed as Agentic AI Architect rather than operating an independent business with documented commercial success.
+                    Currently employed as Manager of Solution Architecture rather than operating an independent business with documented commercial success.
                   </p>
                   <div className="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
                     <p className="text-sm text-blue-600 dark:text-blue-400 italic">

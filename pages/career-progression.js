@@ -15,11 +15,11 @@ export default function CareerProgression() {
   return (
     <ContainerBlock
       title="Career Progression & Promotion Plan - Naveen Chatlapalli"
-      description="Structured 6-month career progression plan with OKRs for advancing to Agentic AI Architect Manager role."
+      description="Structured 6-month career progression plan with OKRs for advancing into solution architecture leadership (Manager of Solution Architecture)."
     >
       <Head>
         <title>Career Progression & Promotion Plan - Naveen Chatlapalli</title>
-        <meta name="description" content="Structured 6-month career progression plan with OKRs for advancing to Agentic AI Architect Manager role." />
+        <meta name="description" content="Structured 6-month career progression plan with OKRs for advancing into solution architecture leadership (Manager of Solution Architecture)." />
       </Head>
 
       <div className="bg-white dark:bg-gray-800">
@@ -33,7 +33,7 @@ export default function CareerProgression() {
               Structured 6-Month Career Advancement Framework
             </p>
             <div className="inline-flex items-center bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">
-              Target Role: Agentic AI Architect (Manager/Principal)
+              Role: Manager of Solution Architecture
             </div>
           </div>
 
@@ -45,7 +45,7 @@ export default function CareerProgression() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Plan Overview</h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                    This document outlines a structured 6-month career progression plan for Naveen, aligning business impact with professional growth. The goal is to establish clear Objectives & Key Results (OKRs) that provide a well-defined path for advancing into an Agentic AI Architect (Manager) role.
+                    This document outlines a structured 6-month career progression plan for Naveen, aligning business impact with professional growth. The goal is to establish clear Objectives & Key Results (OKRs) that provide a well-defined path for advancing into the Manager of Solution Architecture role.
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-center">
@@ -87,7 +87,7 @@ export default function CareerProgression() {
               
               <div className="mt-6 p-4 bg-blue-100 dark:bg-blue-800 rounded-lg">
                 <p className="text-blue-800 dark:text-blue-200 font-medium">
-                  <strong>Success Commitment:</strong> If Naveen successfully meets these OKRs and a business need exists, we will move forward with promotion to Agentic AI Architect (Manager), Agentic AI Architect (Principal), or equivalent role.
+                  <strong>Success Commitment:</strong> If Naveen successfully meets these OKRs and a business need exists, we will move forward with promotion to Manager of Solution Architecture, principal-equivalent technical leadership, or an equivalent role.
                 </p>
               </div>
             </div>
@@ -284,7 +284,7 @@ export default function CareerProgression() {
                     <ul className="space-y-2 text-blue-700 dark:text-blue-300">
                       <li><strong>KR 10.1:</strong> Add 2 additional sections to Architecture Knowledge Base</li>
                       <li><strong>KR 10.2:</strong> Achieve 15% improvement in documentation search efficiency</li>
-                      <li><strong>KR 10.3:</strong> Drive 2 advanced Agentic AI Architecture trainings</li>
+                      <li><strong>KR 10.3:</strong> Drive 2 advanced solution architecture trainings</li>
                     </ul>
                   </div>
 
@@ -409,7 +409,7 @@ export default function CareerProgression() {
                 </p>
                 <div className="bg-white bg-opacity-20 rounded-lg p-4">
                   <p className="text-xl font-bold">
-                    Upon successful completion of these OKRs and business need alignment, promotion to Agentic AI Architect (Manager/Principal) will be formalized.
+                    Upon successful completion of these OKRs and business need alignment, promotion to Manager of Solution Architecture (or principal-equivalent scope) will be formalized.
                   </p>
                 </div>
               </div>

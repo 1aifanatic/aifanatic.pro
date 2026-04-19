@@ -1,7 +1,7 @@
 ﻿const userData = {
-  githubUsername: "ai-fanatic",
+  githubUsername: "1aifanatic",
   name: "Naveen Chatlapalli",
-  designation: "Agentic AI Architect",
+  designation: "Manager of Solution Architecture",
   avatarUrl: "/avatar.png",
   email: "naveen@aifanatic.pro",
   phone: "1-999-999-9999",
@@ -63,14 +63,14 @@
     title1: "I help design automation solutions for enterprises.",
     title2:
       "I keep a side mission of simplifying topics about AI + AUTOMATION + HABITS + BOOKS.",
-    currentPosition: "Agentic AI Architect at Ashling Partners",
+    currentPosition: "Manager of Solution Architecture at Ashling Partners",
     currentPositionUrl: "https://ashlingpartners.com",
   },
     bio: {
     description: [
-      "I am Naveen Chatlapalli, an Agentic AI Architect, Gen AI Engineer, and tech writer based in Dallas, Texas. I design automation systems and AI-assisted workflows for enterprise teams.",
+      "I am Naveen Chatlapalli, Manager of Solution Architecture, Gen AI Engineer, and tech writer based in Dallas, Texas. I lead solution architecture for automation and AI programs and design systems for enterprise teams.",
       "Education: M.S. in Computer Science from San Francisco Bay University, with undergraduate studies at Jawaharlal Nehru Technological University, Kakinada.",
-      "Career: Started as a .NET developer, discovered UiPath, won a hackathon, and grew from RPA Developer to Lead RPA Developer to Agentic AI Architect at Ashling Partners.",
+      "Career: Started as a .NET developer, discovered UiPath, won a hackathon, and grew from RPA Developer to Lead RPA Developer to Agentic AI Architect, and now Manager of Solution Architecture at Ashling Partners.",
       "Community: 3-time UiPath MVP and Top Contributor (2024). I lead the UiPath Dallas Chapter, serve as VP of PR for Texas Dragon Toastmasters, and volunteer as a Telugu teacher at Silicon Andhra Manabadi.",
       "Recognition: Globally recognized multi-award judge (Globee Awards, TechX Awards finalist, HackSharks 2.0) and featured in Wired for coverage on AI agent liability.",
       "Solopreneurship: I build apps and products that make AI and automation accessible, with a focus on practical business outcomes.",
@@ -78,7 +78,7 @@
   },
   experience: [
     {
-        title: "Manager, Solution Architecture Team",
+        title: "Manager of Solution Architecture",
         company: "Ashling Partners",
         year: "2026 - Present",
         companyLink: "https://ashlingpartners.com",
@@ -141,12 +141,12 @@
   MediumUrl: "https://medium.com/@navaifanatic",
   BlogUrl: "http://projects.Naveenshah.com/blog/",
   socialLinks: {
-    twitter: "https://twitter.com/navaifanatic",
-    linkedin: "https://linkedin.com/in/nchatlapalli",
-    github: "https://github.com/ai-fanatic",
+    twitter: "https://x.com/1aifanatic",
+    linkedin: "https://www.linkedin.com/in/1aifanatic/",
+    github: "https://github.com/1aifanatic",
     facebook: "https://facebook.com/",
     tiktok: "https://topmate.io/aifanatic",
-    youtube: "https://www.youtube.com/@aifanatic",
+    youtube: "https://www.youtube.com/@1aifanatic",
     topmate: "https://topmate.io/aifanatic",
   },
   blogpost: [
@@ -1030,7 +1030,7 @@ const FINANCE_SYSTEM_PROMPT = \`You are the Finance Assistant for {company_name}
       title: "Multi-Agent Orchestration: The Architecture Behind Scalable Enterprise Automation",
       excerpt: "How to design, deploy, and manage multi-agent systems that handle complex enterprise workflows across departments without chaos.",
       date: "February 4, 2026",
-      category: "Agentic AI Architecture",
+      category: "Solution Architecture",
       tags: ["MultiAgent", "Orchestration", "EnterpriseAI", "UiPath", "Architecture"],
       content: `
         <p class="lead">Last quarter, I architected a multi-agent system for a Fortune 500 financial services firm. Three agents—one for document extraction, one for compliance checking, and one for customer notifications—needed to coordinate on 10,000+ daily mortgage applications. The challenge wasn't building the agents. It was orchestrating them without creating a distributed nightmare.</p>
