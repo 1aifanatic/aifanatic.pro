@@ -22,12 +22,18 @@ export default function Home({ repositories }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  console.log(process.env.GITHUB_AUTH_TOKEN);
-  let token = process.env.GITHUB_AUTH_TOKEN;
+export const getServerSideProps = async ({ res }) => {
+  const link = [
+    `</.well-known/api-catalog>; rel="api-catalog"`,
+    `</openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json"`,
+    `</contact>; rel="service-doc"`,
+    `</.well-known/agent-skills/index.json>; rel="describedby"`,
+    `</sitemap.xml>; rel="alternate"; type="application/xml"`,
+  ].join(", ");
+  res.setHeader("Link", link);
 
+  const token = process.env.GITHUB_AUTH_TOKEN;
   const repositories = await getLatestRepos(userData, token);
-  // console.log("REPOSITORIES", repositories);
 
   return {
     props: {

@@ -15,11 +15,11 @@ export default function Talks() {
           <b>Recent Publicly Available Talks or Interviews</b>
                   {userData.talks.map((proj, idx) => (
                     <TalksCard
+                      key={`${proj.link}-${idx}`}
                       title={proj.title}
                       date={proj.date}
                       source={proj.source}
                       link={proj.link}
-                      number={`${idx + 1}`}
                     />
                   ))}
               <br></br>
@@ -61,7 +61,7 @@ export default function Talks() {
   );
 }
 
-const TalksCard = ({ title, date, source, link}) => {
+const TalksCard = ({ title, date, source, link }) => {
   return (
     <div className="">
     <p>

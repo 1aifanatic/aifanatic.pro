@@ -1,0 +1,87 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "aifanatic.pro HTTP APIs",
+    "version": "1.0.0",
+    "description": "Public and operator APIs for this portfolio site. Protected routes use Bearer credentials issued out-of-band."
+  },
+  "servers": [{ "url": "https://aifanatic.pro" }],
+  "paths": {
+    "/api/hello": {
+      "get": {
+        "summary": "Health / sample JSON",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "name": { "type": "string" } }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/leads": {
+      "get": {
+        "summary": "List stored leads (admin)",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": { "type": "integer", "default": 100 }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": { "type": "integer", "default": 0 }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Success" },
+          "401": { "description": "Unauthorized" }
+        }
+      }
+    },
+    "/api/download": {
+      "post": {
+        "summary": "Submit download / lead capture",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["name", "email", "documentName", "documentPath"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "email": { "type": "string", "format": "email" },
+                  "documentName": { "type": "string" },
+                  "documentPath": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Stored" },
+          "400": { "description": "Validation error" },
+          "405": { "description": "Method not allowed" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Use ADMIN_SECRET_KEY value as Bearer token for /api/leads."
+      }
+    }
+  }
+}

@@ -11,29 +11,42 @@
   ],
   highlight: [
     {
+      title:
+        "3x UiPath MVP on Why Enterprises Will NEVER Use OpenClaw / Claude Cowork | #99",
+      link: "https://youtu.be/16ltBiifkTE",
+      imgUrl: "https://i.ytimg.com/vi/16ltBiifkTE/hqdefault.jpg",
+      kind: "youtube",
+      featured: true,
+    },
+    {
       title: "Create Your First AI Agent with UiPath Agent Builder 🤖",
       link: "https://community.uipath.com/events/details/uipath-dallas-texas-presents-create-your-first-ai-agent-with-uipath-agent-builder/cohost-dallas-texas",
       imgUrl: "/AgentBuilder.png",
+      kind: "event",
     },
     {
       title: "🤖 UiPath Clipboard AI: A TIME Magazine Best Invention of 2023 Unveiled 🌟",
       link: "https://community.uipath.com/events/details/uipath-dallas-texas-presents-uipath-clipboard-ai-a-time-magazine-best-invention-of-2023-unveiled",
       imgUrl: "/Mar.jpg",
+      kind: "event",
     },
     {
       title: "Exploring UiPath Orchestrator API: Updates and Limits in 2024 🚀",
       link: "https://community.uipath.com/events/details/uipath-dallas-texas-presents-exploring-uipath-orchestrator-api-updates-and-limits-in-2024",
       imgUrl: "/Apr.jpg",
+      kind: "event",
     },
     {
       title: "How to become an Agentic AI Architect",
       link: "https://www.youtube.com/watch?v=8_9e38kElHk",
       imgUrl: "/HowtobeSA.webp",
+      kind: "youtube",
     },
     {
       title: "UiPath Integration Service",
       link: "https://www.youtube.com/watch?v=Lu5ooVPEBII&t=1330s",
       imgUrl: "/IntegrationService.webp",
+      kind: "youtube",
     },
     // {
     //   title: "Exploring Language Model Evaluation",
@@ -65,11 +78,18 @@
   },
   experience: [
     {
+        title: "Manager, Solution Architecture Team",
+        company: "Ashling Partners",
+        year: "2026 - Present",
+        companyLink: "https://ashlingpartners.com",
+        desc: "Leading the Solution Architecture team: hiring and developing solution architects, shaping technical standards and reference architectures, and partnering with sales and delivery on complex enterprise engagements across automation and AI.",
+    },
+    {
         title: "Agentic AI Architect",
         company: "Ashling Partners",
-        year: "2020 - Present",
+        year: "2020 - 2026",
         companyLink: "https://ashlingpartners.com",
-        desc: "Designing innovative solutions using Microsoft and UiPath for enterprise clients. Leading projects, mentoring developers, and supporting production deployments. Promoted from RPA Developer to Lead RPA Developer to Agentic AI Architect.",
+        desc: "Designed and delivered innovative solutions using Microsoft and UiPath for enterprise clients. Led projects, mentored developers, and supported production deployments. Progressed from RPA Developer to Lead RPA Developer to Agentic AI Architect before moving into solution architecture management.",
     },
     {
         title: "Developer",
@@ -418,6 +438,13 @@
     },
   ],
     talks: [
+    {
+      title:
+        "3x UiPath MVP on Why Enterprises Will NEVER Use OpenClaw / Claude Cowork | #99",
+      date: "Apr 2026",
+      source: "YouTube — Ready Set Do (podcast interview)",
+      link: "https://youtu.be/16ltBiifkTE",
+    },
     {
       title: "Employee onboarding automation",
       date: "",
@@ -1765,7 +1792,7 @@ except RateLimitError:
       date: "February 7, 2026",
       category: "AI Safety",
       tags: ["AI Safety", "AgenticAI", "EnterpriseRisk", "ProductionEngineering", "Governance"],
-      content: \`
+      content: `
         <p class="lead">We love the promise of Agentic AI: "Give it a goal, and it figures out the rest." But in enterprise production, that same autonomy is the biggest liability. An agent that "figures it out" can also figure out how to wipe a database, email 10,000 customers the wrong offer, or hallucinate a legal contract.</p>
 
         <p>I've seen agents fail in ways that traditional software never would. A traditional bug crashes. A misfired agent <em>improvises</em>—often destructively. It doesn't just stop working; it starts working <em>wrong</em>, with high confidence and at scale.</p>
@@ -1879,7 +1906,7 @@ except RateLimitError:
         <div class="final-cta">
           <strong>Move fast, but don't break things that can't be fixed.</strong>
         </div>
-      \`
+      `
     }
   ]
 };
