@@ -1,3 +1,4 @@
+import { getSiteBaseUrl } from "@lib/siteUrl";
 import { getLeads } from "../../lib/database";
 
 export default async function handler(req, res) {
@@ -13,6 +14,13 @@ export default async function handler(req, res) {
       authHeader !==
         `Bearer ${process.env.ADMIN_SECRET_KEY || "your-secret-key"}`
     ) {
+      const resourceMetadata = `${getSiteBaseUrl(
+        req
+      )}/.well-known/oauth-protected-resource`;
+      res.setHeader(
+        "WWW-Authenticate",
+        `Bearer resource_metadata="${resourceMetadata}"`
+      );
       return res.status(401).json({ error: "Unauthorized" });
     }
 

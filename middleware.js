@@ -52,6 +52,7 @@ export function middleware(request) {
     "",
     "## Machine discovery",
     `- API catalog (RFC 9727): ${base}/.well-known/api-catalog`,
+    `- OAuth protected resource (RFC 9728): ${base}/.well-known/oauth-protected-resource`,
     `- OpenAPI: ${base}/openapi.json`,
     `- Sitemap: ${base}/sitemap.xml`,
     `- Robots: ${base}/robots.txt`,

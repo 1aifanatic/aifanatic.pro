@@ -20,5 +20,6 @@ export default function handler(req, res) {
     token_endpoint_auth_methods_supported: ["client_secret_basic", "private_key_jwt"],
     scopes_supported: ["leads.read"],
     registration_endpoint: `${base}/contact`,
+    protected_resources: [base],
   });
 }
