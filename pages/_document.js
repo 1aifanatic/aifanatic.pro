@@ -5,7 +5,7 @@ export default function MyDocument() {
   const payloadJson = JSON.stringify(getWebmcpPayload()).replace(/</g, "\\u003c");
 
   return (
-    <Html lang="en">
+      <Html lang="en" data-scroll-behavior="smooth">
       <Head />
       <body>
         <script

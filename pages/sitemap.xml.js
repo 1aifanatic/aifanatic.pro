@@ -4,24 +4,14 @@ import userData from "../constants/data";
 const STATIC_PATHS = [
   "/",
   "/about",
-  "/bio",
   "/blog",
   "/contact",
-  "/career-progression",
-  "/download",
-  "/downloads",
   "/experience",
   "/insights",
-  "/judging",
-  "/press",
-  "/publications",
   "/recognition",
   "/solopreneur-projects",
   "/speaking",
-  "/talks",
-  "/videos",
   "/work",
-  "/writing",
 ];
 
 function escapeXml(s) {
