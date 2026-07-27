@@ -31,7 +31,7 @@ Gartner predicts that by 2026, 50% of enterprise applications will integrate tas
 It means your domain knowledge (e.g., "I know how React works") is no longer your differentiator. It is merely the *foundation*.
 
 The differentiator is your ability to apply **"Software-Shaped Intent."**
-Can you structure a problem in a way that an agent can solve? Can you define the inputs, the constraints, and the success criteria so that a fleet of agents can execute the work of a PM, a Designer, and an Engineer simultaneously?
+Can you structure a problem in a way that an agent can solve? Can you define the inputs, constraints, and success measures so that a fleet of agents can execute the work of a PM, a Designer, and an Engineer simultaneously?
 
 If you can, you aren't just an individual contributor anymore. You are an **Architect of Labor.**
 

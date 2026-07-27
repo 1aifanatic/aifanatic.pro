@@ -1,94 +1,27 @@
 import React from "react";
+import Link from "next/link";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
-import { RainbowHighlight } from "./RainbowHighlight";
 import userData from "@constants/data";
 
 export default function Hero() {
-  const colors = ["#F59E0B", "#84CC16", "#10B981", "#3B82F6"];
-  return (
-    <div className="flex flex-row justify-center items-start overflow-hidden">
-      {/* Text container */}
-
-      <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20">
+  return <section className="site-container page-section overflow-hidden lg:pt-24">
+    <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_.85fr]">
+      <div>
+        <p className="eyebrow">Naveen Chatlapalli · Dallas, Texas</p>
         <RoughNotationGroup show={true}>
-          <RainbowHighlight color={colors[0]}>
-            <h1 className="text-4xl md:text-7xl font-bold text-gray-700 dark:text-gray-200 my-2">
-              {userData.designation}
-            </h1>
-          </RainbowHighlight>
-          <RainbowHighlight color={colors[1]}>
-            <h1 className="text-4xl md:text-7xl font-bold text-gray-700 dark:text-gray-200 my-2">
-              UiPath MVP*
-            </h1>
-          </RainbowHighlight>
-          <RainbowHighlight color={colors[2]}>
-            <h1 className="text-4xl md:text-7xl font-bold text-gray-700 dark:text-gray-200 my-2">
-              UiPath Dallas Chapter Leader
-            </h1>
-          </RainbowHighlight>
-          <RainbowHighlight color={colors[3]}>
-            <h1 className="text-4xl md:text-7xl font-bold text-gray-700 dark:text-gray-200 my-2">
-              Gen AI Engineer
-            </h1>
-          </RainbowHighlight>
-          {/* <RainbowHighlight color={colors[3]}>
-            <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-              Solopreneur
-            </h1>
-          </RainbowHighlight> */}
+          <h1 className="display-title">AI product and applied-ML leadership for <RoughNotation type="underline" color="#91aed2" strokeWidth={2} padding={2}>practical systems.</RoughNotation></h1>
         </RoughNotationGroup>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
-          <a
-            href="/contact"
-            className="rounded-full bg-slate-900 px-8 py-3 text-center font-semibold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl"
-          >
-            Contact Me
-          </a>
-          <a
-            href="/download"
-            className="rounded-full border border-slate-200 bg-white px-8 py-3 text-center font-semibold text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
-          >
-            Download Presentation
-          </a>
-          <a
-            href="/about"
-            className="rounded-full border border-transparent px-8 py-3 text-center font-semibold text-slate-600 transition-all hover:border-slate-200 hover:text-slate-900 dark:text-gray-300 dark:hover:border-gray-700 dark:hover:text-white"
-          >
-            Learn More
-          </a>
-        </div>
+        <p className="page-lede">I lead solution architecture for enterprise automation and AI programs—translating emerging technology into systems that teams can trust, use, and scale.</p>
+        <div className="mt-8 flex flex-wrap gap-3"><Link href="/work" className="button-primary">Explore selected work <span aria-hidden="true">→</span></Link><a href={userData.resumeUrl} className="button-secondary" download>Download CV <span aria-hidden="true">↓</span></a></div>
       </div>
-      {/* Image container */}
-      <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
-        <div className="w-3/4 ">
-          <img
-            src={userData.avatarUrl}
-            alt={`Portrait of ${userData.name}`}
-            className="shadow"
-          />
-          <div className="flex flex-row justify-between mt-4">
-            <div className="flex flex-row space-x-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-90deg-up"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"
-                />
-              </svg>
-              <p className="font-mono">That's me</p>
-            </div>
-          </div>
-        </div>
+      <div className="relative mx-auto w-full max-w-sm lg:justify-self-end">
+        <div className="absolute -inset-3 rounded-[2rem] border border-[#c9d6e7] bg-[#e9eff8] dark:border-[#314b65] dark:bg-[#172c3c]" />
+        <img src={userData.avatarUrl} alt={`Portrait of ${userData.name}`} className="relative aspect-[4/5] w-full rounded-[1.5rem] object-cover shadow-[0_18px_50px_rgba(24,33,31,.16)]" />
+        <p className="relative mt-4 text-right text-xs font-semibold uppercase tracking-[.16em] text-[#5f6864] dark:text-[#b7c0bb]">Enterprise AI · Architecture · Community</p>
       </div>
     </div>
-  );
+    <div className="mt-16 grid border-y border-[#d8ddd8] py-6 dark:border-[#34413d] sm:grid-cols-2 lg:grid-cols-4">
+      {[['3×','UiPath MVP'], ['10+','years in technology'], ['Global','awards judging'], ['Public','talks & writing']].map(([value, label]) => <div key={label} className="border-[#d8ddd8] px-0 py-4 first:pt-0 sm:border-l sm:px-6 sm:first:border-l-0 sm:first:pl-0 lg:py-0 lg:not-last:border-r dark:border-[#34413d]"><p className="font-serif text-3xl text-[#18211f] dark:text-[#eef1ed]">{value}</p><p className="mt-1 text-sm text-[#5f6864] dark:text-[#b7c0bb]">{label}</p></div>)}
+    </div>
+  </section>;
 }
-

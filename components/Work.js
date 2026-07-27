@@ -1,149 +1,20 @@
 import React from "react";
-import Link from "next/link";
+import PageIntro from "./PageIntro";
+import userData from "@constants/data";
+
+const caseStudy = {
+  title: "Risk Orbit",
+  label: "Selected case study · Applied AI",
+  problem: "Supply-chain risk teams need to make sense of fragmented signals quickly, without losing the context needed for responsible action.",
+  role: "Solution architecture & lead development",
+  approach: ["Multi-agent workflow built with UiPath Coded Agents and LangChain", "Context grounding through MCP for more reliable risk assessment", "Parallel data aggregation and automation workflows for timely response"],
+  outcome: "Recognized as a Top 7 winner in the UiPath Specialist Coded Agent Challenge.",
+  links: [{ label: "Read the Ashling case study", url: "https://ashling.ai/resources/risk-orbit-uipath-coded-agents-meet-real-world-supply-chain-risk" }, { label: "View the UiPath discussion", url: "https://forum.uipath.com/t/risk-orbit-uipath-coded-agent-with-langchain-mcp-context-grounding-uipath-sdk-supported/5676124" }],
+};
 
 export default function Work() {
-  const projects = [
-    {
-      id: "risk-orbit",
-      name: "Risk Orbit",
-      problem: "Supply chain risk management requires real-time monitoring of multiple data sources and rapid assessment of potential disruptions.",
-      role: "Manager of Solution Architecture & Lead Developer",
-      built: [
-        "Multi-agent system using UiPath Coded Agents with LangChain integration",
-        "Context grounding with MCP (Model Context Protocol) for accurate risk assessment",
-        "Real-time data aggregation from multiple supply chain data sources",
-        "UiPath SDK-supported automation workflows for risk response actions",
-        "Intelligent agent orchestration for parallel risk analysis tasks",
-      ],
-      results: [
-        "Top 7 Winner in UiPath Specialist Coded Agent Challenge",
-        "Recognized as innovative approach to enterprise AI agent architecture",
-      ],
-      links: [
-        {
-          label: "Ashling Article",
-          url: "https://ashling.ai/resources/risk-orbit-uipath-coded-agents-meet-real-world-supply-chain-risk",
-        },
-        {
-          label: "UiPath Forum Discussion",
-          url: "https://forum.uipath.com/t/risk-orbit-uipath-coded-agent-with-langchain-mcp-context-grounding-uipath-sdk-supported/5676124",
-        },
-      ],
-      artifacts: [
-        // Placeholder - artifacts would be added when available
-        // { label: "Case Study PDF", url: "/artifacts/risk-orbit-case-study.pdf" },
-        // { label: "Architecture Diagram", url: "/artifacts/risk-orbit-architecture.png" },
-      ],
-    },
-  ];
-
-  return (
-    <section className="bg-white dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto h-32 bg-white dark:bg-gray-800">
-        <h1 className="text-5xl md:text-6xl font-bold py-12 text-center md:text-left">
-          Selected Work
-        </h1>
-      </div>
-      <div className="bg-[#F1F1F1] dark:bg-gray-900 px-4">
-        <div className="max-w-6xl mx-auto pt-12 pb-24">
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-12">
-            A curated set of projects, write-ups, and systems I've led or architected. Each entry includes context, what I did, and supporting links.
-          </p>
-
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              id={project.id}
-              className="mb-16 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 md:p-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200 mb-6">
-                {project.name}
-              </h2>
-
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                  Problem
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {project.problem}
-                </p>
-              </div>
-
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                  Role
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">{project.role}</p>
-              </div>
-
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                  Built
-                </h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
-                  {project.built.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                  Results
-                </h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
-                  {project.results.map((result, idx) => (
-                    <li key={idx}>{result}</li>
-                  ))}
-                </ul>
-              </div>
-
-              {project.links && project.links.length > 0 && (
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                    Links
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {project.links.map((link, idx) => (
-                      <a
-                        key={idx}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
-                      >
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {project.artifacts && project.artifacts.length > 0 && (
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                    Artifacts
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {project.artifacts.map((artifact, idx) => (
-                      <a
-                        key={idx}
-                        href={artifact.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors"
-                      >
-                        {artifact.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  const products = (userData.solopreneurProjects || []).slice(0, 4);
+  return <><PageIntro eyebrow="Selected work" title="From architecture to systems people can use." aside="Each featured item includes context and a source where one is available.">I work across enterprise automation, agentic AI, and independent products—with a bias toward practical delivery.</PageIntro>
+    <section className="site-container page-section"><article className="paper-card overflow-hidden p-0"><div className="grid lg:grid-cols-[.78fr_1.22fr]"><div className="bg-[#e9eff8] p-7 dark:bg-[#172c3c] sm:p-10"><p className="eyebrow">{caseStudy.label}</p><h2 className="mt-4 text-4xl">{caseStudy.title}</h2><p className="mt-5 leading-8 text-[#46514c] dark:text-[#c5cec8]">{caseStudy.problem}</p><div className="mt-10 border-t border-[#b9cce5] pt-5 dark:border-[#315169]"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[#174b8b] dark:text-[#a8c7ee]">Role</p><p className="mt-2 font-semibold">{caseStudy.role}</p></div></div><div className="p-7 sm:p-10"><p className="eyebrow">Approach</p><ul className="mt-5 space-y-4">{caseStudy.approach.map((item) => <li key={item} className="flex gap-3 leading-7 text-[#46514c] dark:text-[#c5cec8]"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#174b8b] dark:bg-[#a8c7ee]" />{item}</li>)}</ul><div className="mt-8 rounded-xl border-l-2 border-[#174b8b] bg-[#f8f7f3] p-5 dark:bg-[#111716]"><p className="text-sm font-semibold">Outcome</p><p className="mt-2 leading-7 text-[#46514c] dark:text-[#c5cec8]">{caseStudy.outcome}</p></div><div className="mt-8 flex flex-wrap gap-4">{caseStudy.links.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="text-link">{link.label} ↗</a>)}</div></div></div></article></section>
+    <section className="border-t border-[#d8ddd8] bg-white/60 dark:border-[#34413d] dark:bg-[#18211f]/50"><div className="site-container page-section"><p className="eyebrow">Independent products</p><h2 className="section-title mt-4">Ideas taken into the world.</h2><div className="mt-10 grid gap-5 md:grid-cols-2">{products.map((project) => <a key={project.id} href={project.url.startsWith("http") ? project.url : `https://${project.url}`} target="_blank" rel="noopener noreferrer" className="paper-card group transition hover:-translate-y-1 hover:border-[#91aed2]"><div className="flex items-start justify-between gap-4"><h3 className="text-2xl">{project.name}</h3><span className="text-[#174b8b] transition group-hover:translate-x-1 dark:text-[#a8c7ee]">↗</span></div><p className="mt-3 leading-7 text-[#5f6864] dark:text-[#b7c0bb]">{project.description}</p><p className="mt-5 text-xs font-semibold uppercase tracking-[.14em] text-[#5f6864] dark:text-[#b7c0bb]">{project.category} · {project.stage}</p></a>)}</div></div></section></>;
 }
-

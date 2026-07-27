@@ -1,0 +1,14 @@
+import React from "react";
+import Link from "next/link";
+import PageIntro from "./PageIntro";
+import userData from "@constants/data";
+
+const groups = [
+  { label: "Awards & distinctions", entries: [{ title: "UiPath MVP", detail: "Three-time recognition for community contribution, technical expertise, and thought leadership.", href: "https://www.uipath.com/community/mvp" }, { title: "Risk Orbit", detail: "Top 7 winner in UiPath Specialist Coded Agent Challenge.", href: "https://ashling.ai/resources/risk-orbit-uipath-coded-agents-meet-real-world-supply-chain-risk" }, { title: "TechX Awards", detail: "Finalist for AI Innovation Award.", href: "https://www.chattanoogapulse.com/local-news/business-news/chatech-announces-finalists-for-the-6th-annual-techx-awards/" }] },
+  { label: "Judging", entries: [{ title: "Globee Awards", detail: "Judge, 2024 Business Awards.", href: "https://globeeawards.com/2024-business-awards-judge/" }, { title: "HackSharks 2.0", detail: "Judge for hackathon submissions.", href: "https://hacksharks-2-0.devpost.com/" }] },
+  { label: "Media & public contribution", entries: [{ title: "Wired", detail: "Featured in coverage of AI agent liability.", href: "https://www.wired.com/story/ai-agents-legal-liability-issues/" }, { title: "Public speaking", detail: "Technical sessions, interviews, and community education on AI and automation.", href: "/speaking", internal: true }, { title: "Technical writing", detail: "Published writing on machine learning, AI systems, and applied practice.", href: "/writing", internal: true }] },
+];
+
+export default function Recognition() {
+  return <><PageIntro eyebrow="Recognition" title="A record of contribution, reviewed in public." aside="Every featured entry links to a source, organization, event, or publication.">Selected distinctions, judging roles, public speaking, and published work related to AI and automation.</PageIntro><section className="site-container page-section space-y-14">{groups.map((group) => <div key={group.label}><div className="flex items-center gap-4"><p className="eyebrow">{group.label}</p><span className="h-px flex-1 bg-[#d8ddd8] dark:bg-[#34413d]" /></div><div className="mt-6 grid gap-5 md:grid-cols-3">{group.entries.map((entry) => { const body = <><h2 className="text-2xl">{entry.title}</h2><p className="mt-3 leading-7 text-[#5f6864] dark:text-[#b7c0bb]">{entry.detail}</p><p className="mt-6 text-sm font-semibold text-[#174b8b] dark:text-[#a8c7ee]">View source {entry.internal ? "→" : "↗"}</p></>; return entry.internal ? <Link key={entry.title} href={entry.href} className="paper-card group transition hover:-translate-y-1 hover:border-[#91aed2]">{body}</Link> : <a key={entry.title} href={entry.href} target="_blank" rel="noopener noreferrer" className="paper-card group transition hover:-translate-y-1 hover:border-[#91aed2]">{body}</a>; })}</div></div>)}</section></>;
+}

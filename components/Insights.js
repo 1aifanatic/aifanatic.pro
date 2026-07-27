@@ -1,0 +1,13 @@
+import React from "react";
+import Link from "next/link";
+import PageIntro from "./PageIntro";
+import userData from "@constants/data";
+
+function Entry({ entry, action = "Read" }) { return <a href={entry.link} target="_blank" rel="noopener noreferrer" className="group grid gap-3 border-b border-[#d8ddd8] py-5 transition last:border-b-0 hover:px-3 dark:border-[#34413d]"><div className="flex flex-wrap items-baseline justify-between gap-3"><h3 className="text-xl transition group-hover:text-[#174b8b] dark:group-hover:text-[#a8c7ee]">{entry.title}</h3><span className="text-xs font-semibold uppercase tracking-[.13em] text-[#5f6864] dark:text-[#b7c0bb]">{entry.date || entry.source}</span></div><p className="text-sm text-[#5f6864] dark:text-[#b7c0bb]">{entry.source} · {action} ↗</p></a>; }
+
+export default function Insights() {
+  const writing = userData.blogpost.slice(0, 6);
+  const videos = userData.video.slice(0, 4);
+  const talks = userData.talks.slice(0, 3);
+  return <><PageIntro eyebrow="Insights" title="Notes from building, teaching, and learning in public.">A selected archive of writing, video explainers, and talks on AI, automation, and the systems around them.</PageIntro><section className="site-container page-section"><div className="grid gap-12 lg:grid-cols-2"><div><div className="flex items-end justify-between gap-4"><div><p className="eyebrow">Writing</p><h2 className="mt-3 text-3xl">Technical perspectives</h2></div><Link href="/writing" className="text-link">All writing →</Link></div><div className="mt-6">{writing.map((entry) => <Entry key={entry.link} entry={entry} />)}</div></div><div><div className="flex items-end justify-between gap-4"><div><p className="eyebrow">Watch & listen</p><h2 className="mt-3 text-3xl">Talks and video</h2></div><Link href="/speaking" className="text-link">Speaking →</Link></div><div className="mt-6">{[...talks, ...videos].map((entry) => <Entry key={entry.link} entry={entry} action="Watch" />)}</div></div></div><div className="mt-16 rounded-[1.5rem] bg-[#18211f] p-8 text-white dark:bg-[#e9eff8] dark:text-[#18211f] sm:p-10"><p className="text-[11px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee] dark:text-[#174b8b]">Full archive</p><h2 className="mt-4 max-w-2xl text-4xl">Follow the thread, from early ML work to current agentic systems.</h2><div className="mt-7 flex flex-wrap gap-4"><Link href="/blog" className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#18211f] dark:bg-[#18211f] dark:text-white">Browse articles →</Link><Link href="/videos" className="rounded-full border border-white/40 px-5 py-3 text-sm font-semibold text-white dark:border-[#18211f]/30 dark:text-[#18211f]">Browse videos →</Link></div></div></section></>;
+}

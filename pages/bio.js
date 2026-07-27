@@ -4,7 +4,7 @@ import Bio from "../components/Bio";
 
 export default function bio() {
   return (
-    <ContainerBlock>
+    <ContainerBlock title="About — Naveen Chatlapalli">
       <Bio />
     </ContainerBlock>
   );

@@ -1557,7 +1557,7 @@ Step 4: Run test suite</code></pre>
         <p>The evaluator is explicit: <em>"This headline is too technical. Simplify for C-level audience."</em> The generator incorporates that feedback.</p>
 
         <div class="insight-box">
-          <strong>💡 The Metric That Matters:</strong> If you can't define "better" quantitatively, this pattern won't help. You need evaluation criteria sharper than "make it good."
+          <strong>💡 The Metric That Matters:</strong> If you can't define "better" quantitatively, this pattern won't help. You need evaluation measures sharper than "make it good."
         </div>
 
         <hr>
@@ -1694,7 +1694,7 @@ except RateLimitError:
 
         <p>The goal is strategic human involvement — only when necessary, but always when critical.</p>
 
-        <h3>Escalation Criteria</h3>
+        <h3>Escalation conditions</h3>
 
         <ul>
           <li>✅ High-stakes decisions (cancellations, refunds over $X)</li>
