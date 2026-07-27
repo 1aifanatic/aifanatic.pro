@@ -1,0 +1,6 @@
+import React from "react";
+import PageIntro from "./PageIntro";
+
+export default function ArchiveList({ eyebrow, title, lede, entries, action = "View", aside }) {
+  return <><PageIntro eyebrow={eyebrow} title={title} aside={aside}>{lede}</PageIntro><section className="site-container page-section"><div className="mx-auto max-w-4xl divide-y divide-[#d8ddd8] border-y border-[#d8ddd8] dark:divide-[#34413d] dark:border-[#34413d]">{entries.map((entry, index) => <a key={`${entry.link}-${index}`} href={entry.link} target="_blank" rel="noopener noreferrer" className="group grid gap-3 py-6 transition hover:bg-white/70 hover:px-5 dark:hover:bg-[#18211f]/50 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"><div><p className="text-sm font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{entry.source || entry.category}</p><h2 className="mt-2 text-2xl transition group-hover:text-[#174b8b] dark:group-hover:text-[#a8c7ee]">{entry.title}</h2>{entry.description && <p className="mt-3 max-w-2xl leading-7 text-[#5f6864] dark:text-[#b7c0bb]">{entry.description}</p>}</div><div className="flex items-center gap-4 text-sm"><span className="text-[#5f6864] dark:text-[#b7c0bb]">{entry.date}</span><span className="font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{action} ↗</span></div></a>)}</div></section></>;
+}

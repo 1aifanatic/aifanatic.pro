@@ -1,37 +1,4 @@
 import React from "react";
+import PageIntro from "./PageIntro";
 import userData from "@constants/data";
-
-export default function Press() {
-  return (
-    <section className="bg-white dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto h-32 bg-white dark:bg-gray-800">
-        <h1 className="text-5xl md:text-6xl font-bold py-12 text-center md:text-left">
-          Press & Mentions
-        </h1>
-      </div>
-      <div className="bg-[#F1F1F1] dark:bg-gray-900 px-4">
-        <div className="max-w-6xl mx-auto pt-12 pb-24">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 md:p-12">
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-              For press inquiries, please contact:{" "}
-              <a
-                href={`mailto:${userData.email}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
-              >
-                {userData.email}
-              </a>
-            </p>
-            <div className="mt-6">
-              <a
-                href="/downloads"
-                className="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors font-semibold"
-              >
-                Media Kit →
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+export default function Press() { return <><PageIntro eyebrow="Press" title="For interviews, context, and speaking requests.">For a short biography, background on current work, or a media inquiry, email is the best place to start.</PageIntro><section className="site-container page-section"><div className="paper-card max-w-3xl"><p className="eyebrow">Press contact</p><a className="mt-4 block font-serif text-3xl text-[#174b8b] underline decoration-[#91aed2] underline-offset-8 dark:text-[#a8c7ee]" href={`mailto:${userData.email}`}>{userData.email}</a><div className="mt-10 grid gap-6 border-t border-[#d8ddd8] pt-7 text-sm leading-7 text-[#5f6864] dark:border-[#34413d] dark:text-[#b7c0bb] sm:grid-cols-2"><p><strong className="block text-[#18211f] dark:text-[#eef1ed]">Focus areas</strong>Enterprise AI, automation, applied ML, and AI agent systems.</p><p><strong className="block text-[#18211f] dark:text-[#eef1ed]">Professional links</strong><a className="text-link" href={userData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><br /><a className="text-link" href={userData.resumeUrl} download>Download CV ↓</a></p></div></div></section></> }

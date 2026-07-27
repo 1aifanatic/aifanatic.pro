@@ -5,32 +5,14 @@
 @tailwind utilities;
 
 :root {
-  --font-body: "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --paper: #f8f7f3;
+  --ink: #18211f;
+  --font-body: "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: Iowan Old Style, Baskerville, "Times New Roman", Georgia, serif;
 }
 
-html[data-font="source-sans"] {
-  --font-body: "Source Sans Pro", "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-html[data-font="system"] {
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-html[data-font="inter"] {
-  --font-body: "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-body);
-}
+html { scroll-behavior: smooth; }
+html, body { padding: 0; margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); }
 a {
   color: inherit;
   text-decoration: none;
@@ -39,3 +21,39 @@ a {
 * {
   box-sizing: border-box;
 }
+
+::selection { background: #cbdcf4; color: #18211f; }
+
+@layer base {
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.035em; }
+  :focus-visible { outline: 2px solid #174b8b; outline-offset: 3px; }
+}
+
+@layer components {
+  .site-surface { @apply min-h-screen bg-[#f8f7f3] text-[#18211f] dark:bg-[#111716] dark:text-[#eef1ed]; }
+  .site-container { @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10; }
+  .page-section { @apply py-14 sm:py-20; }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-[#174b8b] dark:text-[#a8c7ee]; }
+  .display-title { @apply mt-4 max-w-4xl text-5xl leading-[0.98] text-[#18211f] dark:text-[#eef1ed] sm:text-6xl lg:text-7xl; }
+  .page-lede { @apply mt-6 max-w-2xl text-lg leading-8 text-[#5f6864] dark:text-[#b7c0bb] sm:text-xl; }
+  .section-title { @apply text-3xl leading-tight text-[#18211f] dark:text-[#eef1ed] sm:text-4xl; }
+  .paper-card { @apply rounded-[1.35rem] border border-[#d8ddd8] bg-white p-6 shadow-[0_10px_30px_rgba(24,33,31,0.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:p-8; }
+  .text-link { @apply font-semibold text-[#174b8b] underline decoration-[#91aed2] underline-offset-4 transition hover:text-[#0d376b] dark:text-[#a8c7ee] dark:hover:text-white; }
+  .button-primary { @apply inline-flex items-center justify-center rounded-full bg-[#18211f] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#174b8b] dark:bg-[#eef1ed] dark:text-[#18211f] dark:hover:bg-[#a8c7ee]; }
+  .button-secondary { @apply inline-flex items-center justify-center rounded-full border border-[#aeb8b1] px-5 py-3 text-sm font-semibold text-[#18211f] transition hover:-translate-y-0.5 hover:border-[#174b8b] hover:text-[#174b8b] dark:border-[#53605b] dark:text-[#eef1ed] dark:hover:border-[#a8c7ee] dark:hover:text-[#a8c7ee]; }
+}
+
+.article-copy { color: #46514c; font-size: 1.125rem; line-height: 1.9; }
+.article-copy h2, .article-copy h3 { color: #18211f; margin-top: 2.75rem; margin-bottom: 1rem; }
+.article-copy h2 { font-size: 2rem; }
+.article-copy h3 { font-size: 1.45rem; }
+.article-copy p, .article-copy ul, .article-copy ol { margin: 1.25rem 0; }
+.article-copy ul, .article-copy ol { padding-left: 1.35rem; }
+.article-copy li { margin: .5rem 0; }
+.article-copy a { color: #174b8b; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.article-copy blockquote { border-left: 2px solid #174b8b; margin: 2rem 0; padding-left: 1.25rem; font-family: var(--font-display); font-size: 1.35rem; }
+.dark .article-copy { color: #c5cec8; }
+.dark .article-copy h2, .dark .article-copy h3 { color: #eef1ed; }
+.dark .article-copy a { color: #a8c7ee; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
