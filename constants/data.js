@@ -677,7 +677,7 @@
     {
       id: 20,
       name: "GC Genius",
-      description: "Mentor platform guiding EB‑1A/O‑1 aspirants through profile‑building",
+      description: "Structured mentoring platform for tracking professional goals, evidence, and long-term career development",
       tech: "GPT knowledge base, milestone tracker",
       stage: "Alpha",
       category: "Mentoring",

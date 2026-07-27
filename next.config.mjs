@@ -14,6 +14,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: "/bio", destination: "/about", permanent: true },
+      { source: "/career-progression", destination: "/experience", permanent: true },
+      { source: "/download", destination: "/about#resources", permanent: true },
+      { source: "/downloads", destination: "/about#resources", permanent: true },
+      { source: "/talks", destination: "/speaking", permanent: true },
+      { source: "/videos", destination: "/speaking", permanent: true },
+      { source: "/writing", destination: "/insights", permanent: true },
+      { source: "/publications", destination: "/insights", permanent: true },
+      { source: "/judging", destination: "/recognition#judging", permanent: true },
+      { source: "/press", destination: "/recognition#media", permanent: true },
+    ];
+  },
   async rewrites() {
     return [
       {

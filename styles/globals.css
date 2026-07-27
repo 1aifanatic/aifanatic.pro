@@ -12,7 +12,7 @@
 }
 
 html { scroll-behavior: smooth; }
-html, body { padding: 0; margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); }
+html, body { overflow-x: clip; padding: 0; margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); }
 a {
   color: inherit;
   text-decoration: none;
@@ -31,7 +31,7 @@ a {
 
 @layer components {
   .site-surface { @apply min-h-screen bg-[#f8f7f3] text-[#18211f] dark:bg-[#111716] dark:text-[#eef1ed]; }
-  .site-container { @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10; }
+  .site-container { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10; }
   .page-section { @apply py-14 sm:py-20; }
   .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-[#174b8b] dark:text-[#a8c7ee]; }
   .display-title { @apply mt-4 max-w-4xl text-5xl leading-[0.98] text-[#18211f] dark:text-[#eef1ed] sm:text-6xl lg:text-7xl; }
@@ -41,6 +41,9 @@ a {
   .text-link { @apply font-semibold text-[#174b8b] underline decoration-[#91aed2] underline-offset-4 transition hover:text-[#0d376b] dark:text-[#a8c7ee] dark:hover:text-white; }
   .button-primary { @apply inline-flex items-center justify-center rounded-full bg-[#18211f] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#174b8b] dark:bg-[#eef1ed] dark:text-[#18211f] dark:hover:bg-[#a8c7ee]; }
   .button-secondary { @apply inline-flex items-center justify-center rounded-full border border-[#aeb8b1] px-5 py-3 text-sm font-semibold text-[#18211f] transition hover:-translate-y-0.5 hover:border-[#174b8b] hover:text-[#174b8b] dark:border-[#53605b] dark:text-[#eef1ed] dark:hover:border-[#a8c7ee] dark:hover:text-[#a8c7ee]; }
+  .skip-link { @apply fixed left-4 top-3 z-[100] -translate-y-20 rounded-full bg-[#18211f] px-5 py-3 text-sm font-semibold text-white transition focus:translate-y-0 dark:bg-[#eef1ed] dark:text-[#18211f]; }
+  .source-label { @apply inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-[#174b8b] underline decoration-[#91aed2] underline-offset-4 transition hover:text-[#0d376b] dark:text-[#a8c7ee] dark:hover:text-white; }
+  .topic-chip { @apply inline-flex min-h-[40px] items-center rounded-full border border-[#c7cfca] px-4 py-2 text-xs font-semibold uppercase tracking-[.1em] text-[#46514c] dark:border-[#46514c] dark:text-[#c5cec8]; }
 }
 
 .article-copy { color: #46514c; font-size: 1.125rem; line-height: 1.9; }
@@ -52,6 +55,9 @@ a {
 .article-copy li { margin: .5rem 0; }
 .article-copy a { color: #174b8b; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 .article-copy blockquote { border-left: 2px solid #174b8b; margin: 2rem 0; padding-left: 1.25rem; font-family: var(--font-display); font-size: 1.35rem; }
+.article-copy pre { max-width: 100%; overflow-x: auto; border: 1px solid #d8ddd8; border-radius: 1rem; background: #18211f; color: #eef1ed; padding: 1.25rem; font-size: .9rem; line-height: 1.7; }
+.article-copy table { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; white-space: nowrap; }
+.article-copy th, .article-copy td { border: 1px solid #d8ddd8; padding: .75rem 1rem; text-align: left; }
 .dark .article-copy { color: #c5cec8; }
 .dark .article-copy h2, .dark .article-copy h3 { color: #eef1ed; }
 .dark .article-copy a { color: #a8c7ee; }
