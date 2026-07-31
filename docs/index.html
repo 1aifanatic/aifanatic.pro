@@ -9,9 +9,12 @@
     <title>Redirecting to Naveen Chatlapalli</title>
     <script>
       (function () {
+        var path =
+          window.location.pathname.replace(/^\/aifanatic\.pro(?=\/|$)/, "") ||
+          "/";
         var destination =
           "https://naveen.aifanatic.pro" +
-          window.location.pathname +
+          path +
           window.location.search +
           window.location.hash;
         window.location.replace(destination);
