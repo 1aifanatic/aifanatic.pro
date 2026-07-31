@@ -154,7 +154,7 @@ export default function GuestBookAdmin() {
   if (authorized !== true) {
     return (
       <ContainerBlock
-        title="Private Guest Book — Naveen Chatlapalli"
+        title="Private Guest Book - Naveen Chatlapalli"
         description="Private portfolio guest-book administration."
         noIndex
       >
@@ -220,7 +220,7 @@ export default function GuestBookAdmin() {
 
   return (
     <ContainerBlock
-      title="Private Guest Book — Naveen Chatlapalli"
+      title="Private Guest Book - Naveen Chatlapalli"
       description="Private portfolio guest-book administration."
       noIndex
     >

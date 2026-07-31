@@ -9,7 +9,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
   const isAdmin = router.pathname.startsWith("/admin");
   const meta = {
-    title: "Naveen Chatlapalli — AI & Solution Architecture",
+    title: "Naveen Chatlapalli - AI & Solution Architecture",
     description: "Portfolio of Naveen Chatlapalli, an AI product and solution architecture leader.",
     image: "/avatar.png",
     type: "website",

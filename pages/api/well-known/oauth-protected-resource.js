@@ -4,7 +4,7 @@ import { getSiteBaseUrl } from "@lib/siteUrl";
  * OAuth 2.0 Protected Resource Metadata (RFC 9728).
  * Served at `/.well-known/oauth-protected-resource` (see next.config.mjs).
  * The `resource` identifier MUST match the URL into which that well-known path
- * was inserted (RFC 9728 §3.3) — here the site origin, not a specific API path.
+ * was inserted (RFC 9728 §3.3) - here the site origin, not a specific API path.
  */
 export default function handler(req, res) {
   if (req.method !== "GET") {

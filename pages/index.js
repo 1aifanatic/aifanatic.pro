@@ -4,7 +4,7 @@ import getRepoMetrics from "@lib/getRepoMetrics";
 import userData from "@constants/data";
 
 export default function Home({ boostMetrics }) {
-  return <ContainerBlock title="Naveen Chatlapalli — Solution Architecture & AI Agents" description="Enterprise solution architecture, AI-agent systems, selected work, and public contributions by Naveen Chatlapalli.">
+  return <ContainerBlock title="Naveen Chatlapalli - Solution Architecture & AI Agents" description="Enterprise solution architecture, AI-agent systems, selected work, and public contributions by Naveen Chatlapalli.">
     <Hero boostMetrics={boostMetrics} />
   </ContainerBlock>;
 }

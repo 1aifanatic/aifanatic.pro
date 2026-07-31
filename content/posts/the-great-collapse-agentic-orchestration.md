@@ -14,7 +14,7 @@ AI is dismantling these silos. Not by replacing them, but by **collapsing** them
 
 I recently watched a breakdown of this shift that perfectly articulates the transition we are living through. It argues that we are facing two simultaneous collapses: a **Horizontal Collapse** of roles and a **Temporal Collapse** of time.
 
-If you are betting your career on deep domain expertise alone, you are betting against the house. The new meta-skill—the only one that will matter by late 2026—is **Agentic Orchestration.**
+If you are betting your career on deep domain expertise alone, you are betting against the house. The new meta-skill - the only one that will matter by late 2026 - is **Agentic Orchestration.**
 
 ## 1. The Horizontal Collapse: Roles are Merging
 
@@ -37,7 +37,7 @@ If you can, you aren't just an individual contributor anymore. You are an **Arch
 
 ## 2. The Temporal Collapse: Time is Shrinking
 
-The second collapse is even scarier for traditionalists. The timeline from "Novice" to "Expert" used to be years. Now, it's weeks—or days.
+The second collapse is even scarier for traditionalists. The timeline from "Novice" to "Expert" used to be years. Now, it's weeks - or days.
 
 The "learning curve" for AI is vertical. A new model drops, and the workflows that worked yesterday are obsolete today.
 *   **Old Strategy:** "I'll wait for the tech to mature before I learn it."

@@ -223,7 +223,7 @@ export default function Highlight() {
               Recent highlights
             </h2>
             <p className="mt-3 max-w-2xl text-base text-gray-600 dark:text-gray-400">
-              Community sessions, recordings, and videos—curated so you can catch up quickly.
+              Community sessions, recordings, and videos - curated so you can catch up quickly.
             </p>
           </div>
         </div>

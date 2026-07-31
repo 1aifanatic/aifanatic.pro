@@ -5,18 +5,11 @@ import userData from "@constants/data";
 import { openGuestBook } from "@lib/guestBook";
 import Icon from "./Icon";
 
-const boostAreas = [
-  "Discovery",
-  "Architecture",
-  "Quality",
-  "Release",
-];
-
 export default function Hero({ boostMetrics = null }) {
   const { uipathBoost, loanShield, homeSnapshot } = userData;
   const starCount = Number.isFinite(boostMetrics?.stars)
     ? boostMetrics.stars.toLocaleString("en-US")
-    : "—";
+    : "Live";
 
   return (
     <section className="site-container py-4 sm:py-5 lg:h-[calc(100vh-64px)] lg:min-h-[720px] lg:max-h-[840px]">
@@ -24,22 +17,21 @@ export default function Hero({ boostMetrics = null }) {
         <article className="overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white p-5 shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:p-6 lg:col-span-7 lg:flex lg:flex-col lg:justify-center lg:p-5 2xl:p-7">
           <p className="eyebrow">Naveen Chatlapalli · Dallas, Texas</p>
           <RoughNotationGroup show={true}>
-            <h1 className="mt-2 max-w-4xl text-[2.55rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:text-5xl lg:text-[2.55rem] xl:text-[2.8rem] 2xl:text-[3.35rem]">
-              Solution architecture for AI agents that{" "}
+            <h1 className="mt-2 max-w-4xl text-[2.3rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:text-[2.7rem] lg:text-[2.4rem] xl:text-[2.65rem] 2xl:text-[3rem]">
+              AI agents that work. {" "}
               <RoughNotation
                 type="underline"
                 color="#91aed2"
                 strokeWidth={2}
                 padding={2}
               >
-                work in the real world.
+                Systems that scale.
               </RoughNotation>
             </h1>
           </RoughNotationGroup>
           <p className="mt-3 max-w-2xl text-base leading-6 text-[#5f6864] dark:text-[#b7c0bb] 2xl:text-lg 2xl:leading-7">
-            I lead enterprise solution architecture across automation and
-            AI—turning ambitious agent ideas into governed, production-ready
-            systems.
+            I lead enterprise solution architecture for governed AI and
+            automation systems that teams can trust in production.
           </p>
           <div className="mt-3 flex flex-wrap gap-2.5 2xl:mt-5">
             <Link href="/work" className="button-primary px-4 py-2.5">
@@ -103,6 +95,14 @@ export default function Hero({ boostMetrics = null }) {
               <h2 className="mt-2 text-4xl leading-none sm:text-5xl lg:text-4xl 2xl:text-5xl">
                 {uipathBoost.title}
               </h2>
+              <div className="mt-2 flex items-center gap-2.5">
+                <span className="font-serif text-3xl leading-none text-white">
+                  {uipathBoost.skillCount}
+                </span>
+                <span className="rounded-full bg-[#a8c7ee] px-3 py-1 text-xs font-bold uppercase tracking-[.12em] text-[#172c3c]">
+                  {uipathBoost.skillLabel}
+                </span>
+              </div>
               <p className="mt-2 max-w-xl text-sm leading-5 text-[#c5cec8] 2xl:text-base 2xl:leading-7">
                 {uipathBoost.summary}
               </p>
@@ -131,24 +131,23 @@ export default function Hero({ boostMetrics = null }) {
             </div>
             <div className="border-t border-[#34413d] p-5 md:border-l md:border-t-0 sm:p-6">
               <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">
-                Engineering around delivery
+                Why teams need these skills
               </p>
               <ol className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-1 xl:grid-cols-2">
-                {boostAreas.map((area, index) => (
+                {uipathBoost.benefits.map((benefit) => (
                   <li
-                    key={area}
+                    key={benefit.title}
                     className="rounded-xl border border-[#34413d] bg-[#18211f] px-3 py-2.5"
                   >
-                    <span className="font-mono text-[9px] text-[#7ea5d4]">
-                      0{index + 1}
-                    </span>
-                    <p className="mt-1 text-xs font-semibold">{area}</p>
+                    <p className="text-xs font-semibold">{benefit.title}</p>
+                    <p className="mt-1 text-[9px] leading-3 text-[#96a09a]">
+                      {benefit.detail}
+                    </p>
                   </li>
                 ))}
               </ol>
               <p className="mt-3 text-[10px] leading-4 text-[#96a09a]">
-                Independent community project complementing official UiPath
-                product skills.
+                One reusable system for clearer decisions and safer delivery.
               </p>
             </div>
           </div>
@@ -157,9 +156,10 @@ export default function Hero({ boostMetrics = null }) {
         <article className="relative flex flex-col justify-center overflow-hidden rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 shadow-[0_12px_32px_rgba(24,33,31,.06)] dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5 lg:p-5 2xl:p-7">
           <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full border-[24px] border-white/30 dark:border-[#315169]/30" />
           <div className="relative flex flex-wrap items-center justify-between gap-2">
-            <p className="eyebrow">{loanShield.eyebrow}</p>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#91aed2] bg-white/60 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[.11em] text-[#174b8b] dark:border-[#527ba8] dark:bg-[#18211f]/60 dark:text-[#a8c7ee]">
-              <Icon name="shield" className="h-3.5 w-3.5" /> Case orchestration
+            <p className="eyebrow">{loanShield.program}</p>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#174b8b] px-3 py-1.5 text-[9px] font-bold uppercase tracking-[.13em] text-white dark:bg-[#a8c7ee] dark:text-[#172c3c]">
+              <span className="h-1.5 w-1.5 rounded-full bg-current" />
+              {loanShield.status}
             </span>
           </div>
           <div className="relative mt-2">
@@ -169,15 +169,13 @@ export default function Hero({ boostMetrics = null }) {
             </p>
           </div>
           <ol className="relative mt-3 grid grid-cols-4 overflow-hidden rounded-xl border border-[#b9cce5] bg-white/70 dark:border-[#315169] dark:bg-[#18211f]/70 2xl:mt-5">
-            {loanShield.systemPath.map((step, index) => (
+            {loanShield.systemPath.map((step) => (
               <li
                 key={step}
-                className="border-r border-[#b9cce5] px-2 py-2 text-center last:border-0 dark:border-[#315169] 2xl:py-3"
+                className="flex items-center justify-center gap-1.5 border-r border-[#b9cce5] px-2 py-3 text-center last:border-0 dark:border-[#315169] 2xl:py-3.5"
               >
-                <span className="mx-auto grid h-5 w-5 place-items-center rounded-full bg-[#174b8b] font-mono text-[8px] text-white dark:bg-[#a8c7ee] dark:text-[#172c3c]">
-                  0{index + 1}
-                </span>
-                <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[.08em] text-[#46514c] dark:text-[#c5cec8]">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#174b8b] dark:bg-[#a8c7ee]" />
+                <span className="text-[10px] font-semibold uppercase tracking-[.08em] text-[#46514c] dark:text-[#c5cec8]">
                   {step}
                 </span>
               </li>

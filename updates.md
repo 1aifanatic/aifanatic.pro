@@ -61,7 +61,7 @@ Suggested chips:
 
 - Awards Judge (2024)
 - UiPath MVP (2x)
-- Top 7 Winner — Specialist Coded Agent Challenge
+- Top 7 Winner - Specialist Coded Agent Challenge
 - UiPath Dallas Chapter Lead
 - Published Author (Ashling / UiPath Community)
 
@@ -151,7 +151,7 @@ Include:
 - Optional: downloadable confirmation letter/email (redacted)
 
 Add this item:
-Globee Awards — Judge (2024)
+Globee Awards - Judge (2024)
 Verification link:
 https://globeeawards.com/2024-business-awards-judge/
 
@@ -289,7 +289,7 @@ Create `proof.json` and render cards on /work and /judging.
 [
 {
 "type": "Judging",
-"title": "Globee Awards — Judge (2024)",
+"title": "Globee Awards - Judge (2024)",
 "summary": "Selected as a judge for Globee Business Awards.",
 "links": [
 {
@@ -303,7 +303,7 @@ Create `proof.json` and render cards on /work and /judging.
 },
 {
 "type": "Recognition",
-"title": "Risk Orbit — Top 7 Winner (Specialist Coded Agent Challenge)",
+"title": "Risk Orbit - Top 7 Winner (Specialist Coded Agent Challenge)",
 "summary": "Multi-agent supply chain risk intelligence system recognized as a Top 7 winner.",
 "links": [
 {
