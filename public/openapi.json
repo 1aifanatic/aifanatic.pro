@@ -76,7 +76,7 @@
     },
     "/api/guestbook": {
       "post": {
-        "summary": "Sign the portfolio guest book and unlock curated links",
+        "summary": "Sign the portfolio guest book before continuing to featured content",
         "requestBody": {
           "required": true,
           "content": {

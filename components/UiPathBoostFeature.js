@@ -1,4 +1,5 @@
 import userData from "@constants/data";
+import { openGuestBook } from "@lib/guestBook";
 import Icon from "./Icon";
 
 const skillGroups = [
@@ -46,23 +47,14 @@ export default function UiPathBoostFeature({ bordered = true }) {
                   </span>
                 ))}
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <div className="mt-8">
+                <button
+                  type="button"
+                  onClick={() => openGuestBook(project.url)}
                   className="button-primary"
                 >
-                  Explore on GitHub <Icon name="arrowUpRight" />
-                </a>
-                <a
-                  href={`${project.url}#recommended-starter-set`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button-secondary"
-                >
-                  View starter set <Icon name="arrowUpRight" />
-                </a>
+                  View on GitHub <Icon name="arrowRight" />
+                </button>
               </div>
               <p className="mt-6 text-xs leading-5 text-[#6b7670] dark:text-[#aab4ae]">
                 Independent community project. UiPath’s official skills remain

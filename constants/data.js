@@ -161,25 +161,7 @@
   guestBook: {
     title: "Join the builder’s guest book",
     description:
-      "Leave your name and email to unlock a small collection of architecture notes, community tools, and new experiments.",
-    content: [
-      {
-        title: "UiPath Boost starter catalog",
-        description: "Explore the open catalog and install the project router.",
-        href: "https://github.com/1aifanatic/uipath-boost#quick-start",
-      },
-      {
-        title: "Applied AI case studies",
-        description: "Go deeper on the systems, architecture, and public evidence.",
-        href: "/work",
-        internal: true,
-      },
-      {
-        title: "Naveen’s Substack",
-        description: "Follow new field notes and independent ideas as they are published.",
-        href: "https://aifanatic.substack.com",
-      },
-    ],
+      "Enter your name and email to access the UiPath Boost repository.",
   },
   socialLinks: {
     twitter: "https://x.com/1aifanatic",
