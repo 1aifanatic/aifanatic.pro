@@ -148,6 +148,7 @@
   },
   uipathBoost: {
     title: "UiPath Boost",
+    repository: "1aifanatic/uipath-boost",
     eyebrow: "Open source · Community Agent Skills",
     summary:
       "A catalog of 34 Agent Skills that brings discovery, testing, release readiness, and durable engineering practices to UiPath delivery.",

@@ -7,6 +7,7 @@ import GuestBookPopup from "./GuestBookPopup";
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
+  const isAdmin = router.pathname.startsWith("/admin");
   const meta = {
     title: "Naveen Chatlapalli — AI & Solution Architecture",
     description: "Portfolio of Naveen Chatlapalli, an AI product and solution architecture leader.",
@@ -30,7 +31,10 @@ export default function ContainerBlock({ children, ...customMeta }) {
   return <div className="site-surface">
     <Head>
       <title>{meta.title}</title>
-      <meta name="robots" content="follow, index" />
+      <meta
+        name="robots"
+        content={customMeta.noIndex || isAdmin ? "noindex, nofollow" : "follow, index"}
+      />
       <meta name="description" content={meta.description} />
       <meta property="og:url" content={`https://naveen.aifanatic.pro${router.asPath}`} />
       <link rel="canonical" href={`https://naveen.aifanatic.pro${router.asPath}`} />
@@ -47,9 +51,9 @@ export default function ContainerBlock({ children, ...customMeta }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
     </Head>
     <a href="#main-content" className="skip-link">Skip to content</a>
-    <Navbar />
+    {!isAdmin && <Navbar />}
     <main id="main-content" tabIndex="-1">{children}</main>
-    <Footer />
-    {!router.pathname.startsWith("/admin") && <GuestBookPopup />}
+    {!isAdmin && <Footer />}
+    {!isAdmin && <GuestBookPopup />}
   </div>;
 }

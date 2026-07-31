@@ -346,8 +346,7 @@ GITHUB_AUTH_TOKEN=''          # Personal access token for API
 DATABASE_URL=''               # PostgreSQL connection string (Neon)
 
 # Admin Authentication
-ADMIN_SECRET_KEY=''           # Backend secret for API auth
-NEXT_PUBLIC_ADMIN_SECRET=''   # Frontend secret for admin pages
+ADMIN_SECRET_KEY=''           # Server-only secret for API and admin session auth
 ```
 
 **Setup:**
@@ -771,10 +770,10 @@ import { Analytics } from '@vercel/analytics/react'
 - Device and browser info
 
 **Admin Dashboard:** `/admin/leads`
-- View captured leads
-- Download counts per lead
+- View guest-book names, emails, and access timestamps
+- Search guest-book entries
 - Export to CSV
-- Requires `NEXT_PUBLIC_ADMIN_SECRET` authentication
+- Requires server-only `ADMIN_SECRET_KEY` authentication
 
 ---
 

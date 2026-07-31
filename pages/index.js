@@ -1,11 +1,11 @@
 import ContainerBlock from "@components/ContainerBlock";
 import Hero from "@components/Hero";
-import getLatestRepos from "@lib/getLatestRepos";
+import getRepoMetrics from "@lib/getRepoMetrics";
 import userData from "@constants/data";
 
-export default function Home() {
+export default function Home({ boostMetrics }) {
   return <ContainerBlock title="Naveen Chatlapalli — Solution Architecture & AI Agents" description="Enterprise solution architecture, AI-agent systems, selected work, and public contributions by Naveen Chatlapalli.">
-    <Hero />
+    <Hero boostMetrics={boostMetrics} />
   </ContainerBlock>;
 }
 
@@ -18,6 +18,13 @@ export const getServerSideProps = async ({ res }) => {
     `</sitemap.xml>; rel="alternate"; type="application/xml"`,
   ].join(", ");
   res.setHeader("Link", link);
-  await getLatestRepos(userData, process.env.GITHUB_AUTH_TOKEN);
-  return { props: {} };
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=300, stale-while-revalidate=3600"
+  );
+  const boostMetrics = await getRepoMetrics(
+    userData.uipathBoost.repository,
+    process.env.GITHUB_AUTH_TOKEN
+  );
+  return { props: { boostMetrics } };
 };

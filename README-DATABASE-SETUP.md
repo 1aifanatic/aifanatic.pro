@@ -37,9 +37,6 @@ DATABASE_URL=postgresql://neondb_owner:npg_s5f7yloDbQtp@ep-wispy-darkness-ad3ujw
 
 # Admin Access (change this to your own secret)
 ADMIN_SECRET_KEY=your-secret-admin-key-here
-
-# Optional: For admin dashboard
-NEXT_PUBLIC_ADMIN_SECRET=your-secret-admin-key-here
 ```
 
 ### 📁 File Structure
@@ -89,7 +86,9 @@ Link to: `/download?doc=Document%20Name&path=/documents/file.pdf&desc=Descriptio
 
 #### 4. Access Admin Dashboard
 
-Visit `/admin/leads` to view collected leads and export data.
+Visit `/admin/leads` and enter `ADMIN_SECRET_KEY` to view guest-book entries
+and export them. The key is validated server-side and stored only in a
+short-lived HttpOnly session cookie.
 
 ### 🔒 Security Features
 
@@ -162,6 +161,6 @@ The form uses Tailwind CSS and matches your site's professional color scheme.
 **Admin Dashboard Access:**
 
 - Make sure `ADMIN_SECRET_KEY` is set
-- Use the same key in the authorization header
+- Enter that key on `/admin/leads`, or use it as a Bearer token for API access
 
 Your lead capture system is now ready to collect valuable leads while providing users with your documents! 🎉

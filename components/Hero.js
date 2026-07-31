@@ -12,8 +12,11 @@ const boostAreas = [
   "Release",
 ];
 
-export default function Hero() {
+export default function Hero({ boostMetrics = null }) {
   const { uipathBoost, loanShield, homeSnapshot } = userData;
+  const starCount = Number.isFinite(boostMetrics?.stars)
+    ? boostMetrics.stars.toLocaleString("en-US")
+    : "—";
 
   return (
     <section className="site-container py-4 sm:py-5 lg:h-[calc(100vh-64px)] lg:min-h-[720px] lg:max-h-[840px]">
@@ -111,7 +114,19 @@ export default function Hero() {
                 >
                   View on GitHub <Icon name="arrowRight" />
                 </button>
-                <span className="text-xs text-[#96a09a]">{uipathBoost.facts[0]}</span>
+                <div
+                  className="flex min-h-[42px] items-center gap-2 rounded-full border border-[#46514c] bg-[#18211f] px-3"
+                  aria-label={`${starCount} GitHub stars`}
+                  title="Live repository metric from GitHub"
+                >
+                  <Icon name="star" className="h-4 w-4 fill-[#f2c86b] text-[#f2c86b]" />
+                  <span className="font-serif text-xl leading-none text-white">
+                    {starCount}
+                  </span>
+                  <span className="text-[9px] font-semibold uppercase leading-3 tracking-[.1em] text-[#96a09a]">
+                    GitHub<br />stars
+                  </span>
+                </div>
               </div>
             </div>
             <div className="border-t border-[#34413d] p-5 md:border-l md:border-t-0 sm:p-6">
@@ -139,23 +154,27 @@ export default function Hero() {
           </div>
         </article>
 
-        <article className="flex flex-col justify-center overflow-hidden rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 shadow-[0_12px_32px_rgba(24,33,31,.06)] dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5 lg:p-5 2xl:p-7">
-          <p className="eyebrow">{loanShield.eyebrow}</p>
-          <div className="mt-2">
-            <div>
-              <h2 className="text-4xl leading-none sm:text-5xl lg:text-4xl 2xl:text-5xl">{loanShield.title}</h2>
-              <p className="mt-2 text-sm leading-5 text-[#46514c] dark:text-[#c5cec8] 2xl:text-base 2xl:leading-6">
-                {loanShield.summary}
-              </p>
-            </div>
+        <article className="relative flex flex-col justify-center overflow-hidden rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 shadow-[0_12px_32px_rgba(24,33,31,.06)] dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5 lg:p-5 2xl:p-7">
+          <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full border-[24px] border-white/30 dark:border-[#315169]/30" />
+          <div className="relative flex flex-wrap items-center justify-between gap-2">
+            <p className="eyebrow">{loanShield.eyebrow}</p>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#91aed2] bg-white/60 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[.11em] text-[#174b8b] dark:border-[#527ba8] dark:bg-[#18211f]/60 dark:text-[#a8c7ee]">
+              <Icon name="shield" className="h-3.5 w-3.5" /> Case orchestration
+            </span>
           </div>
-          <ol className="mt-3 grid grid-cols-4 overflow-hidden rounded-xl border border-[#b9cce5] bg-white/60 dark:border-[#315169] dark:bg-[#18211f]/60 2xl:mt-5">
+          <div className="relative mt-2">
+            <h2 className="text-4xl leading-none sm:text-5xl lg:text-4xl 2xl:text-5xl">{loanShield.title}</h2>
+            <p className="mt-2 text-sm leading-5 text-[#46514c] dark:text-[#c5cec8] 2xl:text-base 2xl:leading-6">
+              {loanShield.summary}
+            </p>
+          </div>
+          <ol className="relative mt-3 grid grid-cols-4 overflow-hidden rounded-xl border border-[#b9cce5] bg-white/70 dark:border-[#315169] dark:bg-[#18211f]/70 2xl:mt-5">
             {loanShield.systemPath.map((step, index) => (
               <li
                 key={step}
                 className="border-r border-[#b9cce5] px-2 py-2 text-center last:border-0 dark:border-[#315169] 2xl:py-3"
               >
-                <span className="block font-mono text-[9px] text-[#174b8b] dark:text-[#a8c7ee]">
+                <span className="mx-auto grid h-5 w-5 place-items-center rounded-full bg-[#174b8b] font-mono text-[8px] text-white dark:bg-[#a8c7ee] dark:text-[#172c3c]">
                   0{index + 1}
                 </span>
                 <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[.08em] text-[#46514c] dark:text-[#c5cec8]">
@@ -164,14 +183,19 @@ export default function Hero() {
               </li>
             ))}
           </ol>
-          <a
-            href={loanShield.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-flex min-h-9 items-center gap-2 self-start text-sm font-semibold text-[#174b8b] transition hover:text-[#0d376b] dark:text-[#a8c7ee] dark:hover:text-white 2xl:mt-3"
-          >
-            View on Devpost <Icon name="arrowUpRight" />
-          </a>
+          <div className="relative mt-2 flex items-center justify-between gap-4 2xl:mt-3">
+            <a
+              href={loanShield.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-9 items-center gap-2 text-sm font-semibold text-[#174b8b] transition hover:text-[#0d376b] dark:text-[#a8c7ee] dark:hover:text-white"
+            >
+              View on Devpost <Icon name="arrowUpRight" />
+            </a>
+            <span className="text-[9px] font-semibold uppercase tracking-[.12em] text-[#5f6864] dark:text-[#b7c0bb]">
+              End-to-end case flow
+            </span>
+          </div>
         </article>
 
         <nav className="overflow-hidden rounded-[1.2rem] border border-[#d8ddd8] bg-white shadow-[0_8px_24px_rgba(24,33,31,.035)] dark:border-[#34413d] dark:bg-[#18211f] lg:col-span-12" aria-label="Public contributions">
