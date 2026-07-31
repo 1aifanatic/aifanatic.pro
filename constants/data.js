@@ -158,6 +158,53 @@
       "npx skills add 1aifanatic/uipath-boost --skill uipath-project-router --agent codex --yes",
     facts: ["34 Agent Skills", "MIT licensed", "Open community catalog"],
   },
+  loanShield: {
+    title: "Loan Shield",
+    eyebrow: "UiPath AgentHack · New submission",
+    summary:
+      "An AI-powered loan-dispute workflow that turns fragmented evidence, approvals, and case updates into one auditable process.",
+    description:
+      "Built with UiPath Maestro Case Management, Agent Builder, API Workflows, Action Center, and a live Next.js portal backed by Neon PostgreSQL.",
+    url: "https://devpost.com/software/loan-shield",
+    facts: ["Maestro Case", "AI agents", "Human approval", "Neon PostgreSQL"],
+    systemPath: ["Intake", "AI triage", "Decision", "Audit"],
+  },
+  homeSnapshot: {
+    proof: [
+      {
+        value: "3×",
+        label: "UiPath MVP",
+        href: "/recognition#distinctions",
+      },
+      {
+        value: "10+",
+        label: "Years in technology",
+        href: "/experience",
+      },
+    ],
+    contributions: [
+      {
+        label: "Community Lead",
+        detail: "UiPath Dallas",
+        href: "/recognition#distinctions",
+      },
+      {
+        label: "Speaker",
+        detail: "Sessions & interviews",
+        href: "/speaking",
+      },
+      {
+        label: "Technical Writer",
+        detail: "AI & automation",
+        href: "/insights",
+      },
+      {
+        label: "Awards Judge",
+        detail: "Globee & hackathons",
+        href: "/recognition#judging",
+      },
+    ],
+  },
   guestBook: {
     title: "Join the builder’s guest book",
     description:
