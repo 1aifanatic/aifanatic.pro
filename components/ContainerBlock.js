@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import GuestBookPopup from "./GuestBookPopup";
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
@@ -49,5 +50,6 @@ export default function ContainerBlock({ children, ...customMeta }) {
     <Navbar />
     <main id="main-content" tabIndex="-1">{children}</main>
     <Footer />
+    {!router.pathname.startsWith("/admin") && <GuestBookPopup />}
   </div>;
 }

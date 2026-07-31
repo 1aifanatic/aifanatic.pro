@@ -2,6 +2,7 @@ import Link from "next/link";
 import ContainerBlock from "@components/ContainerBlock";
 import Hero from "@components/Hero";
 import AboutMe from "@components/AboutMe";
+import UiPathBoostFeature from "@components/UiPathBoostFeature";
 import Icon from "@components/Icon";
 import getLatestRepos from "@lib/getLatestRepos";
 import userData from "@constants/data";
@@ -16,6 +17,7 @@ export default function Home() {
   return <ContainerBlock title="Naveen Chatlapalli — Solution Architecture & AI Agents" description="Enterprise solution architecture, AI-agent systems, selected work, and public contributions by Naveen Chatlapalli.">
     <Hero />
     <AboutMe />
+    <UiPathBoostFeature />
     <section className="border-y border-[#d8ddd8] bg-white/60 dark:border-[#34413d] dark:bg-[#18211f]/50"><div className="site-container page-section">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><p className="eyebrow">Selected evidence</p><h2 className="section-title mt-4">Work that holds up to a closer look.</h2></div><Link href="/recognition" className="source-label">View all recognition <Icon name="arrowRight" /></Link></div>
       <div className="mt-10 grid gap-5 md:grid-cols-3">{evidence.map((item) => {

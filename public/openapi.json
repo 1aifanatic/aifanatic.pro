@@ -73,6 +73,35 @@
           "405": { "description": "Method not allowed" }
         }
       }
+    },
+    "/api/guestbook": {
+      "post": {
+        "summary": "Sign the portfolio guest book and unlock curated links",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["name", "email"],
+                "properties": {
+                  "name": { "type": "string", "maxLength": 120 },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "maxLength": 254
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Guest book signed" },
+          "400": { "description": "Validation error" },
+          "405": { "description": "Method not allowed" }
+        }
+      }
     }
   },
   "components": {

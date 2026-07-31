@@ -140,6 +140,47 @@
   GoogleSUrl: "https://scholar.google.com/citations?user=J6N60VcAAAAJ&hl=en",
   MediumUrl: "https://medium.com/@navaifanatic",
   BlogUrl: "http://projects.Naveenshah.com/blog/",
+  newsletter: {
+    name: "Naveen’s Substack",
+    url: "https://aifanatic.substack.com",
+    description:
+      "Occasional field notes on AI agents, automation engineering, and the habits behind dependable delivery.",
+  },
+  uipathBoost: {
+    title: "UiPath Boost",
+    eyebrow: "Open source · Community Agent Skills",
+    summary:
+      "A catalog of 34 Agent Skills that brings discovery, testing, release readiness, and durable engineering practices to UiPath delivery.",
+    description:
+      "Official UiPath skills build and operate the platform. UiPath Boost adds the repeatable engineering process before, after, and around that product work.",
+    url: "https://github.com/1aifanatic/uipath-boost",
+    installCommand:
+      "npx skills add 1aifanatic/uipath-boost --skill uipath-project-router --agent codex --yes",
+    facts: ["34 Agent Skills", "MIT licensed", "Open community catalog"],
+  },
+  guestBook: {
+    title: "Join the builder’s guest book",
+    description:
+      "Leave your name and email to unlock a small collection of architecture notes, community tools, and new experiments.",
+    content: [
+      {
+        title: "UiPath Boost starter catalog",
+        description: "Explore the open catalog and install the project router.",
+        href: "https://github.com/1aifanatic/uipath-boost#quick-start",
+      },
+      {
+        title: "Applied AI case studies",
+        description: "Go deeper on the systems, architecture, and public evidence.",
+        href: "/work",
+        internal: true,
+      },
+      {
+        title: "Naveen’s Substack",
+        description: "Follow new field notes and independent ideas as they are published.",
+        href: "https://aifanatic.substack.com",
+      },
+    ],
+  },
   socialLinks: {
     twitter: "https://x.com/1aifanatic",
     linkedin: "https://www.linkedin.com/in/1aifanatic/",

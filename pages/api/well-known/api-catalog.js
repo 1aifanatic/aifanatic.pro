@@ -11,6 +11,7 @@ function linksetBody(base) {
           { href: `${base}/api/hello` },
           { href: `${base}/api/leads` },
           { href: `${base}/api/download` },
+          { href: `${base}/api/guestbook` },
         ],
       },
       {
@@ -44,6 +45,17 @@ function linksetBody(base) {
           },
         ],
         "service-doc": [{ href: `${base}/downloads`, type: "text/html" }],
+        status: [{ href: `${base}/api/hello`, type: "application/json" }],
+      },
+      {
+        anchor: `${base}/api/guestbook`,
+        "service-desc": [
+          {
+            href: openapi,
+            type: "application/vnd.oai.openapi+json",
+          },
+        ],
+        "service-doc": [{ href: `${base}/`, type: "text/html" }],
         status: [{ href: `${base}/api/hello`, type: "application/json" }],
       },
     ],
