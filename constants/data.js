@@ -135,7 +135,7 @@
     },
 ],
 
-  resumeUrl: "/CVShah2023.pdf",
+  resumeUrl: "/documents/Naveen_Chatlapalli_Resume.pdf",
   SSRNUrl: "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=261155",
   GoogleSUrl: "https://scholar.google.com/citations?user=J6N60VcAAAAJ&hl=en",
   MediumUrl: "https://medium.com/@navaifanatic",
