@@ -7,13 +7,14 @@ import { installCommands, upstreamFileUrl } from "@constants/skillCatalogs";
 
 export default function SkillPage({ skill, commands }) {
   const { catalog } = skill;
-  const skillPath = `skills/${skill.name}`;
+  // Recorded by the sync — upstream layouts differ between catalogs.
+  const skillPath = skill.path;
 
   return (
     <ContainerBlock
       title={`${skill.name} - ${catalog.title} Agent Skill`}
       description={skill.description}
-      image="/og-uipath-boost.png"
+      image={`/og-${catalog.slug}.png`}
     >
       <article className="site-container page-section">
         <div className="mx-auto max-w-6xl">

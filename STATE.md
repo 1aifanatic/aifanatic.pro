@@ -1,6 +1,6 @@
 # STATE
 
-**Last updated:** 2026-08-06 — UiPath Boost catalog shipped and verified live.
+**Last updated:** 2026-08-06 — two catalogs shipped and verified live: UiPath Boost and UiPath Coded App Launchpad.
 
 ## What works
 
@@ -17,28 +17,38 @@ UiPath Boost already appears on the homepage via `components/UiPathBoostFeature.
 
 *(Resolved 2026-08-06: `data.js` no longer hardcodes the skill count, install command, or category labels — all derived from the Snapshot.)*
 
-## Shipped: UiPath Boost Catalog
+## Shipped: Agent Skills Catalogs
 
 Live and verified 2026-08-06. Read [CONTEXT.md](./CONTEXT.md) for vocabulary and [decisions/](./decisions/) for the eight ADRs.
 
 **Live URLs**
 - Shelf: https://naveen.aifanatic.pro/skills
-- Catalog: https://naveen.aifanatic.pro/skills/uipath-boost
-- 34 Skill Pages: `/skills/uipath-boost/<skill>` — all verified 200
-- Discovery Index: https://naveen.aifanatic.pro/.well-known/agent-skills/index.json — 35 entries, `site-overview` first
-- Raw Skill markdown: `/agent-skills/uipath-boost/<skill>/SKILL.md`
+- Catalog 1: https://naveen.aifanatic.pro/skills/uipath-boost — 34 skills, six categories, search
+- Catalog 2: https://naveen.aifanatic.pro/skills/uipath-coded-app-launchpad — 1 skill, plus a hand-written Overview
+- Skill Pages: `/skills/<catalog>/<skill>` — all 35 verified 200
+- Discovery Index: https://naveen.aifanatic.pro/.well-known/agent-skills/index.json — 36 entries, `site-overview` first
+- Raw Skill markdown: `/agent-skills/<catalog>/<skill>/SKILL.md`
 
-**Verified in production**: all 34 Skill Pages return 200; the served `SKILL.md` sha256 matches the digest published in the Discovery Index; sitemap carries 35 catalog URLs; the apex redirect preserves catalog paths (`aifanatic.pro/skills/...` → `naveen.aifanatic.pro/skills/...`).
+**Two catalog layouts are supported.** Boost keeps skills under `skills/`; Launchpad keeps its single skill at the repo root. The catalog's `skillsPath` records which, and each skill's upstream `path` is stored in the manifest so permalinks work for both.
 
-**Commits**: portfolio `3c13922` + `b6c4df5`; upstream `1aifanatic/uipath-boost@8a9791b`.
+**Invocation type** is derived from each skill's `agents/openai.yaml`: `allow_implicit_invocation: false` means user-invoked. This is portable across catalogs and reproduces Boost's own 15/19 test exactly. Note: `create-uipath-coded-app` has no such policy line, so it is labelled agent-invocable even though its README documents `$create-uipath-coded-app` usage — add the policy line upstream if that is not intended.
 
-### How to update the catalog
+**Verified in production**: every Skill Page returns 200; the served `SKILL.md` sha256 matches the digest published in the Discovery Index; the sitemap carries every catalog URL; the apex redirect preserves catalog paths (`aifanatic.pro/skills/...` → `naveen.aifanatic.pro/skills/...`).
 
-1. Change skills in `D:\D-Solopreneur\uipath-boost`, run `npm run validate && node --test` there, push to `main`.
-2. In this repo: `npm run sync:skills`, review the diff, `node scripts/generate-og.mjs` if the count changed.
+`.gitattributes` pins Snapshots to LF, because CRLF conversion on a Windows checkout would change the bytes and invalidate every published digest.
+
+### How to update a catalog
+
+1. Change skills upstream (`D:\D-Solopreneur\uipath-boost` or `D:\D-Solopreneur\uipath-coded-app-launchpad`). Boost has its own suite — run `npm run validate && node --test` there. Push to `main`.
+2. In this repo: `npm run sync:skills <catalog-slug>` (defaults to `uipath-boost`), review the diff, run `node scripts/generate-og.mjs` if a count changed.
 3. Commit and push. Vercel deploys from `main`.
 
-Two implementation notes beyond the ADRs. Invocation type (15 user / 19 model) is not frontmatter — the sync reads `src/skill-contracts.mjs` from the clone by pattern, and degrades to "model" rather than failing if that module's shape changes. And `.gitattributes` pins the Snapshot to LF, because CRLF conversion on a Windows checkout would change the bytes and invalidate every published digest.
+### How to add a third catalog
+
+1. Add an entry to `CATALOGS` in `scripts/sync-skills.mjs` (repository, branch, `skillsPath`, categories).
+2. Add a matching entry to `skillCatalogs` in `constants/skillCatalogs.js`. Add an `overview` block if the skills alone will not explain the project — that is what makes a one-skill catalog page worth visiting.
+3. Add a card to `CARDS` in `scripts/generate-og.mjs`.
+4. `npm run sync:skills <slug>`, then build. The shelf, sitemap, and discovery index pick it up automatically.
 
 ### Do not
 

@@ -21,8 +21,12 @@ A single unit of agent instruction, authored as one `SKILL.md` file with `name`,
 _Avoid_: prompt, playbook, command, recipe
 
 **Catalog**:
-A named, versioned collection of Skills published from one Upstream Repository, presented as a browsable set of pages under aifanatic.pro. UiPath Boost is the first Catalog.
+A named, versioned collection of Skills published from one Upstream Repository, presented as a browsable set of pages under aifanatic.pro. A Catalog may hold a single Skill. UiPath Boost and UiPath Coded App Launchpad are the first two.
 _Avoid_: skills webapp, skills directory site, skills library, registry
+
+**Overview**:
+Optional long-form documentation attached to a Catalog and rendered above its Skills — what it does, how the workflow runs, what it refuses to do silently. Written by hand, unlike everything else on a Catalog page, and used where the Skills alone do not explain the project.
+_Avoid_: description, blurb, about section
 
 **Shelf**:
 The single page that presents every Catalog and explains how agents discover them. It carries the narrative; a Catalog carries the Skills.
@@ -46,7 +50,7 @@ A third-party, multi-author service that indexes Catalogs from many authors — 
 ### Publishing pipeline
 
 **Upstream Repository**:
-The public GitHub repository that authors a Catalog's Skills and is the sole source of truth for their content and Categories. `1aifanatic/uipath-boost` is the first.
+The public GitHub repository that authors a Catalog's Skills and is the sole source of truth for their content and Categories. Skill folders usually live under `skills/`, but may sit at the repository root; the Catalog's `skillsPath` records which.
 _Avoid_: source repo, skills repo
 
 **Sync**:

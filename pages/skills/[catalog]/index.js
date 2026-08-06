@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import CatalogOverview from "@components/CatalogOverview";
 import ContainerBlock from "@components/ContainerBlock";
 import Icon from "@components/Icon";
 import InstallCommands from "@components/InstallCommands";
@@ -9,6 +10,8 @@ import { installCommands, skillCatalogs } from "@constants/skillCatalogs";
 
 export default function CatalogPage({ catalog, commands }) {
   const [query, setQuery] = useState("");
+  // A handful of skills are scannable; a search box would just be furniture.
+  const searchable = catalog.skillCount > 8;
 
   const categories = useMemo(() => {
     const term = query.trim().toLowerCase();
@@ -29,9 +32,9 @@ export default function CatalogPage({ catalog, commands }) {
 
   return (
     <ContainerBlock
-      title={`${catalog.title} - ${catalog.skillCount} Agent Skills`}
+      title={`${catalog.title} - ${catalog.skillCount} Agent Skill${catalog.skillCount === 1 ? "" : "s"}`}
       description={catalog.tagline}
-      image="/og-uipath-boost.png"
+      image={`/og-${catalog.slug}.png`}
     >
       <section className="site-container page-section">
         <Link href="/skills" className="source-label">
@@ -49,8 +52,12 @@ export default function CatalogPage({ catalog, commands }) {
               {catalog.description}
             </p>
             <div className="mt-7 flex flex-wrap gap-2">
-              <span className="topic-chip">{catalog.skillCount} skills</span>
-              <span className="topic-chip">{catalog.userInvokedCount} user-invoked</span>
+              <span className="topic-chip">
+                {catalog.skillCount} {catalog.skillCount === 1 ? "skill" : "skills"}
+              </span>
+              {catalog.userInvokedCount > 0 && (
+                <span className="topic-chip">{catalog.userInvokedCount} user-invoked</span>
+              )}
               <span className="topic-chip">{catalog.license} licensed</span>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -61,6 +68,14 @@ export default function CatalogPage({ catalog, commands }) {
               >
                 View on GitHub <Icon name="arrowRight" />
               </button>
+              {catalog.skillCount === 1 && (
+                <Link
+                  href={`/skills/${catalog.slug}/${catalog.skills[0].name}`}
+                  className="text-sm font-semibold text-[#174b8b] dark:text-[#a8c7ee]"
+                >
+                  Read the full skill
+                </Link>
+              )}
               <a
                 href={catalog.registryUrl}
                 target="_blank"
@@ -74,7 +89,7 @@ export default function CatalogPage({ catalog, commands }) {
 
           <div className="rounded-[1.5rem] border border-[#34413d] bg-[#111716] p-6 text-[#eef1ed] sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[.16em] text-[#a8c7ee]">
-              Install the whole catalog
+              {catalog.skillCount === 1 ? "Install the skill" : "Install the whole catalog"}
             </p>
             <div className="mt-5">
               <InstallCommands commands={commands} />
@@ -87,30 +102,36 @@ export default function CatalogPage({ catalog, commands }) {
         </div>
       </section>
 
-      <section className="border-t border-[#d8ddd8] bg-white/60 dark:border-[#34413d] dark:bg-[#18211f]/50">
+      <CatalogOverview overview={catalog.overview || null} />
+
+      <section className="border-t border-[#d8ddd8] dark:border-[#34413d]">
         <div className="site-container page-section">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="eyebrow">The catalog</p>
               <h2 className="mt-3 text-3xl sm:text-4xl">
-                {matches === catalog.skillCount
-                  ? `All ${catalog.skillCount} skills`
-                  : `${matches} of ${catalog.skillCount} skills`}
+                {catalog.skillCount === 1
+                  ? "The skill"
+                  : matches === catalog.skillCount
+                    ? `All ${catalog.skillCount} skills`
+                    : `${matches} of ${catalog.skillCount} skills`}
               </h2>
             </div>
-            <div className="w-full sm:w-80">
-              <label htmlFor="skill-search" className="sr-only">
-                Search skills
-              </label>
-              <input
-                id="skill-search"
-                type="search"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Search by name or description"
-                className="min-h-[48px] w-full rounded-xl border border-[#c7cfca] bg-white px-4 text-[#18211f] placeholder:text-[#7a847e] focus:border-[#174b8b] focus:outline-none focus:ring-2 focus:ring-[#91aed2] dark:border-[#46514c] dark:bg-[#18211f] dark:text-[#eef1ed]"
-              />
-            </div>
+            {searchable && (
+              <div className="w-full sm:w-80">
+                <label htmlFor="skill-search" className="sr-only">
+                  Search skills
+                </label>
+                <input
+                  id="skill-search"
+                  type="search"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Search by name or description"
+                  className="min-h-[48px] w-full rounded-xl border border-[#c7cfca] bg-white px-4 text-[#18211f] placeholder:text-[#7a847e] focus:border-[#174b8b] focus:outline-none focus:ring-2 focus:ring-[#91aed2] dark:border-[#46514c] dark:bg-[#18211f] dark:text-[#eef1ed]"
+                />
+              </div>
+            )}
           </div>
 
           {matches === 0 && (
@@ -188,7 +209,11 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       catalog,
-      commands: installCommands(catalog.repository),
+      // A one-skill catalog installs by name — `--skill '*'` would be a riddle.
+      commands: installCommands(
+        catalog.repository,
+        catalog.skillCount === 1 ? catalog.skills[0].name : undefined
+      ),
     },
   };
 }

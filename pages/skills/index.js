@@ -38,11 +38,13 @@ export default function SkillsShelf({ catalogs }) {
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     <span className="topic-chip bg-white/60 dark:bg-[#18211f]/60">
-                      {catalog.skillCount} skills
+                      {catalog.skillCount} {catalog.skillCount === 1 ? "skill" : "skills"}
                     </span>
-                    <span className="topic-chip bg-white/60 dark:bg-[#18211f]/60">
-                      {catalog.categories.length} categories
-                    </span>
+                    {catalog.categories.length > 1 && (
+                      <span className="topic-chip bg-white/60 dark:bg-[#18211f]/60">
+                        {catalog.categories.length} categories
+                      </span>
+                    )}
                     <span className="topic-chip bg-white/60 dark:bg-[#18211f]/60">
                       {catalog.license} licensed
                     </span>
@@ -51,12 +53,15 @@ export default function SkillsShelf({ catalogs }) {
                     href={`/skills/${catalog.slug}`}
                     className="button-primary mt-8 inline-flex"
                   >
-                    Browse {catalog.skillCount} skills <Icon name="arrowRight" />
+                    {catalog.skillCount === 1
+                      ? "Read the skill"
+                      : `Browse ${catalog.skillCount} skills`}{" "}
+                    <Icon name="arrowRight" />
                   </Link>
                 </div>
                 <div className="border-t border-[#b9cce5] px-6 py-8 dark:border-[#315169] sm:px-8 lg:border-l lg:border-t-0">
                   <p className="text-xs font-semibold uppercase tracking-[.16em] text-[#174b8b] dark:text-[#a8c7ee]">
-                    Categories
+                    {catalog.skillCount === 1 ? "What it covers" : "Categories"}
                   </p>
                   <ul className="mt-4 space-y-2.5">
                     {catalog.categories.map((category) => (
@@ -67,9 +72,11 @@ export default function SkillsShelf({ catalogs }) {
                         <span className="text-[#25332f] dark:text-[#e0e7e3]">
                           {category.name}
                         </span>
-                        <span className="font-mono text-xs text-[#5f6864] dark:text-[#b7c0bb]">
-                          {category.skills.length}
-                        </span>
+                        {catalog.skillCount > 1 && (
+                          <span className="font-mono text-xs text-[#5f6864] dark:text-[#b7c0bb]">
+                            {category.skills.length}
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>

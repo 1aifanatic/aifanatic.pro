@@ -18,10 +18,14 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 // Kept in sync with constants/skillCatalogs.js. Duplicated as plain data here
 // because that module is consumed by Next's bundler, not by node scripts.
+// `skillsPath` is where skill folders live in the upstream repo, relative to
+// its root. Most catalogs use "skills"; a single-skill repo may keep them at
+// the root instead ("."). Anything without a SKILL.md is ignored either way.
 const CATALOGS = {
   "uipath-boost": {
     repository: "1aifanatic/uipath-boost",
     branch: "main",
+    skillsPath: "skills",
     categories: [
       "Routing and project continuity",
       "Discovery and decision-making",
@@ -30,6 +34,12 @@ const CATALOGS = {
       "Release, operations, and governance",
       "Learning and communication",
     ],
+  },
+  "uipath-coded-app-launchpad": {
+    repository: "1aifanatic/uipath-coded-app-launchpad",
+    branch: "main",
+    skillsPath: ".",
+    categories: ["Scaffolding and delivery"],
   },
 };
 
@@ -86,26 +96,30 @@ try {
     .toString()
     .trim();
 
-  // Invocation type lives in the upstream module, not in frontmatter. Read it
-  // by pattern rather than importing, so we never execute cloned code and a
-  // change in that module's shape degrades instead of failing the sync.
-  let userInvoked = new Set();
-  try {
-    const contracts = fs.readFileSync(path.join(clone, "src", "skill-contracts.mjs"), "utf8");
-    const block = contracts.match(/USER_INVOKED_SKILLS\s*=\s*Object\.freeze\(\[([\s\S]*?)\]\)/);
-    if (block) {
-      userInvoked = new Set([...block[1].matchAll(/"([^"]+)"/g)].map((m) => m[1]));
+  // Invocation type is not frontmatter. The portable signal is each skill's
+  // Codex policy: `allow_implicit_invocation: false` means only the user can
+  // invoke it. Absent policy means the agent may pick it up itself.
+  const isUserInvoked = (skillDir) => {
+    try {
+      const policy = fs.readFileSync(path.join(skillDir, "agents", "openai.yaml"), "utf8");
+      return /allow_implicit_invocation:\s*false/.test(policy);
+    } catch {
+      return false;
     }
-  } catch {
-    /* optional metadata */
+  };
+
+  const skillsPath = catalog.skillsPath || "skills";
+  const skillsDir = path.join(clone, skillsPath);
+  if (!fs.existsSync(skillsDir)) {
+    fail(`no ${skillsPath}/ directory in ${catalog.repository}`);
   }
 
-  const skillsDir = path.join(clone, "skills");
-  if (!fs.existsSync(skillsDir)) fail(`no skills/ directory in ${catalog.repository}`);
-
+  // A skill folder is any directory holding a SKILL.md. Required when skills
+  // sit at the repo root, where docs/, .git/ and friends are siblings.
   const names = fs
     .readdirSync(skillsDir, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
+    .filter((entry) => entry.isDirectory() && !entry.name.startsWith("."))
+    .filter((entry) => fs.existsSync(path.join(skillsDir, entry.name, "SKILL.md")))
     .map((entry) => entry.name)
     .sort();
 
@@ -114,8 +128,6 @@ try {
 
   for (const name of names) {
     const source = path.join(skillsDir, name, "SKILL.md");
-    if (!fs.existsSync(source)) fail(`${name} has no SKILL.md`);
-
     const raw = fs.readFileSync(source, "utf8");
     const { data } = matter(raw);
 
@@ -138,7 +150,9 @@ try {
       name,
       description: String(data.description),
       category: data.category,
-      invocation: userInvoked.has(name) ? "user" : "model",
+      invocation: isUserInvoked(path.join(skillsDir, name)) ? "user" : "model",
+      // Path within the upstream repo, so permalinks work for both layouts.
+      path: skillsPath === "." ? name : `${skillsPath}/${name}`,
       supplementary,
       digest: `sha256:${crypto.createHash("sha256").update(raw).digest("hex")}`,
     });
@@ -165,6 +179,7 @@ try {
     catalog: slug,
     repository: catalog.repository,
     branch: catalog.branch,
+    skillsPath,
     commit,
     syncedAt: new Date().toISOString().slice(0, 10),
     categories: catalog.categories,

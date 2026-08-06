@@ -53,7 +53,7 @@ export default function handler(req, res) {
         category: skill.category,
         invocation: skill.invocation,
         license: catalog.license,
-        source: `https://github.com/${catalog.repository}/blob/${catalog.commit}/skills/${skill.name}/SKILL.md`,
+        source: `https://github.com/${catalog.repository}/blob/${catalog.commit}/${skill.path}/SKILL.md`,
         install: `npx skills add ${catalog.repository} --skill ${skill.name} --agent claude-code --global --yes`,
       });
     }

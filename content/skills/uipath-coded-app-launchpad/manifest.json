@@ -1,0 +1,29 @@
+{
+  "catalog": "uipath-coded-app-launchpad",
+  "repository": "1aifanatic/uipath-coded-app-launchpad",
+  "branch": "main",
+  "skillsPath": ".",
+  "commit": "4a77df73cdbc7dc25d384774c70f5794481d83c1",
+  "syncedAt": "2026-08-06",
+  "categories": [
+    "Scaffolding and delivery"
+  ],
+  "skills": [
+    {
+      "name": "create-uipath-coded-app",
+      "description": "Create and deliver UiPath Coded Web Apps or Coded Action Apps from simple UI prototypes through production-oriented builds. Use when identifying a small coded-app use case, scaffolding a TypeScript UI with safe dummy data, checking developer prerequisites, configuring UiPath SDK authentication and access, publishing and deploying to an Orchestrator folder, opening the deployed URL in a browser, or documenting and publishing the source to Git or GitHub.",
+      "category": "Scaffolding and delivery",
+      "invocation": "model",
+      "path": "create-uipath-coded-app",
+      "supplementary": [
+        "references/evaluation-scenarios.md",
+        "references/git-readme-browser.md",
+        "references/naming-folders-access.md",
+        "references/readiness-contract.md",
+        "references/simple-ui-delivery.md",
+        "scripts/check-prerequisites.ps1"
+      ],
+      "digest": "sha256:d0f24ec038ba64fe62148969d60a94a988328fe89b5f3b4714c3f97aad8d63b1"
+    }
+  ]
+}
