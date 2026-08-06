@@ -35,7 +35,7 @@ Live and verified 2026-08-06. Read [CONTEXT.md](./CONTEXT.md) for vocabulary and
 
 **Verified in production**: every Skill Page returns 200; the served `SKILL.md` sha256 matches the digest published in the Discovery Index; the sitemap carries every catalog URL; the apex redirect preserves catalog paths (`aifanatic.pro/skills/...` → `naveen.aifanatic.pro/skills/...`).
 
-`.gitattributes` pins Snapshots to LF, because CRLF conversion on a Windows checkout would change the bytes and invalidate every published digest.
+`.gitattributes` pins Snapshots to LF, because CRLF conversion on a Windows checkout would change the bytes and invalidate every published digest. For the same reason the sync **normalises CRLF to LF before both digesting and writing** — the Launchpad's upstream uses CRLF, and hashing unnormalised bytes published a digest the served file could never match. Do not remove that normalisation.
 
 ### How to update a catalog
 
