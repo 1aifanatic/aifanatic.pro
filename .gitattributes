@@ -1,0 +1,6 @@
+# Catalog Snapshots are digested with sha256 and those digests are published in
+# /.well-known/agent-skills/index.json. CRLF conversion on checkout would change
+# the bytes and break every digest, so pin these to LF everywhere.
+content/skills/**/SKILL.md text eol=lf
+content/skills/**/manifest.json text eol=lf
+content/skills/**/summary.json text eol=lf
