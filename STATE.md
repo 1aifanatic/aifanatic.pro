@@ -1,6 +1,6 @@
 # STATE
 
-**Last updated:** 2026-08-06
+**Last updated:** 2026-08-06 — UiPath Boost catalog shipped and verified live.
 
 ## What works
 
@@ -12,39 +12,33 @@ UiPath Boost already appears on the homepage via `components/UiPathBoostFeature.
 
 ## What's broken / rotting
 
-- `constants/data.js` hardcodes `skillCount: 34`, the Install Command, and four Category labels. The four labels **already disagree** with the Upstream Repository README's six. These rot the moment Skill 35 is added — [0003](./decisions/0003-categories-in-upstream-frontmatter.md) fixes the taxonomy, and the build plan below derives the rest.
-- `content/posts/the-great-collapse-agentic-orchestration.md` is orphaned. Nothing reads it; the blog uses `userData.blogs[].content`. See NEXT.md.
+- `content/posts/the-great-collapse-agentic-orchestration.md` is orphaned. Nothing reads it; the blog uses `userData.blogs[].content`. Now that `marked` + `gray-matter` are installed, wiring it up is cheap. See NEXT.md.
+- `data.js` is still a 31KB+ object mixing marketing copy, blog HTML, and project facts. The catalog work carved out one slice; the rest is untouched.
 
-## In progress: UiPath Boost Catalog
+*(Resolved 2026-08-06: `data.js` no longer hardcodes the skill count, install command, or category labels — all derived from the Snapshot.)*
 
-**Design is settled and documented. Implementation has not started — no code written yet.**
+## Shipped: UiPath Boost Catalog
 
-Read [CONTEXT.md](./CONTEXT.md) for vocabulary and [decisions/](./decisions/) for the eight ADRs, numbered in build order.
+Live and verified 2026-08-06. Read [CONTEXT.md](./CONTEXT.md) for vocabulary and [decisions/](./decisions/) for the eight ADRs.
 
-### Build plan
+**Live URLs**
+- Shelf: https://naveen.aifanatic.pro/skills
+- Catalog: https://naveen.aifanatic.pro/skills/uipath-boost
+- 34 Skill Pages: `/skills/uipath-boost/<skill>` — all verified 200
+- Discovery Index: https://naveen.aifanatic.pro/.well-known/agent-skills/index.json — 35 entries, `site-overview` first
+- Raw Skill markdown: `/agent-skills/uipath-boost/<skill>/SKILL.md`
 
-**Phase 1 — Upstream Repository (`1aifanatic/uipath-boost`)**
+**Verified in production**: all 34 Skill Pages return 200; the served `SKILL.md` sha256 matches the digest published in the Discovery Index; sitemap carries 35 catalog URLs; the apex redirect preserves catalog paths (`aifanatic.pro/skills/...` → `naveen.aifanatic.pro/skills/...`).
 
-1. Clone to `D:\D-Solopreneur\uipath-boost` (not currently on disk anywhere).
-2. Add `category` frontmatter to all 34 `SKILL.md` files, using the six canonical Categories exactly as the README names them: Routing and project continuity (4), Discovery and decision-making (8), Design and architecture (5), Build, test, and change quality (9), Release, operations, and governance (4), Learning and communication (4).
-3. Add the attribution line to the README: structure inspired by `mattpocock/skills`, Catalog listed on skills.sh.
-4. **Show Naveen the diff. Do not push without approval.** Then push, and deploy nothing else in this phase.
+**Commits**: portfolio `3c13922` + `b6c4df5`; upstream `1aifanatic/uipath-boost@8a9791b`.
 
-**Phase 2 — Portfolio, one coherent deploy**
+### How to update the catalog
 
-5. `scripts/sync-skills.mjs` + `npm run sync:skills`: shallow-clone upstream to a temp dir → copy 34 `SKILL.md` into `content/skills/uipath-boost/` → write Manifest with the `HEAD` SHA and sync date → delete clone. Assertions that exit non-zero: Skill count not below the previous Manifest, every Skill has `name`/`description`/`category`, every Category is one of the known six.
-6. `constants/skillCatalogs.js` — single source for Catalog slug, Upstream Repository, Category order, Install Command templates. Strip `repository` / `skillCount` / `installCommand` out of `userData.uipathBoost`, leaving it marketing copy only; derive counts from the Manifest.
-7. Add `marked` + `gray-matter` (build-time only, used in `getStaticProps`).
-8. `/skills` — Shelf. Catalog card, the narrative, and a pointer to the Discovery Index. One attribution line.
-9. `/skills/uipath-boost` — Catalog. Grouped by the six Categories with counts, plus a client-side search over name + description (`useState` + `filter`, no library, no pagination). Whole-Catalog Install Command at the top.
-10. `/skills/uipath-boost/[skill]` — Skill Page, full SSG via `getStaticPaths`/`getStaticProps` (no ISR; content is committed). Breadcrumb, Category chip, `name` as H1, `description` as lede, both Install Commands as copy-to-clipboard lines, rendered body in `.article-copy`, sticky TOC reusing the blog's `enhanceHeadings` helper, named links to Supplementary Files, Provenance line linking the file at its exact SHA, prev/next within Category. No "related skills".
-11. Install Commands — two labelled lines, Claude Code first: `npx skills add 1aifanatic/uipath-boost --skill <name> --agent claude-code --global --yes` and the same with `--agent codex`. **Agent id is `claude-code`, not `claude`.** Verified against `vercel-labs/skills` v1.5.22.
-12. Navbar — add "Skills" after "Work". Homepage `UiPathBoostFeature` — retarget the primary button to `/skills/uipath-boost` (ungated), keep the gated GitHub link as secondary, and render all six Categories with counts derived from the registry instead of the four hardcoded labels.
-13. `sitemap.xml.js` — add `/skills`, `/skills/uipath-boost`, and the 34 Skill Pages.
-14. `/.well-known/agent-skills/index.json` — extend to all 34 with URL + `sha256` digest, `site-overview` first and unchanged.
-15. One shared OG card image for all 35 pages (not the avatar, not per-Skill generation).
-16. Add the `AGENTS.md` / `CLAUDE.md` section: the `/skills` routes, the `npm run sync:skills` workflow, and the warning that `docs/` is a publish directory.
-17. Build, deploy, then **verify the live URLs with curl** before reporting done.
+1. Change skills in `D:\D-Solopreneur\uipath-boost`, run `npm run validate && node --test` there, push to `main`.
+2. In this repo: `npm run sync:skills`, review the diff, `node scripts/generate-og.mjs` if the count changed.
+3. Commit and push. Vercel deploys from `main`.
+
+Two implementation notes beyond the ADRs. Invocation type (15 user / 19 model) is not frontmatter — the sync reads `src/skill-contracts.mjs` from the clone by pattern, and degrades to "model" rather than failing if that module's shape changes. And `.gitattributes` pins the Snapshot to LF, because CRLF conversion on a Windows checkout would change the bytes and invalidate every published digest.
 
 ### Do not
 
@@ -55,4 +49,4 @@ Read [CONTEXT.md](./CONTEXT.md) for vocabulary and [decisions/](./decisions/) fo
 
 ## Next
 
-Phase 1, step 1: clone the Upstream Repository. Deferred ideas are in [NEXT.md](./NEXT.md).
+Nothing outstanding on the catalog. Deferred ideas are in [NEXT.md](./NEXT.md) — the strongest candidate is wiring `content/posts/` into the markdown pipeline that now exists.
