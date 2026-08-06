@@ -3,6 +3,7 @@ import Link from "next/link";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import userData from "@constants/data";
 import { openGuestBook } from "@lib/guestBook";
+import boostSummary from "../content/skills/uipath-boost/summary.json";
 import Icon from "./Icon";
 
 export default function Hero({ boostMetrics = null }) {
@@ -97,7 +98,7 @@ export default function Hero({ boostMetrics = null }) {
               </h2>
               <div className="mt-2 flex items-center gap-2.5">
                 <span className="font-serif text-3xl leading-none text-white">
-                  {uipathBoost.skillCount}
+                  {boostSummary.skillCount}
                 </span>
                 <span className="rounded-full bg-[#a8c7ee] px-3 py-1 text-xs font-bold uppercase tracking-[.12em] text-[#172c3c]">
                   {uipathBoost.skillLabel}
@@ -107,12 +108,18 @@ export default function Hero({ boostMetrics = null }) {
                 {uipathBoost.summary}
               </p>
               <div className="mt-3 flex flex-wrap items-center gap-2.5 2xl:mt-5">
+                <Link
+                  href="/skills/uipath-boost"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#eef1ed] px-4 py-2.5 text-sm font-semibold text-[#18211f] transition hover:-translate-y-0.5 hover:bg-[#a8c7ee] motion-reduce:transform-none"
+                >
+                  Browse the {boostSummary.skillCount} skills <Icon name="arrowRight" />
+                </Link>
                 <button
                   type="button"
                   onClick={() => openGuestBook(uipathBoost.url)}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#eef1ed] px-4 py-2.5 text-sm font-semibold text-[#18211f] transition hover:-translate-y-0.5 hover:bg-[#a8c7ee] motion-reduce:transform-none"
+                  className="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-full border border-[#46514c] px-4 py-2.5 text-sm font-semibold text-[#c5cec8] transition hover:border-[#a8c7ee] hover:text-white"
                 >
-                  View on GitHub <Icon name="arrowRight" />
+                  GitHub
                 </button>
                 <div
                   className="flex min-h-[42px] items-center gap-2 rounded-full border border-[#46514c] bg-[#18211f] px-3"

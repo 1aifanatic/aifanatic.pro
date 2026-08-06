@@ -49,8 +49,23 @@
 - Store images in `public/`; prefer WebP when possible.
 - Use `<Image>` where practical, but existing code uses `<img>` in places.
 
+**Agent Skills Catalog (`/skills`)**
+- Routes: `/skills` (Shelf), `/skills/[catalog]` (Catalog), `/skills/[catalog]/[skill]` (Skill Page). All fully static via `getStaticProps`.
+- Skill content is a **committed Snapshot** in `content/skills/<catalog>/`, produced by `npm run sync:skills`. The build never fetches from GitHub — do not "improve" this into a build-time fetch. See `decisions/0004`.
+- To publish upstream skill changes: push to the upstream repo, run `npm run sync:skills`, review the diff, commit, deploy.
+- Skill count, categories, and install commands are **derived** from the Snapshot manifest / `summary.json`. Never hardcode them in `constants/data.js` again.
+- Categories come from `category:` frontmatter in the upstream `SKILL.md` files, not from any list kept here. See `decisions/0003`.
+- Catalog pages are ungated and indexable. The Guest Book belongs only on outbound GitHub links. See `decisions/0006`.
+- Agent id for Claude Code in install commands is `claude-code`, never `claude`.
+- Regenerate the social card with `node scripts/generate-og.mjs` if the skill count changes.
+
+**Documentation**
+- `docs/` is **not** a documentation directory — it is the GitHub Pages publish root for the `aifanatic.pro` apex redirect (`CNAME`, `index.html`, `404.html`). Anything placed there is served publicly. Do not put project docs in it.
+- ADRs live in `decisions/`, the glossary in `CONTEXT.md`, current status in `STATE.md`, parked ideas in `NEXT.md`.
+
 **Testing**
 - No testing framework configured. If requested, use Jest + Testing Library.
+- The upstream `1aifanatic/uipath-boost` repo has its own suite: `npm run validate && node --test`. Run it there before pushing skill changes.
 
 **Deployment**
 - Vercel deploys from `main`. Build output is `.next`.

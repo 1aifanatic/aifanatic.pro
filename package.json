@@ -5,13 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "sync:skills": "node scripts/sync-skills.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
     "@types/pg": "^8.15.5",
     "@vercel/analytics": "^1.0.2",
     "axios": "^1.7.9",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.9",
     "next": "^16.1.6",
     "next-themes": "latest",
     "pg": "^8.16.3",

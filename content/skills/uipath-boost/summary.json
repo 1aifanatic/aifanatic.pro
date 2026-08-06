@@ -1,0 +1,30 @@
+{
+  "skillCount": 34,
+  "userInvokedCount": 15,
+  "categories": [
+    {
+      "name": "Routing and project continuity",
+      "count": 4
+    },
+    {
+      "name": "Discovery and decision-making",
+      "count": 8
+    },
+    {
+      "name": "Design and architecture",
+      "count": 5
+    },
+    {
+      "name": "Build, test, and change quality",
+      "count": 9
+    },
+    {
+      "name": "Release, operations, and governance",
+      "count": 4
+    },
+    {
+      "name": "Learning and communication",
+      "count": 4
+    }
+  ]
+}

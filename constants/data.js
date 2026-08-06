@@ -146,20 +146,20 @@ const userData = {
     description:
       "Occasional field notes on AI agents, automation engineering, and the habits behind dependable delivery.",
   },
+  // Marketing copy only. Skill count, categories, and install commands are
+  // derived from the synced Snapshot — see constants/skillCatalogs.js and
+  // decisions/0003. Do not hardcode them here again.
   uipathBoost: {
     title: "UiPath Boost",
     repository: "1aifanatic/uipath-boost",
     eyebrow: "Open source · Community toolkit",
-    skillCount: 34,
     skillLabel: "Agent Skills",
     summary:
       "Reusable playbooks that help UiPath teams move from idea to production with less guesswork.",
     description:
       "Official UiPath skills build and operate the platform. UiPath Boost adds the repeatable engineering process before, after, and around that product work.",
     url: "https://github.com/1aifanatic/uipath-boost",
-    installCommand:
-      "npx skills add 1aifanatic/uipath-boost --skill uipath-project-router --agent codex --yes",
-    facts: ["34 Agent Skills", "MIT licensed", "Open community catalog"],
+    facts: ["MIT licensed", "Open community catalog"],
     benefits: [
       { title: "Start faster", detail: "Guided discovery" },
       { title: "Design clearly", detail: "Architecture patterns" },

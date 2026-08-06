@@ -39,6 +39,13 @@ const nextConfig = {
         destination: "/api/well-known/agent-skills-index",
       },
       {
+        // Raw SKILL.md for synced catalogs. The static
+        // /agent-skills/site-overview/SKILL.md file is served from public/
+        // and is unaffected — public files win over rewrites.
+        source: "/agent-skills/:catalog/:skill/SKILL.md",
+        destination: "/api/agent-skills/:catalog/:skill",
+      },
+      {
         source: "/.well-known/mcp/server-card.json",
         destination: "/api/well-known/mcp-server-card",
       },

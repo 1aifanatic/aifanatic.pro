@@ -1,5 +1,6 @@
 import { getSiteBaseUrl } from "../lib/siteUrl";
 import userData from "../constants/data";
+import { getAllCatalogs } from "../lib/skillCatalog";
 
 const STATIC_PATHS = [
   "/",
@@ -9,6 +10,7 @@ const STATIC_PATHS = [
   "/experience",
   "/insights",
   "/recognition",
+  "/skills",
   "/solopreneur-projects",
   "/speaking",
   "/work",
@@ -25,9 +27,16 @@ function escapeXml(s) {
 export async function getServerSideProps({ req, res }) {
   const base = getSiteBaseUrl(req);
   const blogSlugs = (userData.blogs || []).map((b) => b.slug).filter(Boolean);
+  const catalogs = getAllCatalogs();
   const urls = [
     ...STATIC_PATHS.map((path) => ({ loc: `${base}${path}` })),
     ...blogSlugs.map((slug) => ({ loc: `${base}/blog/${encodeURIComponent(slug)}` })),
+    ...catalogs.flatMap((catalog) => [
+      { loc: `${base}/skills/${catalog.slug}` },
+      ...catalog.skills.map((skill) => ({
+        loc: `${base}/skills/${catalog.slug}/${skill.name}`,
+      })),
+    ]),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

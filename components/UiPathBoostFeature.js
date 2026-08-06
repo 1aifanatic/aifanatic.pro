@@ -1,16 +1,16 @@
+import Link from "next/link";
 import userData from "@constants/data";
 import { openGuestBook } from "@lib/guestBook";
+import { installCommand } from "@constants/skillCatalogs";
+import boostSummary from "../content/skills/uipath-boost/summary.json";
 import Icon from "./Icon";
 
-const skillGroups = [
-  "Discovery & decisions",
-  "Architecture & safe change",
-  "Testing & traceability",
-  "Release & operations",
-];
+// Categories and counts come from the synced Snapshot, never a hand-kept list.
+const skillGroups = boostSummary.categories;
 
 export default function UiPathBoostFeature({ bordered = true }) {
   const project = userData.uipathBoost;
+  const repository = "1aifanatic/uipath-boost";
 
   return (
     <section
@@ -41,19 +41,25 @@ export default function UiPathBoostFeature({ bordered = true }) {
                 {project.description}
               </p>
               <div className="mt-7 flex flex-wrap gap-2">
+                <span className="topic-chip bg-white/60 dark:bg-[#18211f]/60">
+                  {boostSummary.skillCount} Agent Skills
+                </span>
                 {project.facts.map((fact) => (
                   <span key={fact} className="topic-chip bg-white/60 dark:bg-[#18211f]/60">
                     {fact}
                   </span>
                 ))}
               </div>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link href="/skills/uipath-boost" className="button-primary">
+                  Browse the {boostSummary.skillCount} skills <Icon name="arrowRight" />
+                </Link>
                 <button
                   type="button"
                   onClick={() => openGuestBook(project.url)}
-                  className="button-primary"
+                  className="text-sm font-semibold text-[#174b8b] dark:text-[#a8c7ee]"
                 >
-                  View on GitHub <Icon name="arrowRight" />
+                  View on GitHub
                 </button>
               </div>
               <p className="mt-6 text-xs leading-5 text-[#6b7670] dark:text-[#aab4ae]">
@@ -73,7 +79,7 @@ export default function UiPathBoostFeature({ bordered = true }) {
                 </span>
               </div>
               <pre className="mt-5 overflow-x-auto whitespace-pre-wrap break-words rounded-2xl border border-[#34413d] bg-[#0b1210] p-5 font-mono text-sm leading-7 text-[#d8e6f7]">
-                <code>{project.installCommand}</code>
+                <code>{installCommand(repository, "codex", "uipath-project-router")}</code>
               </pre>
               <div className="mt-8">
                 <p className="text-xs font-semibold uppercase tracking-[.16em] text-[#a8c7ee]">
@@ -81,11 +87,12 @@ export default function UiPathBoostFeature({ bordered = true }) {
                 </p>
                 <ol className="mt-4 divide-y divide-[#34413d] border-y border-[#34413d]">
                   {skillGroups.map((group, index) => (
-                    <li key={group} className="flex items-center gap-4 py-4">
+                    <li key={group.name} className="flex items-center gap-4 py-3.5">
                       <span className="font-mono text-xs text-[#7ea5d4]">
                         0{index + 1}
                       </span>
-                      <span className="font-semibold">{group}</span>
+                      <span className="flex-1 text-sm font-semibold">{group.name}</span>
+                      <span className="font-mono text-xs text-[#96a09a]">{group.count}</span>
                     </li>
                   ))}
                 </ol>

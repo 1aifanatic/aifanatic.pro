@@ -1,0 +1,321 @@
+{
+  "catalog": "uipath-boost",
+  "repository": "1aifanatic/uipath-boost",
+  "branch": "main",
+  "commit": "8a9791bab05351551fff6e877987daaf8121c0a7",
+  "syncedAt": "2026-08-06",
+  "categories": [
+    "Routing and project continuity",
+    "Discovery and decision-making",
+    "Design and architecture",
+    "Build, test, and change quality",
+    "Release, operations, and governance",
+    "Learning and communication"
+  ],
+  "skills": [
+    {
+      "name": "uipath-architecture-deepening",
+      "description": "Use only when the user explicitly asks to deepen a proven UiPath architecture hotspot into ranked design options and a safe handoff.",
+      "category": "Design and architecture",
+      "invocation": "user",
+      "supplementary": [],
+      "digest": "sha256:3346336321b45c3f97d6c8050705c6a661a7fe590a2f4be50d04c1bb7bd740ef"
+    },
+    {
+      "name": "uipath-component-design",
+      "description": "Design a deep UiPath component or project contract by exploring several genuinely different shapes before selecting one. Use for reusable libraries, workflow interfaces, coded automation modules, agents, Maestro processes, API workflows, human tasks, queue contracts, and integration adapters that need clear seams and testable behavior.",
+      "category": "Design and architecture",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:b15de4a532014ee72498f9ef4986379622296b83a2628db774d80fee7e164825"
+    },
+    {
+      "name": "uipath-delivery-control-plane",
+      "description": "Use only when the user explicitly asks to establish durable delivery governance around an already discovered UiPath repository or solution.",
+      "category": "Routing and project continuity",
+      "invocation": "user",
+      "supplementary": [
+        "assets/delivery-control-plane-template.md",
+        "scripts/audit_delivery_control_plane.py"
+      ],
+      "digest": "sha256:a7c453e0049dec8cf55ba7a7eac9d185b00c9a5dbeacce03904acf625d1ef1af"
+    },
+    {
+      "name": "uipath-discovery-interview",
+      "description": "Run evidence-based UiPath discovery in frontier rounds. Use to sharpen an automation idea, stress-test a proposed solution, clarify a process before a PDD or SDD, or resolve business, data, exception, security, volume, SLA, access, and acceptance decisions.",
+      "category": "Discovery and decision-making",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:5c41baddf46f9c91c548b4983513737180e6c680479c139336d35a7aa251a81d"
+    },
+    {
+      "name": "uipath-discovery-with-docs",
+      "description": "Use only when the user explicitly asks to run UiPath discovery while maintaining durable project documentation.",
+      "category": "Discovery and decision-making",
+      "invocation": "user",
+      "supplementary": [
+        "assets/decision-log-template.md",
+        "assets/evidence-index-template.md"
+      ],
+      "digest": "sha256:57be49a5e599fd4be9ac75d0a85d3394f75d229967b4dabd628d6ef3156dd6a5"
+    },
+    {
+      "name": "uipath-learning-workspace",
+      "description": "Use only when the user explicitly asks to create a stateful, practice-led UiPath learning workspace tied to a real mission.",
+      "category": "Learning and communication",
+      "invocation": "user",
+      "supplementary": [],
+      "digest": "sha256:6038724b042778afbafd295f3e044ca9d1bba15ce3302b8556581920f4124bc3"
+    },
+    {
+      "name": "uipath-observability-design",
+      "description": "Design end-to-end observability for a UiPath process, agent, Maestro journey, integration, application, or multi-project solution. Use for correlation, structured events, business and technical metrics, SLOs, alert logic, dashboard requirements, runbook links, retention, and support ownership. This skill designs the model only; live job analytics belong to uipath-insights, Action Center task operations to uipath-tasks, audit events to uipath-admin, platform resources to uipath-platform, and causal diagnosis to uipath-troubleshoot.",
+      "category": "Release, operations, and governance",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:1e5ecf22113165fdf09e8e169b37d8afe622ab2fad0bb87645925f5dfabb9156"
+    },
+    {
+      "name": "uipath-pattern-migration",
+      "description": "Plan and execute a bounded, reversible migration from one repeated UiPath project pattern to another. Use for naming changes, configuration key changes, queue field migrations, package references, argument conventions, test fixture updates, documentation conventions, or other mechanically discoverable transformations across many files or projects.",
+      "category": "Build, test, and change quality",
+      "invocation": "model",
+      "supplementary": [
+        "scripts/apply_text_migration.py"
+      ],
+      "digest": "sha256:f1679f04804a07f463f84b6f40768a55a7cef3f5f75d1263cc7a0fbaba44689d"
+    },
+    {
+      "name": "uipath-process-domain-modeling",
+      "description": "Build and sharpen the business language used by a UiPath project. Use when process terms are vague, overloaded, inconsistent across business and technical teams, or when discovery, design, testing, and support need one canonical glossary and a small set of durable architectural decisions.",
+      "category": "Discovery and decision-making",
+      "invocation": "model",
+      "supplementary": [
+        "assets/context-template.md"
+      ],
+      "digest": "sha256:86d55045c4696f7f74cea87ccd7d16c1253ccd1b6f8d1c8935c73082930e10a3"
+    },
+    {
+      "name": "uipath-program-wayfinder",
+      "description": "Use only when the user explicitly asks to map the decisions required to make a large, foggy UiPath program plannable.",
+      "category": "Discovery and decision-making",
+      "invocation": "user",
+      "supplementary": [],
+      "digest": "sha256:cdb32a01d50e9cb39a950a3f1584f7e37ad9a07101486ed239a8507638601a6c"
+    },
+    {
+      "name": "uipath-project-boundaries",
+      "description": "Define and enforce public entry points and dependency boundaries across a UiPath solution or repository. Use when reusable libraries, coded components, agents, apps, API workflows, tests, and orchestration projects have deep imports, circular dependencies, duplicated contracts, or unclear ownership that makes agent navigation and safe change difficult.",
+      "category": "Design and architecture",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:92f34dfb0639d2bbd8c10956758d0702f6d8951b3abb41265219d2f10530f9dc"
+    },
+    {
+      "name": "uipath-project-handoff",
+      "description": "Use only when the user explicitly asks to create a portable, redacted UiPath project handoff for another person, harness, or directory.",
+      "category": "Routing and project continuity",
+      "invocation": "user",
+      "supplementary": [
+        "assets/handoff-template.md"
+      ],
+      "digest": "sha256:82d7fe5a45364f4d4092ad8dbac76cf39ca888cc894c349e0245f8ba923c2878"
+    },
+    {
+      "name": "uipath-project-knowledge-base",
+      "description": "Create and maintain a portable linked Markdown knowledge base for a UiPath program or project. Use when design decisions, runbooks, research, glossary terms, operational knowledge, reusable patterns, and lessons are scattered across conversations or folders and need searchable index notes, context pointers, ownership, and freshness signals.",
+      "category": "Routing and project continuity",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:4a3432d5c83a6a52ba0992e7e6e7900c48c72402c5e4378b58a7805091958177"
+    },
+    {
+      "name": "uipath-project-router",
+      "description": "Use only when the user explicitly asks which skill, workflow, or starting point to use; choose the smallest correct official UiPath and UiPath Boost route.",
+      "category": "Routing and project continuity",
+      "invocation": "user",
+      "supplementary": [
+        "references/official-uipath-skill-map.md",
+        "references/phase-boundaries.md",
+        "references/routing-table.md"
+      ],
+      "digest": "sha256:272c35dfccebbaed076cf0fcb32d62d3666e859090281776d741a191c7c77912"
+    },
+    {
+      "name": "uipath-prototype",
+      "description": "Build a deliberately throwaway UiPath-oriented prototype to answer one design question. Use when a team must validate a selector strategy, extraction result shape, state model, human-review experience, queue contract, API interaction, agent behavior, or orchestration flow before committing to production architecture.",
+      "category": "Design and architecture",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:7fc135686ae4ae8b41e380f5db4aa4957372c98cca557bfb06a9f500190d9eb1"
+    },
+    {
+      "name": "uipath-quality-gates-setup",
+      "description": "Use only when the user explicitly asks to install and prove local and CI quality gates for a UiPath repository.",
+      "category": "Build, test, and change quality",
+      "invocation": "user",
+      "supplementary": [
+        "scripts/check_project_markers.py"
+      ],
+      "digest": "sha256:72a58237789b002168cbe671166e1461b6a5a817d3dc673be1f84a3640dc9eab"
+    },
+    {
+      "name": "uipath-regression-harness",
+      "description": "Create a fast, deterministic, red-capable reproduction and regression harness for a UiPath defect after the incident, symptom, or cause has been anchored by uipath-troubleshoot or the owning product skill. Use when a confirmed defect needs repeatable evidence before and after a fix. Do not use to perform root-cause diagnosis, investigate live production broadly, or apply the fix.",
+      "category": "Build, test, and change quality",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:9fd66548643d935d3e6d9428b8cbd30a0439ddbe34cd127dfcaac55b2b457ec6"
+    },
+    {
+      "name": "uipath-release-readiness",
+      "description": "Aggregate authoritative build, review, test, security, operational, governance, deployment, and support evidence into a Ready, Conditionally Ready, or Not Ready verdict for a specific UiPath release unit and target. Use after official product validation and review evidence exists. Do not run product review, Test Manager operations, policy changes, deployment, activation, or production mutation.",
+      "category": "Release, operations, and governance",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:1a505245c980b0b6aa839dd82357c66b62d41c11d4bc0bfe4448d0ba8c6f8748"
+    },
+    {
+      "name": "uipath-requirement-traceability",
+      "description": "Build a requirement-to-implementation-to-test-to-evidence traceability matrix from an approved SDD, official uipath-review report, Test Manager evidence, and release artifacts. Use when the user explicitly needs coverage, missing-evidence analysis, auditability, UAT mapping, or release traceability. Do not perform the underlying artifact quality review, invent requirement coverage, or replace Test Manager reporting.",
+      "category": "Build, test, and change quality",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:9466a88dce764f30d23ed4d60075f7c64899fdf1d7ee15b3310ef71d93622a8e"
+    },
+    {
+      "name": "uipath-research-note",
+      "description": "Research a UiPath technical, product, platform, API, compatibility, or governance question using primary sources and capture the result as a cited Markdown note. Use when a project decision depends on current UiPath documentation, official repositories, release notes, specifications, or first-party APIs.",
+      "category": "Discovery and decision-making",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:d90f9f1fc1de1eeaf8787a330bd17e23b78f81f0decb90b2c2635489ed4be1e1"
+    },
+    {
+      "name": "uipath-runbook-wizard",
+      "description": "Create an interactive or document-based wizard for a UiPath setup, access, migration, deployment-preparation, or operational procedure that requires human actions. Use when a repeatable manual process involves portals, approvals, values to capture, environment configuration, credentials, tenant resources, or irreversible checkpoints that should not be re-explained from scratch.",
+      "category": "Release, operations, and governance",
+      "invocation": "model",
+      "supplementary": [
+        "assets/wizard-template.ps1",
+        "assets/wizard-template.sh"
+      ],
+      "digest": "sha256:641f4deb5c13794ecfac600fdb5d8b3f0a05ead3b0544caca24b0a800ef87a7d"
+    },
+    {
+      "name": "uipath-safe-refactor-plan",
+      "description": "Plan a behavior-preserving UiPath refactor after an architecture direction is selected. Use when a proven hotspot needs small implementation steps, safety nets, compatibility rules, stop conditions, and rollback points across workflows, packages, queues, selectors, or orchestration artifacts.",
+      "category": "Design and architecture",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:b7bbd64dd25f09b221d29e29ac5da46d8ff55a044c2a248afd762588a5395dd2"
+    },
+    {
+      "name": "uipath-skill-authoring-guide",
+      "description": "Design, review, and improve reusable AI skills for UiPath work. Use when creating a skill for discovery, architecture, development, testing, operations, governance, training, or project management; when deciding whether a workflow belongs in a custom skill or the official UiPath catalog; or when an existing skill is inconsistent, bloated, poorly triggered, or difficult to evaluate.",
+      "category": "Learning and communication",
+      "invocation": "model",
+      "supplementary": [
+        "references/skill-mechanics.md"
+      ],
+      "digest": "sha256:b5c6b21df2a19f96310445152856ca824716085227ddebca32adf986cb115bcc"
+    },
+    {
+      "name": "uipath-solution-security-assessment",
+      "description": "Perform project-level threat modeling and evidence-backed security, privacy, AI, integration, and operational control assessment for a defined UiPath solution design or release. Use when the team needs data-flow threats, trust boundaries, misuse cases, control gaps, residual risks, or security evidence requests. Do not author or deploy UiPath governance policies, manage identities or roles, query audit logs, operate tenant resources, or replace uipath-review.",
+      "category": "Release, operations, and governance",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:77e957ff85b1a02f1962d230d82e709e3b9a1f3e72bf0fa9d3ee23744fdec25e"
+    },
+    {
+      "name": "uipath-solution-storytelling",
+      "description": "Develop clear UiPath solution narratives from raw notes, evidence, design artifacts, demos, and implementation outcomes. Use when preparing executive proposals, architecture explanations, demo scripts, community talks, case studies, articles, release communications, or customer-facing stories that must introduce concepts in a logical order and preserve source truth.",
+      "category": "Learning and communication",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:8bc55233e61b20cf5490625f87a93fea592ec78b2a2d68002ccdd833ce158db6"
+    },
+    {
+      "name": "uipath-source-control-conflicts",
+      "description": "Resolve an in-progress source-control merge or rebase conflict involving UiPath project artifacts by recovering the intent of both sides, using structure-aware edits, and rerunning the owning product validations. Use for conflicts in project files, JSON manifests, coded automation, XAML, Maestro artifacts, solution wrappers, tests, documentation, and generated metadata.",
+      "category": "Build, test, and change quality",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:dff7c9c94b1593c0634c68927ad503407165598845cd2ddc5c8fd41145ad034c"
+    },
+    {
+      "name": "uipath-source-control-guardrails",
+      "description": "Use only when the user explicitly asks to install and test command guardrails around destructive Git and UiPath release operations.",
+      "category": "Build, test, and change quality",
+      "invocation": "user",
+      "supplementary": [
+        "scripts/block_dangerous_commands.ps1",
+        "scripts/block_dangerous_commands.sh"
+      ],
+      "digest": "sha256:90d7f52b39849f50303de6561ec6b69751eaa2d0b661508a8c8c9cde2459321b"
+    },
+    {
+      "name": "uipath-stakeholder-questionnaire",
+      "description": "Use only when the user explicitly asks to create a focused UiPath questionnaire for the person who owns missing information.",
+      "category": "Discovery and decision-making",
+      "invocation": "user",
+      "supplementary": [
+        "assets/questionnaire-template.md"
+      ],
+      "digest": "sha256:ed7bdabfc87e983bf5e00f4c49e9466325024721502575676cf59fb4fe686adb"
+    },
+    {
+      "name": "uipath-task-refinement",
+      "description": "Use only when the user explicitly asks to refine an approved UiPath plan into session-sized tracer-bullet tasks with blocking edges.",
+      "category": "Build, test, and change quality",
+      "invocation": "user",
+      "supplementary": [],
+      "digest": "sha256:60788d8407e4e0f6469e9accdbfdc998c6d838f63f3b1233397e906049848877"
+    },
+    {
+      "name": "uipath-test-driven-automation",
+      "description": "Apply behavior-first red-green development to UiPath automation work. Use when implementing a feature or defect through tests, when critical business rules need durable regression coverage, or when a team must choose the right public seams across workflows, coded components, queues, APIs, agents, Maestro, and human tasks.",
+      "category": "Build, test, and change quality",
+      "invocation": "model",
+      "supplementary": [],
+      "digest": "sha256:f03f61f2f97c097d6fd2c76af74506ff064880241d34dad9ad75019aeeac7a80"
+    },
+    {
+      "name": "uipath-training-lab-scaffolder",
+      "description": "Use only when the user explicitly asks to scaffold and validate a consistent UiPath training lab from an approved curriculum.",
+      "category": "Learning and communication",
+      "invocation": "user",
+      "supplementary": [
+        "scripts/scaffold_lab.py"
+      ],
+      "digest": "sha256:23a3eaef69b8a30c3bc1207ef4c70a1f731e305bae95e9f451705cb77336b4c4"
+    },
+    {
+      "name": "uipath-uat-session",
+      "description": "Use only when the user explicitly asks to facilitate UiPath UAT and capture reproducible business acceptance evidence.",
+      "category": "Build, test, and change quality",
+      "invocation": "user",
+      "supplementary": [
+        "assets/uat-defect-template.md"
+      ],
+      "digest": "sha256:489529d271997af1db146625539e92515ee10fd575328f1838ed7bc398087019"
+    },
+    {
+      "name": "uipath-work-intake-triage",
+      "description": "Use only when the user explicitly asks to classify, verify, and route incoming UiPath work before it enters an official workflow.",
+      "category": "Discovery and decision-making",
+      "invocation": "user",
+      "supplementary": [],
+      "digest": "sha256:e487829dc6cb190ddd4b14fb19ba7d87f82b443d343ce7fdd3a4bb2d86a22434"
+    },
+    {
+      "name": "uipath-workflow-spec-workspace",
+      "description": "Use only when the user explicitly asks to maintain a durable, planner-ready specification workspace for a recurring business workflow.",
+      "category": "Discovery and decision-making",
+      "invocation": "user",
+      "supplementary": [],
+      "digest": "sha256:68af06aec799181dca0337537ab55d0dd8e3be4d9b0e4f0148d749ff812a9e7a"
+    }
+  ]
+}
