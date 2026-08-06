@@ -23,7 +23,7 @@
         "references/simple-ui-delivery.md",
         "scripts/check-prerequisites.ps1"
       ],
-      "digest": "sha256:d0f24ec038ba64fe62148969d60a94a988328fe89b5f3b4714c3f97aad8d63b1"
+      "digest": "sha256:974f6f70cf1c9b38a6ca8d3b10a24f2b492389afd0f8b32dcad155d342de3c19"
     }
   ]
 }

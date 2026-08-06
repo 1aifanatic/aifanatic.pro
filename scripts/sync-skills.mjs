@@ -125,10 +125,14 @@ try {
 
   const known = new Set(catalog.categories);
   const skills = [];
+  const contents = new Map();
 
   for (const name of names) {
     const source = path.join(skillsDir, name, "SKILL.md");
-    const raw = fs.readFileSync(source, "utf8");
+    // Normalise to LF before hashing AND before writing. Upstream repos differ
+    // in line endings, and .gitattributes stores the Snapshot as LF — hashing
+    // unnormalised bytes would publish a digest the served file cannot match.
+    const raw = fs.readFileSync(source, "utf8").replace(/\r\n/g, "\n");
     const { data } = matter(raw);
 
     if (!data.name) fail(`${name}: SKILL.md has no "name"`);
@@ -146,6 +150,7 @@ try {
       .filter((file) => file !== "SKILL.md" && !file.startsWith("agents/"))
       .sort();
 
+    contents.set(name, raw);
     skills.push({
       name,
       description: String(data.description),
@@ -172,7 +177,8 @@ try {
   for (const skill of skills) {
     const target = path.join(destination, skill.name);
     fs.mkdirSync(target, { recursive: true });
-    fs.copyFileSync(path.join(skillsDir, skill.name, "SKILL.md"), path.join(target, "SKILL.md"));
+    // Write the same normalised bytes that were digested, never a raw copy.
+    fs.writeFileSync(path.join(target, "SKILL.md"), contents.get(skill.name));
   }
 
   const manifest = {
