@@ -4,7 +4,6 @@ const userData = {
   designation: "Manager of Solution Architecture",
   avatarUrl: "/avatar.png",
   email: "naveen@aifanatic.pro",
-  phone: "1-999-999-9999",
   address: "Texas, USA",
   upcoming: [
     // Upcoming talks section is now hidden - events moved to recent highlights
@@ -60,9 +59,9 @@ const userData = {
     // },
   ],
   about: {
-    title1: "I help design automation solutions for enterprises.",
+    title1: "I design enterprise-grade AI agents for business process automation.",
     title2:
-      "I keep a side mission of simplifying topics about AI + AUTOMATION + HABITS + BOOKS.",
+      "Agentic Automation Architect - AI agents that reason, use tools, and execute business workflows.",
     currentPosition: "Manager of Solution Architecture at Ashling Partners",
     currentPositionUrl: "https://ashlingpartners.com",
   },
@@ -139,7 +138,6 @@ const userData = {
   SSRNUrl: "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=261155",
   GoogleSUrl: "https://scholar.google.com/citations?user=J6N60VcAAAAJ&hl=en",
   MediumUrl: "https://medium.com/@navaifanatic",
-  BlogUrl: "http://projects.Naveenshah.com/blog/",
   newsletter: {
     name: "Naveen’s Substack",
     url: "https://aifanatic.substack.com",
@@ -215,6 +213,71 @@ const userData = {
       },
     ],
   },
+  // Latest open-source projects (featured on the landing page).
+  // Display copy only - live stars/forks come from getServerSideProps metrics.
+  openSource: [
+    {
+      id: "docchrono-uipath-examples",
+      repo: "docchrono/docchrono-uipath-examples",
+      name: "docchrono-uipath-examples",
+      tagline: "UiPath workflows x document evidence graphs",
+      description:
+        "Five complete UiPath workflows integrating DocChrono chronology and evidence graphs through a safe Python JSON bridge.",
+      url: "https://github.com/docchrono/docchrono-uipath-examples",
+      language: "Python",
+      topics: ["Document analysis", "Evidence graphs", "RPA + AI"],
+    },
+    {
+      id: "wiresentinel",
+      repo: "1aifanatic/WireSentinel-Maestro-Challenge",
+      name: "WireSentinel",
+      tagline: "Explainable suspicious-wire review orchestration",
+      description:
+        "Open-source, explainable suspicious-wire review with UiPath Maestro, IXP, Data Fabric, Action Center, and Coded Apps.",
+      url: "https://github.com/1aifanatic/WireSentinel-Maestro-Challenge",
+      language: "TypeScript",
+      topics: ["Maestro", "Governance", "Human-in-the-loop"],
+    },
+    {
+      id: "awesome-langchain-projects",
+      repo: "1aifanatic/awesome-langchain-projects",
+      name: "awesome-langchain-projects",
+      tagline: "Ten tested local-first LangChain & LangGraph POCs",
+      description:
+        "Ten tested local-first LangChain and LangGraph Solutions Engineer POCs.",
+      url: "https://github.com/1aifanatic/awesome-langchain-projects",
+      language: "JavaScript",
+      topics: ["LangChain", "LangGraph", "AI agents"],
+    },
+    {
+      id: "awesome-maestro-flow",
+      repo: "1aifanatic/awesome-maestro-flow",
+      name: "awesome-maestro-flow",
+      tagline: "Community-curated UiPath Maestro Flow collection",
+      description:
+        "A community-curated collection of UiPath Maestro Flow projects, templates, patterns, demos, integrations, tutorials, and real-world use cases.",
+      url: "https://github.com/1aifanatic/awesome-maestro-flow",
+      language: "Markdown",
+      topics: ["Maestro Flow", "Agentic automation", "Orchestration"],
+    },
+  ],
+  // Niche focus - short chips for the landing page hero.
+  nicheFocus: [
+    "Enterprise AI Agents",
+    "Agentic Automation",
+    "Multi-Agent Orchestration",
+    "Human-in-the-Loop",
+    "Observability & Governance",
+  ],
+  // EB1A-aligned expertise points (displayed on About page).
+  expertise: [
+    "Enterprise AI agents that reason, use tools, and execute business workflows",
+    "Agentic automation combined with RPA, APIs, ERP, CRM, ITSM, and document workflows",
+    "Multi-agent orchestration and human-in-the-loop systems",
+    "Reliability, evaluation, observability, security, governance, and auditability",
+    "Reusable architecture patterns, frameworks, and automation methodologies",
+    "Measurable enterprise outcomes from AI-enabled automation",
+  ],
   guestBook: {
     title: "Join the builder’s guest book",
     description:
@@ -224,8 +287,6 @@ const userData = {
     twitter: "https://x.com/1aifanatic",
     linkedin: "https://www.linkedin.com/in/1aifanatic/",
     github: "https://github.com/1aifanatic",
-    facebook: "https://facebook.com/",
-    tiktok: "https://topmate.io/aifanatic",
     youtube: "https://www.youtube.com/@1aifanatic",
     topmate: "https://topmate.io/aifanatic",
   },

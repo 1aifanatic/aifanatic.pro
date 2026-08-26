@@ -5,6 +5,8 @@ import Icon from "./Icon";
 import UiPathBoostFeature from "./UiPathBoostFeature";
 import userData from "@constants/data";
 
+const { loanShield } = userData;
+
 const caseStudy = {
   title: "Risk Orbit",
   problem: "Supply-chain teams need to turn fragmented risk signals into timely decisions without losing the context required for responsible action.",
@@ -18,7 +20,7 @@ const caseStudy = {
   ],
 };
 
-const featuredIds = [1, 4, 15, 18, 21, 3];
+const featuredIds = [15, 1, 4, 5, 12, 13];
 
 export default function Work() {
   const products = featuredIds.map((id) => userData.solopreneurProjects.find((project) => project.id === id)).filter(Boolean);
@@ -38,6 +40,23 @@ export default function Work() {
             <ol className="mt-6 grid gap-3 sm:grid-cols-2">{caseStudy.architecture.map((item, index) => <li key={item} className="rounded-2xl border border-[#d8ddd8] p-5 dark:border-[#34413d]"><span className="text-xs font-semibold text-[#174b8b] dark:text-[#a8c7ee]">0{index + 1}</span><p className="mt-2 font-semibold">{item}</p></li>)}</ol>
             <div className="mt-8 rounded-xl border-l-2 border-[#174b8b] bg-[#f8f7f3] p-5 dark:bg-[#111716]"><p className="eyebrow">Verified outcome</p><p className="mt-3 leading-7 text-[#46514c] dark:text-[#c5cec8]">{caseStudy.outcome}</p></div>
             <div className="mt-7 flex flex-wrap gap-x-6">{caseStudy.links.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="source-label">{link.label} <Icon name="arrowUpRight" /></a>)}</div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section className="site-container page-section" id="loan-shield">
+      <article className="paper-card overflow-hidden p-0">
+        <div className="grid lg:grid-cols-[.78fr_1.22fr]">
+          <div className="bg-[#e9eff8] p-7 dark:bg-[#172c3c] sm:p-10">
+            <p className="eyebrow">Challenge work · Agentic case management</p><h2 className="mt-4 text-5xl">Loan Shield</h2>
+            <p className="mt-6 leading-8 text-[#46514c] dark:text-[#c5cec8]">An AI-powered loan-dispute workflow that turns fragmented evidence, approvals, and case updates into one auditable process.</p>
+            <dl className="mt-10 space-y-5 border-t border-[#b9cce5] pt-6 dark:border-[#315169]"><div><dt className="eyebrow">Stack</dt><dd className="mt-2 font-semibold">UiPath Maestro Case Management · Agent Builder · API Workflows · Action Center</dd></div><div><dt className="eyebrow">Live portal</dt><dd className="mt-2 font-semibold">Next.js + Neon PostgreSQL</dd></div></dl>
+          </div>
+          <div className="p-7 sm:p-10">
+            <p className="eyebrow">System path</p>
+            <ol className="mt-6 grid gap-3 sm:grid-cols-2">{loanShield.systemPath.map((item, index) => <li key={item} className="rounded-2xl border border-[#d8ddd8] p-5 dark:border-[#34413d]"><span className="text-xs font-semibold text-[#174b8b] dark:text-[#a8c7ee]">0{index + 1}</span><p className="mt-2 font-semibold">{item}</p></li>)}</ol>
+            <div className="mt-8 rounded-xl border-l-2 border-[#174b8b] bg-[#f8f7f3] p-5 dark:bg-[#111716]"><p className="eyebrow">Why it matters</p><p className="mt-3 leading-7 text-[#46514c] dark:text-[#c5cec8]">Human approval and audit trails built into an AI-driven case flow - a production pattern for governed agentic automation.</p></div>
+            <div className="mt-7 flex flex-wrap gap-x-6"><a href={loanShield.url} target="_blank" rel="noopener noreferrer" className="source-label">View on Devpost <Icon name="arrowUpRight" /></a></div>
           </div>
         </div>
       </article>

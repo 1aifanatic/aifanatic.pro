@@ -6,11 +6,15 @@ import { openGuestBook } from "@lib/guestBook";
 import boostSummary from "../content/skills/uipath-boost/summary.json";
 import Icon from "./Icon";
 
-export default function Hero({ boostMetrics = null }) {
-  const { uipathBoost, loanShield, homeSnapshot } = userData;
+export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
+  const { uipathBoost, homeSnapshot, openSource, nicheFocus } = userData;
   const starCount = Number.isFinite(boostMetrics?.stars)
     ? boostMetrics.stars.toLocaleString("en-US")
     : "Live";
+  const repoStars = (repo) => {
+    const metrics = openSourceMetrics[repo];
+    return Number.isFinite(metrics?.stars) ? metrics.stars.toLocaleString("en-US") : "New";
+  };
 
   return (
     <section className="site-container py-4 sm:py-5 lg:h-[calc(100vh-64px)] lg:min-h-[720px] lg:max-h-[840px]">
@@ -31,9 +35,17 @@ export default function Hero({ boostMetrics = null }) {
             </h1>
           </RoughNotationGroup>
           <p className="mt-3 max-w-2xl text-base leading-6 text-[#5f6864] dark:text-[#b7c0bb] 2xl:text-lg 2xl:leading-7">
-            I lead enterprise solution architecture for governed AI and
-            automation systems that teams can trust in production.
+            Agentic Automation Architect building enterprise-grade AI agents
+            for business process automation - systems that reason, use tools,
+            and run under governance in production.
           </p>
+          <ul className="mt-3 flex flex-wrap gap-2 2xl:mt-4" aria-label="Niche focus areas">
+            {nicheFocus.map((focus) => (
+              <li key={focus} className="topic-chip min-h-0 rounded-full px-3 py-1.5 text-[10px] uppercase tracking-[.1em]">
+                {focus}
+              </li>
+            ))}
+          </ul>
           <div className="mt-3 flex flex-wrap gap-2.5 2xl:mt-5">
             <Link href="/work" className="button-primary px-4 py-2.5">
               View work <Icon name="arrowRight" />
@@ -160,46 +172,59 @@ export default function Hero({ boostMetrics = null }) {
           </div>
         </article>
 
-        <article className="relative flex flex-col justify-center overflow-hidden rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 shadow-[0_12px_32px_rgba(24,33,31,.06)] dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5 lg:p-5 2xl:p-7">
+        <article className="relative flex flex-col overflow-hidden rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 shadow-[0_12px_32px_rgba(24,33,31,.06)] dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5 lg:p-5 2xl:p-7">
           <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full border-[24px] border-white/30 dark:border-[#315169]/30" />
           <div className="relative flex flex-wrap items-center justify-between gap-2">
-            <p className="eyebrow">{loanShield.program}</p>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#174b8b] px-3 py-1.5 text-[9px] font-bold uppercase tracking-[.13em] text-white dark:bg-[#a8c7ee] dark:text-[#172c3c]">
-              <span className="h-1.5 w-1.5 rounded-full bg-current" />
-              {loanShield.status}
-            </span>
-          </div>
-          <div className="relative mt-2">
-            <h2 className="text-4xl leading-none sm:text-5xl lg:text-4xl 2xl:text-5xl">{loanShield.title}</h2>
-            <p className="mt-2 text-sm leading-5 text-[#46514c] dark:text-[#c5cec8] 2xl:text-base 2xl:leading-6">
-              {loanShield.summary}
-            </p>
-          </div>
-          <ol className="relative mt-3 grid grid-cols-4 overflow-hidden rounded-xl border border-[#b9cce5] bg-white/70 dark:border-[#315169] dark:bg-[#18211f]/70 2xl:mt-5">
-            {loanShield.systemPath.map((step) => (
-              <li
-                key={step}
-                className="flex items-center justify-center gap-1.5 border-r border-[#b9cce5] px-2 py-3 text-center last:border-0 dark:border-[#315169] 2xl:py-3.5"
-              >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#174b8b] dark:bg-[#a8c7ee]" />
-                <span className="text-[10px] font-semibold uppercase tracking-[.08em] text-[#46514c] dark:text-[#c5cec8]">
-                  {step}
-                </span>
-              </li>
-            ))}
-          </ol>
-          <div className="relative mt-2 flex items-center justify-between gap-4 2xl:mt-3">
+            <p className="eyebrow">Latest open source</p>
             <a
-              href={loanShield.url}
+              href={`https://github.com/${userData.githubUsername}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-9 items-center gap-2 text-sm font-semibold text-[#174b8b] transition hover:text-[#0d376b] dark:text-[#a8c7ee] dark:hover:text-white"
             >
-              View on Devpost <Icon name="arrowUpRight" />
+              GitHub <Icon name="arrowUpRight" />
             </a>
-            <span className="text-[9px] font-semibold uppercase tracking-[.12em] text-[#5f6864] dark:text-[#b7c0bb]">
-              End-to-end case flow
-            </span>
+          </div>
+          <div className="relative mt-2">
+            <h2 className="text-4xl leading-none sm:text-5xl lg:text-4xl 2xl:text-5xl">
+              Open agent systems.
+            </h2>
+            <p className="mt-2 text-sm leading-5 text-[#46514c] dark:text-[#c5cec8] 2xl:text-base 2xl:leading-6">
+              Actively maintained repos on agent orchestration, Maestro flows, and
+              document workflows - built in the open.
+            </p>
+          </div>
+          <div className="relative mt-3 grid grid-cols-2 gap-2 2xl:mt-4">
+            {openSource.map((repo) => (
+              <a
+                key={repo.id}
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex min-h-[88px] flex-col justify-between rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:-translate-y-0.5 hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee] motion-reduce:transform-none"
+              >
+                <p className="text-xs font-bold leading-4 text-[#18211f] transition group-hover:text-[#174b8b] dark:text-[#eef1ed] dark:group-hover:text-[#a8c7ee]">
+                  {repo.name}
+                </p>
+                <div className="mt-2 flex items-center justify-between gap-2">
+                  <span className="truncate text-[9px] font-semibold uppercase tracking-[.08em] text-[#5f6864] dark:text-[#b7c0bb]">
+                    {repo.language}
+                  </span>
+                  <span
+                    className="flex shrink-0 items-center gap-1 text-[10px] font-semibold text-[#46514c] dark:text-[#c5cec8]"
+                    aria-label={`${repoStars(repo.repo)} GitHub stars`}
+                  >
+                    <Icon name="star" className="h-3 w-3 fill-[#f2c86b] text-[#f2c86b]" />
+                    {repoStars(repo.repo)}
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="relative mt-2 flex items-center justify-between gap-4 2xl:mt-3">
+            <p className="text-[9px] font-semibold uppercase tracking-[.12em] text-[#5f6864] dark:text-[#b7c0bb]">
+              Agentic automation in the open
+            </p>
           </div>
         </article>
 
