@@ -238,6 +238,7 @@ const userData = {
       id: "awesome-langchain-projects",
       repo: "1aifanatic/awesome-langchain-projects",
       name: "Awesome LangChain Projects",
+      featured: true,
       description:
         "Ten tested local-first LangChain and LangGraph Solutions Engineer POCs.",
       url: "https://github.com/1aifanatic/awesome-langchain-projects",

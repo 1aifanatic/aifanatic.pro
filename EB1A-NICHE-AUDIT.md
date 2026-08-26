@@ -81,6 +81,7 @@ are already on the site:
    - **DocChrono UiPath Examples** - UiPath Contribution · Document Evidence Workflows
    - **WireSentinel Maestro Challenge** - UiPath Maestro Flow · Explainable Review Workflows
    - **Awesome LangChain Projects** - Multi-Agent Architecture · LangChain & LangGraph POCs
+     *(visually featured on the landing page: dark card + "Featured" badge)*
    - **Awesome Maestro Flow** - Collection of Maestro Flow Projects · Community Patterns & Templates
 2. **Hero intro** repositioned as "Agentic Automation Architect" with 5 niche focus chips.
 3. **Hero layout re-verified at 5 viewports** (1280x800 through 1920x1080) - zero card overflow,

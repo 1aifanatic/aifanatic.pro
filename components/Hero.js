@@ -185,31 +185,59 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
             </a>
           </div>
           <div className="relative mt-3 grid grid-cols-2 gap-2">
-            {openSource.map((repo) => (
+            {openSource.map((repo) => {
+              const isFeatured = Boolean(repo.featured);
+              return (
               <a
                 key={repo.id}
                 href={repo.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex min-h-[96px] flex-col justify-between rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:-translate-y-0.5 hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee] motion-reduce:transform-none"
+                className={
+                  isFeatured
+                    ? "group relative flex min-h-[96px] flex-col justify-between rounded-xl border-2 border-[#174b8b] bg-[#111716] p-3 shadow-[0_10px_28px_rgba(23,75,139,.28)] transition hover:-translate-y-0.5 hover:border-[#a8c7ee] dark:border-[#a8c7ee] dark:bg-[#0d1311] motion-reduce:transform-none"
+                    : "group flex min-h-[96px] flex-col justify-between rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:-translate-y-0.5 hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee] motion-reduce:transform-none"
+                }
               >
-                <p className="text-xs font-bold leading-4 text-[#18211f] transition group-hover:text-[#174b8b] dark:text-[#eef1ed] dark:group-hover:text-[#a8c7ee]">
+                {isFeatured && (
+                  <span className="absolute -top-2 right-2.5 rounded-full bg-[#a8c7ee] px-2 py-0.5 text-[8px] font-bold uppercase tracking-[.12em] text-[#172c3c]">
+                    Featured
+                  </span>
+                )}
+                <p className={
+                  isFeatured
+                    ? "text-xs font-bold leading-4 text-[#eef1ed] transition group-hover:text-[#a8c7ee]"
+                    : "text-xs font-bold leading-4 text-[#18211f] transition group-hover:text-[#174b8b] dark:text-[#eef1ed] dark:group-hover:text-[#a8c7ee]"
+                }>
                   {repo.name}
                 </p>
                 <ul className="mt-1.5 space-y-0.5">
                   {repo.points.map((point) => (
-                    <li key={point} className="flex items-start gap-1.5 text-[9px] font-semibold leading-3 text-[#46514c] dark:text-[#c5cec8]">
-                      <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[#174b8b] dark:bg-[#a8c7ee]" />
+                    <li key={point} className={
+                      isFeatured
+                        ? "flex items-start gap-1.5 text-[9px] font-semibold leading-3 text-[#c5cec8]"
+                        : "flex items-start gap-1.5 text-[9px] font-semibold leading-3 text-[#46514c] dark:text-[#c5cec8]"
+                    }>
+                      <span className={
+                        isFeatured
+                          ? "mt-1 h-1 w-1 shrink-0 rounded-full bg-[#a8c7ee]"
+                          : "mt-1 h-1 w-1 shrink-0 rounded-full bg-[#174b8b] dark:bg-[#a8c7ee]"
+                      } />
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-1.5 flex shrink-0 items-center gap-1 text-[10px] font-semibold text-[#46514c] dark:text-[#c5cec8]">
+                <div className={
+                  isFeatured
+                    ? "mt-1.5 flex shrink-0 items-center gap-1 text-[10px] font-semibold text-[#c5cec8]"
+                    : "mt-1.5 flex shrink-0 items-center gap-1 text-[10px] font-semibold text-[#46514c] dark:text-[#c5cec8]"
+                }>
                   <Icon name="star" className="h-3 w-3 fill-[#f2c86b] text-[#f2c86b]" />
                   {repoStars(repo.repo)}
                 </div>
               </a>
-            ))}
+              );
+            })}
           </div>
         </article>
 
