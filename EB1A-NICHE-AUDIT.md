@@ -76,16 +76,25 @@ are already on the site:
 
 ## 4. What changed in this update
 
-1. **Landing page now features the 4 latest open-source repos** (live stars via GitHub API):
-   - docchrono/docchrono-uipath-examples (document evidence graphs + RPA)
-   - 1aifanatic/WireSentinel-Maestro-Challenge (explainable wire-review orchestration)
-   - 1aifanatic/awesome-langchain-projects (tested LangChain/LangGraph POCs)
-   - 1aifanatic/awesome-maestro-flow (community-curated Maestro Flow collection)
+1. **Landing page now features the 4 latest open-source repos** (live stars via GitHub API),
+   each with a camel-case name and **two EB-1A-aligned contribution points**:
+   - **DocChrono UiPath Examples** - UiPath Contribution · Document Evidence Workflows
+   - **WireSentinel Maestro Challenge** - UiPath Maestro Flow · Explainable Review Workflows
+   - **Awesome LangChain Projects** - Multi-Agent Architecture · LangChain & LangGraph POCs
+   - **Awesome Maestro Flow** - Collection of Maestro Flow Projects · Community Patterns & Templates
 2. **Hero intro** repositioned as "Agentic Automation Architect" with 5 niche focus chips.
-3. **About page** gained a "Niche expertise" block with the 6 EB-1A-aligned points.
-4. **Work page** now curates featured products toward AI/agents and carries the Loan Shield case.
-5. **Placeholder data removed** (fake phone, placeholder Facebook, mislabeled TikTok, dead blog URL).
-6. Homepage `title`/meta updated to "Agentic Automation Architect".
+3. **Hero layout re-verified at 5 viewports** (1280x800 through 1920x1080) - zero card overflow,
+   the UiPath Boost GitHub star pill is fully visible at every size.
+4. **About page** gained a "Niche expertise" block with the 6 EB-1A-aligned points.
+5. **Work page** now curates featured products toward AI/agents and carries the Loan Shield case.
+6. **Off-niche solopreneur projects hidden** (TMGenie, DivineRadio, TeluguMaatlaata, TeluguBadi,
+   Amrutham, Taste by Varun, HomeCrafters, Gatherly, LinkHub, Budjet, RaiseTheFlag, GC Genius,
+   Flow Notes, AIconic Internship, Unsloth Chrome Extension). Remaining: Unsloth, KaryAI,
+   AIconic, AgentGate, Ideate, AgentSight, Budjet.
+7. **Pre-2023 data-science content hidden** (`blogpost` and `video` arrays removed from data.js -
+   they were already not rendered on any live page).
+8. **Placeholder data removed** (fake phone, placeholder Facebook, mislabeled TikTok, dead blog URL).
+9. Homepage `title`/meta updated to "Agentic Automation Architect".
 
 ---
 

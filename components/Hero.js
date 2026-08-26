@@ -13,7 +13,7 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
     : "Live";
   const repoStars = (repo) => {
     const metrics = openSourceMetrics[repo];
-    return Number.isFinite(metrics?.stars) ? metrics.stars.toLocaleString("en-US") : "New";
+    return Number.isFinite(metrics?.stars) ? metrics.stars.toLocaleString("en-US") : "0";
   };
 
   return (
@@ -22,7 +22,7 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
         <article className="overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white p-5 shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:p-6 lg:col-span-7 lg:flex lg:flex-col lg:justify-center lg:p-5 2xl:p-7">
           <p className="eyebrow">Naveen Chatlapalli · Dallas, Texas</p>
           <RoughNotationGroup show={true}>
-            <h1 className="mt-2 max-w-4xl text-[2.3rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:text-[2.7rem] lg:text-[2.4rem] xl:text-[2.65rem] 2xl:text-[3rem]">
+            <h1 className="mt-1.5 max-w-4xl text-[2.2rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:text-[2.5rem] lg:text-[2rem] xl:text-[2.4rem] 2xl:text-[2.8rem]">
               AI agents that work. {" "}
               <RoughNotation
                 type="underline"
@@ -34,19 +34,18 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
               </RoughNotation>
             </h1>
           </RoughNotationGroup>
-          <p className="mt-3 max-w-2xl text-base leading-6 text-[#5f6864] dark:text-[#b7c0bb] 2xl:text-lg 2xl:leading-7">
-            Agentic Automation Architect building enterprise-grade AI agents
-            for business process automation - systems that reason, use tools,
-            and run under governance in production.
+          <p className="mt-2 max-w-2xl text-sm leading-5 text-[#5f6864] dark:text-[#b7c0bb] xl:text-base xl:leading-6">
+            Agentic Automation Architect building enterprise-grade AI agents for
+            business process automation.
           </p>
-          <ul className="mt-3 flex flex-wrap gap-2 2xl:mt-4" aria-label="Niche focus areas">
+          <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Niche focus areas">
             {nicheFocus.map((focus) => (
-              <li key={focus} className="topic-chip min-h-0 rounded-full px-3 py-1.5 text-[10px] uppercase tracking-[.1em]">
+              <li key={focus} className="rounded-full border border-[#c7cfca] px-2 py-0.5 text-[8px] font-semibold uppercase tracking-[.06em] text-[#46514c] dark:border-[#46514c] dark:text-[#c5cec8]">
                 {focus}
               </li>
             ))}
           </ul>
-          <div className="mt-3 flex flex-wrap gap-2.5 2xl:mt-5">
+          <div className="mt-2.5 flex flex-wrap gap-2.5">
             <Link href="/work" className="button-primary px-4 py-2.5">
               View work <Icon name="arrowRight" />
             </Link>
@@ -72,9 +71,9 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
         </figure>
 
         <aside className="grid overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:grid-cols-3 lg:col-span-2 lg:grid-cols-1" aria-label="Career highlights">
-          <div className="flex flex-col justify-center border-b border-[#d8ddd8] p-5 dark:border-[#34413d] sm:border-b-0 sm:border-r lg:border-b lg:border-r-0 lg:p-3 2xl:p-4">
+          <div className="flex flex-col justify-center border-b border-[#d8ddd8] p-5 dark:border-[#34413d] sm:border-b-0 sm:border-r lg:border-b lg:border-r-0 lg:p-2.5 2xl:p-4">
             <p className="eyebrow">Current</p>
-            <p className="mt-2 font-serif text-xl leading-tight text-[#18211f] dark:text-[#eef1ed] lg:text-base 2xl:text-xl">
+            <p className="mt-1.5 font-serif text-lg leading-tight text-[#18211f] dark:text-[#eef1ed] lg:text-sm 2xl:text-lg">
               {userData.designation}
             </p>
           </div>
@@ -82,12 +81,12 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
             <Link
               key={item.label}
               href={item.href}
-              className="group flex flex-col justify-center border-b border-[#d8ddd8] p-5 transition last:border-0 hover:bg-[#e9eff8]/70 dark:border-[#34413d] dark:hover:bg-[#203a5a]/50 sm:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b lg:border-r-0 lg:p-3 lg:last:border-b-0 2xl:p-4"
+              className="group flex flex-col justify-center border-b border-[#d8ddd8] p-5 transition last:border-0 hover:bg-[#e9eff8]/70 dark:border-[#34413d] dark:hover:bg-[#203a5a]/50 sm:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b lg:border-r-0 lg:p-2.5 lg:last:border-b-0 2xl:p-4"
             >
-              <p className="font-serif text-3xl leading-none transition group-hover:text-[#174b8b] dark:group-hover:text-[#a8c7ee] lg:text-[1.7rem] 2xl:text-3xl">
+              <p className="font-serif text-3xl leading-none transition group-hover:text-[#174b8b] dark:group-hover:text-[#a8c7ee] lg:text-2xl 2xl:text-3xl">
                 {item.value}
               </p>
-              <p className="mt-2 text-xs font-medium uppercase tracking-[.1em] text-[#5f6864] dark:text-[#b7c0bb]">
+              <p className="mt-1.5 text-[10px] font-medium uppercase tracking-[.1em] text-[#5f6864] dark:text-[#b7c0bb]">
                 {item.label}
               </p>
             </Link>
@@ -96,50 +95,50 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
 
         <article className="overflow-hidden rounded-[1.35rem] border border-[#314b65] bg-[#111716] text-[#eef1ed] shadow-[0_14px_35px_rgba(24,33,31,.12)] lg:col-span-7">
           <div className="grid h-full md:grid-cols-[1.2fr_.8fr]">
-            <div className="flex flex-col justify-center p-5 sm:p-6 lg:p-5 2xl:p-7">
-              <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex flex-col justify-center p-4 sm:p-5 lg:p-4">
+              <div className="flex flex-wrap items-center gap-2">
                 <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">
                   {uipathBoost.eyebrow}
                 </p>
-                <span className="rounded-full border border-[#46514c] px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[.13em] text-[#b7c0bb]">
+                <span className="rounded-full border border-[#46514c] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[.13em] text-[#b7c0bb]">
                   Featured
                 </span>
               </div>
-              <h2 className="mt-2 text-4xl leading-none sm:text-5xl lg:text-4xl 2xl:text-5xl">
+              <h2 className="mt-1.5 text-3xl leading-none sm:text-4xl lg:text-3xl 2xl:text-4xl">
                 {uipathBoost.title}
               </h2>
-              <div className="mt-2 flex items-center gap-2.5">
-                <span className="font-serif text-3xl leading-none text-white">
+              <div className="mt-1.5 flex items-center gap-2">
+                <span className="font-serif text-2xl leading-none text-white">
                   {boostSummary.skillCount}
                 </span>
-                <span className="rounded-full bg-[#a8c7ee] px-3 py-1 text-xs font-bold uppercase tracking-[.12em] text-[#172c3c]">
+                <span className="rounded-full bg-[#a8c7ee] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[.12em] text-[#172c3c]">
                   {uipathBoost.skillLabel}
                 </span>
               </div>
-              <p className="mt-2 max-w-xl text-sm leading-5 text-[#c5cec8] 2xl:text-base 2xl:leading-7">
+              <p className="mt-1.5 max-w-xl text-xs leading-4 text-[#c5cec8] 2xl:text-sm 2xl:leading-5">
                 {uipathBoost.summary}
               </p>
-              <div className="mt-3 flex flex-wrap items-center gap-2.5 2xl:mt-5">
+              <div className="mt-2.5 flex flex-wrap items-center gap-2">
                 <Link
                   href="/skills/uipath-boost"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#eef1ed] px-4 py-2.5 text-sm font-semibold text-[#18211f] transition hover:-translate-y-0.5 hover:bg-[#a8c7ee] motion-reduce:transform-none"
+                  className="inline-flex min-h-[36px] items-center justify-center gap-2 rounded-full bg-[#eef1ed] px-3 py-2 text-xs font-semibold text-[#18211f] transition hover:-translate-y-0.5 hover:bg-[#a8c7ee] motion-reduce:transform-none"
                 >
                   Browse the {boostSummary.skillCount} skills <Icon name="arrowRight" />
                 </Link>
                 <button
                   type="button"
                   onClick={() => openGuestBook(uipathBoost.url)}
-                  className="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-full border border-[#46514c] px-4 py-2.5 text-sm font-semibold text-[#c5cec8] transition hover:border-[#a8c7ee] hover:text-white"
+                  className="inline-flex min-h-[36px] items-center justify-center gap-2 rounded-full border border-[#46514c] px-3 py-2 text-xs font-semibold text-[#c5cec8] transition hover:border-[#a8c7ee] hover:text-white"
                 >
                   GitHub
                 </button>
                 <div
-                  className="flex min-h-[42px] items-center gap-2 rounded-full border border-[#46514c] bg-[#18211f] px-3"
+                  className="flex min-h-[36px] shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-[#46514c] bg-[#18211f] px-3"
                   aria-label={`${starCount} GitHub stars`}
                   title="Live repository metric from GitHub"
                 >
                   <Icon name="star" className="h-4 w-4 fill-[#f2c86b] text-[#f2c86b]" />
-                  <span className="font-serif text-xl leading-none text-white">
+                  <span className="font-serif text-lg leading-none text-white">
                     {starCount}
                   </span>
                   <span className="text-[9px] font-semibold uppercase leading-3 tracking-[.1em] text-[#96a09a]">
@@ -148,31 +147,31 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
                 </div>
               </div>
             </div>
-            <div className="border-t border-[#34413d] p-5 md:border-l md:border-t-0 sm:p-6">
+            <div className="border-t border-[#34413d] p-4 md:border-l md:border-t-0 sm:p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">
                 Why teams need these skills
               </p>
-              <ol className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-1 xl:grid-cols-2">
+              <ol className="mt-2.5 grid grid-cols-2 gap-2">
                 {uipathBoost.benefits.map((benefit) => (
                   <li
                     key={benefit.title}
-                    className="rounded-xl border border-[#34413d] bg-[#18211f] px-3 py-2.5"
+                    className="rounded-lg border border-[#34413d] bg-[#18211f] px-2.5 py-2"
                   >
-                    <p className="text-xs font-semibold">{benefit.title}</p>
-                    <p className="mt-1 text-[9px] leading-3 text-[#96a09a]">
+                    <p className="text-[11px] font-semibold">{benefit.title}</p>
+                    <p className="mt-0.5 text-[9px] leading-3 text-[#96a09a]">
                       {benefit.detail}
                     </p>
                   </li>
                 ))}
               </ol>
-              <p className="mt-3 text-[10px] leading-4 text-[#96a09a]">
+              <p className="mt-2 text-[9px] leading-4 text-[#96a09a]">
                 One reusable system for clearer decisions and safer delivery.
               </p>
             </div>
           </div>
         </article>
 
-        <article className="relative flex flex-col overflow-hidden rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 shadow-[0_12px_32px_rgba(24,33,31,.06)] dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5 lg:p-5 2xl:p-7">
+        <article className="relative flex flex-col justify-center overflow-hidden rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 shadow-[0_12px_32px_rgba(24,33,31,.06)] dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5 lg:p-5 2xl:p-7">
           <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full border-[24px] border-white/30 dark:border-[#315169]/30" />
           <div className="relative flex flex-wrap items-center justify-between gap-2">
             <p className="eyebrow">Latest open source</p>
@@ -185,46 +184,32 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
               GitHub <Icon name="arrowUpRight" />
             </a>
           </div>
-          <div className="relative mt-2">
-            <h2 className="text-4xl leading-none sm:text-5xl lg:text-4xl 2xl:text-5xl">
-              Open agent systems.
-            </h2>
-            <p className="mt-2 text-sm leading-5 text-[#46514c] dark:text-[#c5cec8] 2xl:text-base 2xl:leading-6">
-              Actively maintained repos on agent orchestration, Maestro flows, and
-              document workflows - built in the open.
-            </p>
-          </div>
-          <div className="relative mt-3 grid grid-cols-2 gap-2 2xl:mt-4">
+          <div className="relative mt-3 grid grid-cols-2 gap-2">
             {openSource.map((repo) => (
               <a
                 key={repo.id}
                 href={repo.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex min-h-[88px] flex-col justify-between rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:-translate-y-0.5 hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee] motion-reduce:transform-none"
+                className="group flex min-h-[96px] flex-col justify-between rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:-translate-y-0.5 hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee] motion-reduce:transform-none"
               >
                 <p className="text-xs font-bold leading-4 text-[#18211f] transition group-hover:text-[#174b8b] dark:text-[#eef1ed] dark:group-hover:text-[#a8c7ee]">
                   {repo.name}
                 </p>
-                <div className="mt-2 flex items-center justify-between gap-2">
-                  <span className="truncate text-[9px] font-semibold uppercase tracking-[.08em] text-[#5f6864] dark:text-[#b7c0bb]">
-                    {repo.language}
-                  </span>
-                  <span
-                    className="flex shrink-0 items-center gap-1 text-[10px] font-semibold text-[#46514c] dark:text-[#c5cec8]"
-                    aria-label={`${repoStars(repo.repo)} GitHub stars`}
-                  >
-                    <Icon name="star" className="h-3 w-3 fill-[#f2c86b] text-[#f2c86b]" />
-                    {repoStars(repo.repo)}
-                  </span>
+                <ul className="mt-1.5 space-y-0.5">
+                  {repo.points.map((point) => (
+                    <li key={point} className="flex items-start gap-1.5 text-[9px] font-semibold leading-3 text-[#46514c] dark:text-[#c5cec8]">
+                      <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[#174b8b] dark:bg-[#a8c7ee]" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-1.5 flex shrink-0 items-center gap-1 text-[10px] font-semibold text-[#46514c] dark:text-[#c5cec8]">
+                  <Icon name="star" className="h-3 w-3 fill-[#f2c86b] text-[#f2c86b]" />
+                  {repoStars(repo.repo)}
                 </div>
               </a>
             ))}
-          </div>
-          <div className="relative mt-2 flex items-center justify-between gap-4 2xl:mt-3">
-            <p className="text-[9px] font-semibold uppercase tracking-[.12em] text-[#5f6864] dark:text-[#b7c0bb]">
-              Agentic automation in the open
-            </p>
           </div>
         </article>
 

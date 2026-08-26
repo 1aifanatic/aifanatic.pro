@@ -5,12 +5,11 @@ import Icon from "@components/Icon";
 import userData from "@constants/data";
 
 const groups = {
-  "AI & Automation": ["AI Documentation", "AI Marketplace", "Enterprise AI", "Content Generation"],
-  "Products & Productivity": ["Productivity", "Business Tools", "Startup Platform", "Management Tool", "CRM", "Finance", "E-commerce", "Social Media", "Event Management"],
-  "Community & Learning": ["Education", "Social Impact", "Gaming", "Entertainment", "Mentoring"],
-  "Browser Tools": ["Browser Extension"],
+  "AI & Automation": ["AI Documentation", "AI Marketplace", "Enterprise AI", "Content Generation", "Finance", "Business Tools"],
+  "Products & Productivity": ["Productivity", "Startup Platform", "Management Tool", "CRM", "E-commerce", "Social Media", "Event Management"],
 };
 const groupFor = (category) => Object.entries(groups).find(([, categories]) => categories.includes(category))?.[0] || "Experiments";
+// Community, learning, and browser projects are hidden - they don't support the agentic automation niche.
 
 export default function SolopreneurProjects() {
   const [filter, setFilter] = useState("All");

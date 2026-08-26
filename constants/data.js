@@ -219,46 +219,38 @@ const userData = {
     {
       id: "docchrono-uipath-examples",
       repo: "docchrono/docchrono-uipath-examples",
-      name: "docchrono-uipath-examples",
-      tagline: "UiPath workflows x document evidence graphs",
+      name: "DocChrono UiPath Examples",
       description:
         "Five complete UiPath workflows integrating DocChrono chronology and evidence graphs through a safe Python JSON bridge.",
       url: "https://github.com/docchrono/docchrono-uipath-examples",
-      language: "Python",
-      topics: ["Document analysis", "Evidence graphs", "RPA + AI"],
+      points: ["UiPath Contribution", "Document Evidence Workflows"],
     },
     {
       id: "wiresentinel",
       repo: "1aifanatic/WireSentinel-Maestro-Challenge",
-      name: "WireSentinel",
-      tagline: "Explainable suspicious-wire review orchestration",
+      name: "WireSentinel Maestro Challenge",
       description:
         "Open-source, explainable suspicious-wire review with UiPath Maestro, IXP, Data Fabric, Action Center, and Coded Apps.",
       url: "https://github.com/1aifanatic/WireSentinel-Maestro-Challenge",
-      language: "TypeScript",
-      topics: ["Maestro", "Governance", "Human-in-the-loop"],
+      points: ["UiPath Maestro Flow", "Explainable Review Workflows"],
     },
     {
       id: "awesome-langchain-projects",
       repo: "1aifanatic/awesome-langchain-projects",
-      name: "awesome-langchain-projects",
-      tagline: "Ten tested local-first LangChain & LangGraph POCs",
+      name: "Awesome LangChain Projects",
       description:
         "Ten tested local-first LangChain and LangGraph Solutions Engineer POCs.",
       url: "https://github.com/1aifanatic/awesome-langchain-projects",
-      language: "JavaScript",
-      topics: ["LangChain", "LangGraph", "AI agents"],
+      points: ["Multi-Agent Architecture", "LangChain & LangGraph POCs"],
     },
     {
       id: "awesome-maestro-flow",
       repo: "1aifanatic/awesome-maestro-flow",
-      name: "awesome-maestro-flow",
-      tagline: "Community-curated UiPath Maestro Flow collection",
+      name: "Awesome Maestro Flow",
       description:
         "A community-curated collection of UiPath Maestro Flow projects, templates, patterns, demos, integrations, tutorials, and real-world use cases.",
       url: "https://github.com/1aifanatic/awesome-maestro-flow",
-      language: "Markdown",
-      topics: ["Maestro Flow", "Agentic automation", "Orchestration"],
+      points: ["Collection of Maestro Flow Projects", "Community Patterns & Templates"],
     },
   ],
   // Niche focus - short chips for the landing page hero.
@@ -290,294 +282,6 @@ const userData = {
     youtube: "https://www.youtube.com/@1aifanatic",
     topmate: "https://topmate.io/aifanatic",
   },
-  blogpost: [
-    {
-      title: "GPT-4 Loses: Data Labeling with LLMs",
-      date: "Oct 2023",
-      source: "LinkedIn",
-      link: "https://www.linkedin.com/feed/update/urn:li:activity:7120746362236792832",
-    },
-    {
-      title: "FinBERT beats GPT-4",
-      date: "Sep 2023",
-      source: "LinkedIn",
-      link: "https://www.linkedin.com/feed/update/urn:li:activity:7108090020875444225",
-    },
-    {
-      title: "Lessons earned from Bloomberg GPT",
-      date: "Aug 2023",
-      source: "LinkedIn",
-      link: "https://www.linkedin.com/feed/update/urn:li:activity:7089609531961348096",
-    },
-    {
-      title: "FinBERT beats GPT-3",
-      date: "Feb 2023",
-      source: "LinkedIn",
-      link: "https://www.linkedin.com/feed/update/urn:li:activity:7024363501318000640",
-    },
-    {
-      title: "Reasoning in Large Language Models",
-      date: "Feb 2023",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/reasoning-in-large-language-models-2ff33c318a94",
-    },
-    {
-      title: "Data Science News Sources",
-      date: "Dec 2022",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/data-science-news-sources-71ad418242b4",
-    },
-    {
-      title: "Accelerating Document AI",
-      date: "Nov 2022",
-      source: "Hugging Face",
-      link: "https://huggingface.co/blog/document-ai",
-    },
-    {
-      title:
-        "Text style transfer in a spreadsheet using Hugging Face Inference Endpoints",
-      date: "Nov 2022",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/text-style-transfer-in-a-spreadsheet-using-hugging-face-inference-endpoints-cc55e4bd58b",
-    },
-    {
-      title: "Few shot text classification with SetFit",
-      date: "Oct 2022",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/few-shot-text-classification-with-setfit-63ff7a02da5e",
-    },
-    {
-      title: "Getting predictions intervals with conformal inference",
-      date: "Sep 2022",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/getting-predictions-intervals-with-conformal-inference-caff5be40eff",
-    },
-    {
-      title: "Explaining predictions from 🤗 transformer models",
-      date: "Aug 2022",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/explaining-predictions-from-transformer-models-55ab9c6cab24",
-    },
-    {
-      title: "Dynamic Adversarial Data Collection",
-      date: "Aug 2022",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/dynamic-adversarial-data-collection-712df9bac786",
-    },
-    {
-      title: "Fine-Tuning for Image Classification using Transformers",
-      date: "Aug 2022",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/fine-tuning-for-image-classification-using-transformers-7ca01aeb7766",
-    },
-    {
-      title:
-        "The Art of Sprezzatura for Machine Learning: Building Interpretable Models",
-      date: "Dec 2021",
-      source: "Medium",
-      link: "https://towardsdatascience.com/the-art-of-sprezzatura-for-machine-learning-e2494c0db727",
-    },
-    {
-      title: "AI Use Cases for Cyber and Malware Analysts",
-      date: "July 2021",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/ai-use-cases-for-cyber-and-malware-analysts/",
-    },
-    {
-      title:
-        "How MLOps Helps You Dodge The Wrecking Ball of Underspecification",
-      date: "June 2021",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/how-mlops-helps-you-dodge-the-wrecking-ball-of-underspecification/",
-    },
-    {
-      title: "Running Code and Failing Models",
-      date: "Feb 2021",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/running-code-and-failing-models/",
-    },
-    {
-      title:
-        "Using Feature Importance Rank Ensembling (FIRE) for Advanced Feature Selection",
-      date: "Jan 2021",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/using-feature-importance-rank-ensembling-fire-for-advanced-feature-selection/",
-    },
-    {
-      title: "Predicting Music Genre Based on the Album Cover",
-      date: "Aug 2020",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/predicting-music-genre-based-on-the-album-cover/",
-    },
-    {
-      title: "Improving Model Management in Uncertain Times",
-      date: "Jun 2020",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/improving-model-management-in-uncertain-times/",
-    },
-    {
-      title: "Using Small Datasets to Build Models",
-      date: "Apr 2020",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/using-small-datasets-to-build-models/",
-    },
-    {
-      title: "AI in Turbulent Times: Navigating Changing Conditions Webinar",
-      date: "Mar 2020",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/ai-in-turbulent-times-navigating-changing-conditions-webinar/",
-    },
-    {
-      title:
-        "Stand Up for Best Practices: Misuse of Deep Learning in Nature's Earthquake Aftershock Paper",
-      date: "Jun 2019",
-      source: "Medium",
-      link: "https://towardsdatascience.com/stand-up-for-best-practices-8a8433d3e0e8",
-    },
-    {
-      title: "Using Machine Learning to Peek Inside the Minds of NFL Coaches",
-      date: "Jan 2019",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/using-machine-learning-to-peek-inside-the-minds-of-nfl-coaches/",
-    },
-    {
-      title:
-        "Taking Fantasy Football Analytics to the Next Level with Automated Machine Learning",
-      date: "Sep 2018",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/taking-fantasy-football-analytics-to-the-next-level-with-automated-machine-learning/",
-    },
-    {
-      title: "Optimization Strategies",
-      date: "July 2018",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/optimization-strategies-2fd23afe29f8",
-    },
-    {
-      title:
-        "Measure Once, Cut Twice: Moving Towards Iteration in Data Science",
-      date: "Feb 2018",
-      source: "DataRobot",
-      link: "https://www.datarobot.com/blog/measure-once-cut-twice-moving-towards-iteration-in-data-science/s",
-    },
-    {
-      title: "Using Unlabeled Data to Label Data",
-      date: "Jan 2018",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/using-unlabeled-data-to-label-data-8d8ee8e707ab",
-    },
-    {
-      title: "Using Google's Quickdraw to create an MNIST style dataset!",
-      date: "July 2017",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/using-googles-quickdraw-to-create-an-mnist-style-dataset-709c0f99bc65",
-    },
-    {
-      title: "Using xgbfi for revealing feature interactions",
-      date: "Aug 2016",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/using-xgbfi-for-revealing-feature-interactions-834cb3d33b02",
-    },
-    {
-      title: "Outlier App",
-      date: "Jun 2016",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/outlier-app-ec01941f36a4",
-    },
-    {
-      title: "SportVu Analysis",
-      date: "Apr 2016",
-      source: "Medium",
-      link: "https://medium.com/@navaifanatic/sportvu-analysis-38cdf3e260e1",
-    },
-  ],
-  video: [
-    {
-      title:
-        "Evaluation for Large Language Models and Generative AI - A Deep Dive",
-      date: "Nov 2023",
-      source: "Youtube",
-      link: "https://youtu.be/iQl03pQlYWY?si=kvQxuiYzUVDyIuCm",
-    },
-    {
-      title:
-        "NanoGPT using Simpsons Data: Get Started with Large Language Models",
-      date: "Sep 2023",
-      source: "Youtube",
-      link: "https://youtu.be/Ty2_bR1mrBQ",
-    },
-    {
-      title: "16 Challenges for LLMs - Paper Highlights",
-      date: "Aug 2023",
-      source: "Youtube",
-      link: "https://youtu.be/B5MhLSapnms",
-    },
-    {
-      title: "Llama 2 Paper Explained",
-      date: "July 2023",
-      source: "Youtube",
-      link: "https://youtu.be/idmhH9_H1hY",
-    },
-    {
-      title:
-        "GPT or BERT? Reviewing the tradeoffs of using Large Language Models versus smaller models",
-      date: "Jun 2023",
-      source: "Youtube",
-      link: "https://youtu.be/1Kaj5H_YARg",
-    },
-    {
-      title:
-        "Building Better Large Language Models - Key Concepts for Prompting and Fine Tuning",
-      date: "Apr 2023",
-      source: "Youtube",
-      link: "https://youtu.be/NjtKcnLzo3g",
-    },
-    {
-      title:
-        "Efficient Large Language Model training with LoRA and Hugging Face PEFT",
-      date: "Mar 2023",
-      source: "Youtube",
-      link: "https://youtu.be/YKCtbIJC3kQ",
-    },
-    {
-      title:
-        "Text style transfer in a spreadsheet using Hugging Face Inference Endpoints",
-      date: "Nov 2022",
-      source: "Youtube",
-      link: "https://youtu.be/jA6VDKO7XfA",
-    },
-    {
-      title: "SetFit: Few Shot Learning for Text Classification",
-      date: "Oct 2022",
-      source: "Youtube",
-      link: "https://youtu.be/ZUK4zR0IeLU",
-    },
-    {
-      title:
-        "Prediction Intervals with Conformal Inference: An Intuitive Explanation",
-      date: "Sep 2022",
-      source: "Youtube",
-      link: "https://youtu.be/ZUK4zR0IeLU",
-    },
-    {
-      title: "LayoutLMv3 Training with CORD (receipts dataset)",
-      date: "Sep 2022",
-      source: "Youtube",
-      link: "https://youtu.be/bsT_1uDRQVo",
-    },
-    {
-      title: "Fine Tuning an Image Classifier on Indian Food Images",
-      date: "Aug 2022",
-      source: "Youtube",
-      link: "https://youtu.be/j6WbCS0GLuY",
-    },
-    {
-      title: "Explanation Approaches for Transformers",
-      date: "Aug 2022",
-      source: "Youtube",
-      link: "https://youtu.be/ahgB8c_TgA8",
-    },
-  ],
     talks: [
     {
       title:
@@ -618,28 +322,6 @@ const userData = {
       url: "unsloth.aifanatic.pro"
     },
     {
-      id: 2,
-      name: "Unsloth Chrome Extension",
-      description: "One‑click capture & \"Generate‑Doc\" action that feeds Unsloth",
-      tech: "Browser add‑on (companion)",
-      stage: "MVP in build",
-      category: "Browser Extension",
-      difficulty: "Medium",
-      impact: "Medium",
-      url: "https://chromewebstore.google.com/category/extensions"
-    },
-    {
-      id: 3,
-      name: "TMGenie",
-      description: "Toastmasters club manager - agendas, timing, attendance, history",
-      tech: "React PWA",
-      stage: "Live",
-      category: "Management Tool",
-      difficulty: "Medium",
-      impact: "Medium",
-      url: "tmgenie.aifanatic.pro"
-    },
-    {
       id: 4,
       name: "KaryAI",
       description: "AI‑task manager with smart estimates & Eisenhower analytics",
@@ -660,72 +342,6 @@ const userData = {
       difficulty: "Expert",
       impact: "Very High",
       url: "aiconic.one"
-    },
-    {
-      id: 6,
-      name: "AIconic Internship Platform",
-      description: "Training platform for AIconic interns who will become AI engineers in the future - screen, onboard & monitor 12‑week intensive programs",
-      tech: "Firebase Auth, GDrive video upload",
-      stage: "MVP scaffolding",
-      category: "Education",
-      difficulty: "Advanced",
-      impact: "High",
-      url: "internships.aiconic.one"
-    },
-    {
-      id: 7,
-      name: "DivineRadio",
-      description: "Continuous Hindu devotional radio with lyrics & translation, neatly sorted by deity for spiritual immersion",
-      tech: "Lightweight React PWA",
-      stage: "Live",
-      category: "Entertainment",
-      difficulty: "Easy",
-      impact: "Medium",
-      url: "divineradio.aifanatic.pro"
-    },
-    {
-      id: 8,
-      name: "Amrutham",
-      description: "AI content generator for polished Telugu prose/poetry",
-      tech: "NLP + LLM‑powered",
-      stage: "Alpha",
-      category: "Content Generation",
-      difficulty: "Advanced",
-      impact: "Medium",
-      url: "amrutham.aiconic.one"
-    },
-    {
-      id: 9,
-      name: "LinkHub",
-      description: "Smart link‑in‑bio with AI ordering & engagement analytics",
-      tech: "Next.js, OpenAI, SQLite",
-      stage: "Beta",
-      category: "Social Media",
-      difficulty: "Medium",
-      impact: "Medium",
-      url: "linkhub.aifanatic.pro"
-    },
-    {
-      id: 10,
-      name: "TeluguBadi",
-      description: "Duolingo‑style Telugu learning with AI buddy & pronunciation scoring",
-      tech: "React, spaced‑repetition engine, WebRTC audio",
-      stage: "Alpha",
-      category: "Education",
-      difficulty: "Expert",
-      impact: "High",
-      url: "telugubadi.aiconic.one"
-    },
-    {
-      id: 11,
-      name: "Taste by Varun",
-      description: "Premium Indian catering portal - AI menu builder & order flow",
-      tech: "Next.js, Supabase, Stripe",
-      stage: "Pilot use",
-      category: "E-commerce",
-      difficulty: "Advanced",
-      impact: "Medium",
-      url: "tastebyvarun.aiconic.one"
     },
     {
       id: 12,
@@ -750,17 +366,6 @@ const userData = {
       url: "ideate.aifanatic.pro"
     },
     {
-      id: 14,
-      name: "Gatherly",
-      description: "AI RSVP manager with no‑show prediction & seating optimisation",
-      tech: "Next.js, ML model, webhooks",
-      stage: "Live",
-      category: "Event Management",
-      difficulty: "Advanced",
-      impact: "Medium",
-      url: "gatherly.aiconic.one"
-    },
-    {
       id: 15,
       name: "AgentSight",
       description: "Converts existing RPA workflows into AI agents in one click",
@@ -770,17 +375,6 @@ const userData = {
       difficulty: "Expert",
       impact: "Very High",
       url: "agentsight.aifanatic.pro"
-    },
-    {
-      id: 16,
-      name: "TeluguMaatlaata",
-      description: "Competitive Telugu word‑game platform for Silicon Andhra championships",
-      tech: "React + Socket.IO real‑time play",
-      stage: "Live (event‑based)",
-      category: "Gaming",
-      difficulty: "Advanced",
-      impact: "Medium",
-      url: "https://nextgen.telugumaatlaata.com/dashboard"
     },
     {
       id: 17,
@@ -793,50 +387,6 @@ const userData = {
       impact: "High",
       url: "budjet.aifanatic.pro"
     },
-    {
-      id: 18,
-      name: "RaiseTheFlag",
-      description: "Early‑warning system to stop school drop‑outs; teachers flag & route to counselling",
-      tech: "React, Firebase, analytics dashboard",
-      stage: "Pilot with schools",
-      category: "Social Impact",
-      difficulty: "Advanced",
-      impact: "Very High",
-      url: "raisetheflag.aiconic.one"
-    },
-    {
-      id: 19,
-      name: "HomeCrafters",
-      description: "AI CRM for an architecture firm - keeps clients updated on project progress",
-      tech: "Next.js, image diff & 3‑D previews",
-      stage: "Live (client‑specific)",
-      category: "CRM",
-      difficulty: "Expert",
-      impact: "Medium",
-      url: "homecrafters.aiconic.one"
-    },
-    {
-      id: 20,
-      name: "GC Genius",
-      description: "Structured mentoring platform for tracking professional goals, evidence, and long-term career development",
-      tech: "GPT knowledge base, milestone tracker",
-      stage: "Alpha",
-      category: "Mentoring",
-      difficulty: "Advanced",
-      impact: "High",
-      url: "gcgenius.aiconic.one"
-    },
-    {
-      id: 21,
-      name: "Flow Notes",
-      description: "Speech to Text Conversion Chrome extension that adds notes easily to Notion with seamless workflow integration",
-      tech: "Chrome Extension APIs, Web Speech API, Notion API",
-      stage: "Live",
-      category: "Browser Extension",
-      difficulty: "Advanced",
-      impact: "High",
-      url: "https://chromewebstore.google.com/detail/flow-notes/njgmoefhpkekpkihdlghpjgofnojbfci"
-    }
   ],
   blogs: [
     {
