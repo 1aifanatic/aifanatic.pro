@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import PageIntro from "./PageIntro";
 import Icon from "./Icon";
-import UiPathBoostFeature from "./UiPathBoostFeature";
 import userData from "@constants/data";
 
 const { loanShield } = userData;
@@ -26,7 +25,7 @@ export default function Work() {
   const products = featuredIds.map((id) => userData.solopreneurProjects.find((project) => project.id === id)).filter(Boolean);
   return <>
     <PageIntro eyebrow="Selected work" title="Architecture made tangible." aside="Featured work is limited to projects with a public destination or supporting source.">A curated set of systems and products spanning enterprise automation, AI agents, and independent product development.</PageIntro>
-    <UiPathBoostFeature bordered={false} />
+    <section className="site-container pt-8"><Link href="/open-source" className="button-primary">Explore my upstream open-source contributions <Icon name="arrowRight" /></Link></section>
     <section className="site-container page-section" id="risk-orbit">
       <article className="paper-card overflow-hidden p-0">
         <div className="grid lg:grid-cols-[.78fr_1.22fr]">

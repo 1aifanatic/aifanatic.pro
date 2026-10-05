@@ -16,6 +16,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: "/skills/:path*", destination: "/open-source", permanent: true },
       { source: "/bio", destination: "/about", permanent: true },
       { source: "/career-progression", destination: "/experience", permanent: true },
       { source: "/download", destination: "/about#resources", permanent: true },

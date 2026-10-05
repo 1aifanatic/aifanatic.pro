@@ -10,7 +10,7 @@ const STATIC_PATHS = [
   "/experience",
   "/insights",
   "/recognition",
-  "/skills",
+  "/open-source",
   "/solopreneur-projects",
   "/speaking",
   "/work",

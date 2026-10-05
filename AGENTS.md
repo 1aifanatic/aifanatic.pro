@@ -50,6 +50,7 @@
 - Use `<Image>` where practical, but existing code uses `<img>` in places.
 
 **Agent Skills Catalog (`/skills`)**
+- Retired from the public portfolio on 2026-10-05 at the user's request. The registry is empty; `/skills/:path*` redirects to `/open-source`. Do not republish the UiPath catalogs or run a sync to restore them without a new request. The following snapshot conventions describe the retained historical implementation.
 - Routes: `/skills` (Shelf), `/skills/[catalog]` (Catalog), `/skills/[catalog]/[skill]` (Skill Page). All fully static via `getStaticProps`.
 - Skill content is a **committed Snapshot** in `content/skills/<catalog>/`, produced by `npm run sync:skills`. The build never fetches from GitHub — do not "improve" this into a build-time fetch. See `decisions/0004`.
 - To publish upstream skill changes: push to the upstream repo, run `npm run sync:skills`, review the diff, commit, deploy.

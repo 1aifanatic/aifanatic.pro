@@ -10,6 +10,7 @@ Use this skill when you need the same information a human would get from the hom
 ## Canonical entry points
 
 - Human-readable home: `/`
+- Open-source contributions: `/open-source`
 - Blog index: `/blog`
 - Contact: `/contact`
 

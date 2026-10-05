@@ -38,7 +38,7 @@ export function middleware(request) {
   const body = [
     "# Naveen Chatlapalli",
     "",
-    "Personal site: **Manager of Solution Architecture**, UiPath community leader, and solopreneur.",
+    "Personal site: **Manager of Solution Architecture** and open-source contributor to Microsoft, OpenAI, Omi, and W3C WebMCP.",
     "",
     "## Key pages",
     `- Home: ${base}/`,
@@ -46,6 +46,7 @@ export function middleware(request) {
     `- Bio: ${base}/bio`,
     `- Blog: ${base}/blog`,
     `- Writing: ${base}/writing`,
+    `- Open-source contributions: ${base}/open-source`,
     `- Work: ${base}/work`,
     `- Experience: ${base}/experience`,
     `- Contact: ${base}/contact`,

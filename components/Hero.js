@@ -2,19 +2,12 @@ import React from "react";
 import Link from "next/link";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import userData from "@constants/data";
-import { openGuestBook } from "@lib/guestBook";
-import boostSummary from "../content/skills/uipath-boost/summary.json";
 import Icon from "./Icon";
 
-export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
-  const { uipathBoost, homeSnapshot, openSource, nicheFocus } = userData;
-  const starCount = Number.isFinite(boostMetrics?.stars)
-    ? boostMetrics.stars.toLocaleString("en-US")
-    : "Live";
-  const repoStars = (repo) => {
-    const metrics = openSourceMetrics[repo];
-    return Number.isFinite(metrics?.stars) ? metrics.stars.toLocaleString("en-US") : "0";
-  };
+export default function Hero() {
+  const { contributions, homeSnapshot, nicheFocus } = userData;
+  const mergedCount = contributions.projects.reduce((sum, project) => sum + project.merged.length, 0);
+  const projectCount = contributions.projects.filter((project) => project.merged.length).length;
 
   return (
     <section className="site-container py-4 sm:py-5 lg:h-[calc(100vh-64px)] lg:min-h-[720px] lg:max-h-[840px]">
@@ -35,8 +28,7 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
             </h1>
           </RoughNotationGroup>
           <p className="mt-2 max-w-2xl text-sm leading-5 text-[#5f6864] dark:text-[#b7c0bb] xl:text-base xl:leading-6">
-            Agentic Automation Architect building enterprise-grade AI agents for
-            business process automation.
+            {contributions.description}
           </p>
           <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Niche focus areas">
             {nicheFocus.map((focus) => (
@@ -46,8 +38,8 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
             ))}
           </ul>
           <div className="mt-2.5 flex flex-wrap gap-2.5">
-            <Link href="/work" className="button-primary px-4 py-2.5">
-              View work <Icon name="arrowRight" />
+            <Link href="/open-source" className="button-primary px-4 py-2.5">
+              Explore contributions <Icon name="arrowRight" />
             </Link>
             <a
               href={userData.resumeUrl}
@@ -93,151 +85,30 @@ export default function Hero({ boostMetrics = null, openSourceMetrics = {} }) {
           ))}
         </aside>
 
-        <article className="overflow-hidden rounded-[1.35rem] border border-[#314b65] bg-[#111716] text-[#eef1ed] shadow-[0_14px_35px_rgba(24,33,31,.12)] lg:col-span-7">
-          <div className="grid h-full md:grid-cols-[1.2fr_.8fr]">
-            <div className="flex flex-col justify-center p-4 sm:p-5 lg:p-4">
-              <div className="flex flex-wrap items-center gap-2">
-                <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">
-                  {uipathBoost.eyebrow}
-                </p>
-                <span className="rounded-full border border-[#46514c] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[.13em] text-[#b7c0bb]">
-                  Featured
-                </span>
-              </div>
-              <h2 className="mt-1.5 text-3xl leading-none sm:text-4xl lg:text-3xl 2xl:text-4xl">
-                {uipathBoost.title}
-              </h2>
-              <div className="mt-1.5 flex items-center gap-2">
-                <span className="font-serif text-2xl leading-none text-white">
-                  {boostSummary.skillCount}
-                </span>
-                <span className="rounded-full bg-[#a8c7ee] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[.12em] text-[#172c3c]">
-                  {uipathBoost.skillLabel}
-                </span>
-              </div>
-              <p className="mt-1.5 max-w-xl text-xs leading-4 text-[#c5cec8] 2xl:text-sm 2xl:leading-5">
-                {uipathBoost.summary}
-              </p>
-              <div className="mt-2.5 flex flex-wrap items-center gap-2">
-                <Link
-                  href="/skills/uipath-boost"
-                  className="inline-flex min-h-[36px] items-center justify-center gap-2 rounded-full bg-[#eef1ed] px-3 py-2 text-xs font-semibold text-[#18211f] transition hover:-translate-y-0.5 hover:bg-[#a8c7ee] motion-reduce:transform-none"
-                >
-                  Browse the {boostSummary.skillCount} skills <Icon name="arrowRight" />
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => openGuestBook(uipathBoost.url)}
-                  className="inline-flex min-h-[36px] items-center justify-center gap-2 rounded-full border border-[#46514c] px-3 py-2 text-xs font-semibold text-[#c5cec8] transition hover:border-[#a8c7ee] hover:text-white"
-                >
-                  GitHub
-                </button>
-                <div
-                  className="flex min-h-[36px] shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-[#46514c] bg-[#18211f] px-3"
-                  aria-label={`${starCount} GitHub stars`}
-                  title="Live repository metric from GitHub"
-                >
-                  <Icon name="star" className="h-4 w-4 fill-[#f2c86b] text-[#f2c86b]" />
-                  <span className="font-serif text-lg leading-none text-white">
-                    {starCount}
-                  </span>
-                  <span className="text-[9px] font-semibold uppercase leading-3 tracking-[.1em] text-[#96a09a]">
-                    GitHub<br />stars
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="border-t border-[#34413d] p-4 md:border-l md:border-t-0 sm:p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">
-                Why teams need these skills
-              </p>
-              <ol className="mt-2.5 grid grid-cols-2 gap-2">
-                {uipathBoost.benefits.map((benefit) => (
-                  <li
-                    key={benefit.title}
-                    className="rounded-lg border border-[#34413d] bg-[#18211f] px-2.5 py-2"
-                  >
-                    <p className="text-[11px] font-semibold">{benefit.title}</p>
-                    <p className="mt-0.5 text-[9px] leading-3 text-[#96a09a]">
-                      {benefit.detail}
-                    </p>
-                  </li>
-                ))}
-              </ol>
-              <p className="mt-2 text-[9px] leading-4 text-[#96a09a]">
-                One reusable system for clearer decisions and safer delivery.
-              </p>
-            </div>
+        <article className="flex flex-col justify-center rounded-[1.35rem] border border-[#314b65] bg-[#111716] p-5 text-[#eef1ed] shadow-[0_14px_35px_rgba(24,33,31,.12)] sm:p-6 lg:col-span-7">
+          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">Open source · Merged upstream</p>
+          <h2 className="mt-3 text-3xl leading-tight">{contributions.title}</h2>
+          <div className="mt-4 flex flex-wrap gap-x-8 gap-y-3">
+            <div><span className="font-serif text-4xl">{mergedCount}</span><span className="ml-2 text-sm text-[#c5cec8]">merged PRs</span></div>
+            <div><span className="font-serif text-4xl">{projectCount}</span><span className="ml-2 text-sm text-[#c5cec8]">upstream projects</span></div>
+          </div>
+          <p className="mt-3 text-sm leading-6 text-[#c5cec8]">{contributions.focus}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-4">
+            <Link href="/open-source" className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#eef1ed] px-4 py-2 text-sm font-semibold text-[#18211f] hover:bg-[#a8c7ee]">See the fixes <Icon name="arrowRight" /></Link>
+            <p className="text-xs text-[#b7c0bb]">Verified {contributions.checkedOn}</p>
           </div>
         </article>
 
-        <article className="relative flex flex-col justify-center overflow-hidden rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 shadow-[0_12px_32px_rgba(24,33,31,.06)] dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5 lg:p-5 2xl:p-7">
-          <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full border-[24px] border-white/30 dark:border-[#315169]/30" />
-          <div className="relative flex flex-wrap items-center justify-between gap-2">
-            <p className="eyebrow">Latest open source</p>
-            <a
-              href={`https://github.com/${userData.githubUsername}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-9 items-center gap-2 text-sm font-semibold text-[#174b8b] transition hover:text-[#0d376b] dark:text-[#a8c7ee] dark:hover:text-white"
-            >
-              GitHub <Icon name="arrowUpRight" />
-            </a>
-          </div>
-          <div className="relative mt-3 grid grid-cols-2 gap-2">
-            {openSource.map((repo) => {
-              const isFeatured = Boolean(repo.featured);
-              return (
-              <a
-                key={repo.id}
-                href={repo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={
-                  isFeatured
-                    ? "group relative flex min-h-[96px] flex-col justify-between rounded-xl border-2 border-[#174b8b] bg-[#111716] p-3 shadow-[0_10px_28px_rgba(23,75,139,.28)] transition hover:-translate-y-0.5 hover:border-[#a8c7ee] dark:border-[#a8c7ee] dark:bg-[#0d1311] motion-reduce:transform-none"
-                    : "group flex min-h-[96px] flex-col justify-between rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:-translate-y-0.5 hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee] motion-reduce:transform-none"
-                }
-              >
-                {isFeatured && (
-                  <span className="absolute -top-2 right-2.5 rounded-full bg-[#a8c7ee] px-2 py-0.5 text-[8px] font-bold uppercase tracking-[.12em] text-[#172c3c]">
-                    Featured
-                  </span>
-                )}
-                <p className={
-                  isFeatured
-                    ? "text-xs font-bold leading-4 text-[#eef1ed] transition group-hover:text-[#a8c7ee]"
-                    : "text-xs font-bold leading-4 text-[#18211f] transition group-hover:text-[#174b8b] dark:text-[#eef1ed] dark:group-hover:text-[#a8c7ee]"
-                }>
-                  {repo.name}
-                </p>
-                <ul className="mt-1.5 space-y-0.5">
-                  {repo.points.map((point) => (
-                    <li key={point} className={
-                      isFeatured
-                        ? "flex items-start gap-1.5 text-[9px] font-semibold leading-3 text-[#c5cec8]"
-                        : "flex items-start gap-1.5 text-[9px] font-semibold leading-3 text-[#46514c] dark:text-[#c5cec8]"
-                    }>
-                      <span className={
-                        isFeatured
-                          ? "mt-1 h-1 w-1 shrink-0 rounded-full bg-[#a8c7ee]"
-                          : "mt-1 h-1 w-1 shrink-0 rounded-full bg-[#174b8b] dark:bg-[#a8c7ee]"
-                      } />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className={
-                  isFeatured
-                    ? "mt-1.5 flex shrink-0 items-center gap-1 text-[10px] font-semibold text-[#c5cec8]"
-                    : "mt-1.5 flex shrink-0 items-center gap-1 text-[10px] font-semibold text-[#46514c] dark:text-[#c5cec8]"
-                }>
-                  <Icon name="star" className="h-3 w-3 fill-[#f2c86b] text-[#f2c86b]" />
-                  {repoStars(repo.repo)}
-                </div>
+        <article className="rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5">
+          <p className="eyebrow">Selected merged contributions</p>
+          <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {contributions.highlights.slice(0, 4).map((item) => (
+              <a key={item.url} href={item.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee]">
+                <p className="text-[10px] font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{item.project}</p>
+                <h3 className="mt-1.5 font-sans text-sm font-semibold leading-5">{item.title}</h3>
+                <p className="mt-2 text-xs text-[#5f6864] dark:text-[#b7c0bb]">Merged PR #{item.number} ↗</p>
               </a>
-              );
-            })}
+            ))}
           </div>
         </article>
 

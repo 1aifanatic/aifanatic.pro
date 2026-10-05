@@ -61,7 +61,7 @@ const userData = {
   about: {
     title1: "I design enterprise-grade AI agents for business process automation.",
     title2:
-      "Agentic Automation Architect - AI agents that reason, use tools, and execute business workflows.",
+      "Agentic AI architect and open-source contributor to Microsoft, OpenAI, Omi, and W3C WebMCP.",
     currentPosition: "Manager of Solution Architecture at Ashling Partners",
     currentPositionUrl: "https://ashlingpartners.com",
   },
@@ -144,26 +144,501 @@ const userData = {
     description:
       "Occasional field notes on AI agents, automation engineering, and the habits behind dependable delivery.",
   },
-  // Marketing copy only. Skill count, categories, and install commands are
-  // derived from the synced Snapshot — see constants/skillCatalogs.js and
-  // decisions/0003. Do not hardcode them here again.
-  uipathBoost: {
-    title: "UiPath Boost",
-    repository: "1aifanatic/uipath-boost",
-    eyebrow: "Open source · Community toolkit",
-    skillLabel: "Agent Skills",
-    summary:
-      "Reusable playbooks that help UiPath teams move from idea to production with less guesswork.",
-    description:
-      "Official UiPath skills build and operate the platform. UiPath Boost adds the repeatable engineering process before, after, and around that product work.",
-    url: "https://github.com/1aifanatic/uipath-boost",
-    facts: ["MIT licensed", "Open community catalog"],
-    benefits: [
-      { title: "Start faster", detail: "Guided discovery" },
-      { title: "Design clearly", detail: "Architecture patterns" },
-      { title: "Catch risk early", detail: "Quality gates" },
-      { title: "Ship confidently", detail: "Release readiness" },
+  // Verified public upstream PR snapshot; owned repositories and organizations excluded.
+  contributions: {
+    "title": "Making agent systems more reliable.",
+    "description": "I contribute fixes, tests, and specification improvements to the open-source tools behind AI agents, from Microsoft and OpenAI frameworks to Omi and W3C WebMCP.",
+    "focus": "Agent runtimes, trustworthy governance, streaming correctness, and open Web standards.",
+    "checkedOn": "October 5, 2026",
+    "activityUrl": "https://github.com/search?q=is%3Apr+author%3A1aifanatic&type=pullrequests",
+    "projects": [
+      {
+        "repo": "microsoft/agent-governance-toolkit",
+        "name": "Microsoft Agent Governance Toolkit",
+        "focus": "Audit integrity, policy provenance, and reliability measurement.",
+        "merged": [
+          {
+            "number": 4211,
+            "title": "fix(agent-sre): prefer higher quality at equal pareto cost"
+          },
+          {
+            "number": 4210,
+            "title": "fix(agent-sre): evaluate burn alerts over their declared windows"
+          },
+          {
+            "number": 4209,
+            "title": "fix(agent-sre): return in-memory measurements in timestamp order"
+          },
+          {
+            "number": 4208,
+            "title": "fix(agent-sre): preserve alert fingerprint field boundaries"
+          },
+          {
+            "number": 4207,
+            "title": "fix(agent-sre): calculate latency from windowed measurements"
+          },
+          {
+            "number": 4206,
+            "title": "fix(agent-sre): measure benchmark duration with a monotonic clock"
+          },
+          {
+            "number": 4205,
+            "title": "fix(migrate): report governance file read failures"
+          },
+          {
+            "number": 4204,
+            "title": "fix(policy-engine): version the core compatibility shim separately"
+          },
+          {
+            "number": 4203,
+            "title": "docs(opencode): fix workspace plugin installation and hook guidance"
+          },
+          {
+            "number": 4016,
+            "title": "docs(policy-engine): explain python annotator dispatcher requirement"
+          },
+          {
+            "number": 4015,
+            "title": "test(policy-engine): cover python native transform identities"
+          },
+          {
+            "number": 4014,
+            "title": "fix(policy-engine): forward optional rego and streaming features"
+          },
+          {
+            "number": 3909,
+            "title": "feat(sidecar): bind decisions to policy-load provenance"
+          },
+          {
+            "number": 3573,
+            "title": "fix(relay): scope inbox deduplication per recipient"
+          },
+          {
+            "number": 3572,
+            "title": "fix(claude): preserve audit verification across rollover"
+          }
+        ],
+        "open": [
+          {
+            "number": 3910,
+            "title": "fix(maf): preserve native execution identity in governance evidence"
+          }
+        ]
+      },
+      {
+        "repo": "BasedHardware/omi",
+        "name": "Omi",
+        "focus": "Transcription lifecycle, SDK correctness, and developer tooling.",
+        "merged": [
+          {
+            "number": 20407,
+            "title": "fix(device-ts): preserve accepted Whisper batches after stop"
+          },
+          {
+            "number": 20247,
+            "title": "fix(react-native): allow bounded Deepgram drain on stop"
+          },
+          {
+            "number": 20246,
+            "title": "fix(go-sdk): override encoded Parakeet sample rate keys"
+          },
+          {
+            "number": 20244,
+            "title": "fix(python-sdk): drain Deepgram final transcripts during cancellation"
+          },
+          {
+            "number": 20243,
+            "title": "fix(cpp-sdk): preserve Parakeet URL query parameters"
+          },
+          {
+            "number": 20242,
+            "title": "fix(windows): distinguish LLM and transcription BYOK in settings"
+          },
+          {
+            "number": 20236,
+            "title": "fix(device-ts): stop Deepgram audio submission before draining"
+          },
+          {
+            "number": 20234,
+            "title": "fix(tooling): find Git Bash from Windows hook exec path"
+          },
+          {
+            "number": 20233,
+            "title": "fix(python-sdk): stop audio sender before Parakeet finalization"
+          }
+        ],
+        "open": [
+          {
+            "number": 20411,
+            "title": "feat(web): clarify desktop BYOK key scope in account settings"
+          }
+        ]
+      },
+      {
+        "repo": "microsoft/agent-framework",
+        "name": "Microsoft Agent Framework",
+        "focus": "Workflow runtime reliability, configuration validation, and Python / .NET documentation.",
+        "merged": [
+          {
+            "number": 9005,
+            "title": "Python: Demonstrate group chat response filtering before broadcast"
+          },
+          {
+            "number": 8926,
+            "title": "Python: validate non-optional union settings"
+          },
+          {
+            "number": 8781,
+            "title": "Python: .NET: Python: clarify CodeAct guest packages and host network access"
+          },
+          {
+            "number": 8549,
+            "title": "Python: scope executor activity IDs to workflow runs"
+          },
+          {
+            "number": 8491,
+            "title": ".NET: document A2A authentication and tool authorization"
+          },
+          {
+            "number": 8231,
+            "title": "Python: wake workflow streaming on iteration completion"
+          }
+        ],
+        "open": [
+          {
+            "number": 9009,
+            "title": ".NET: Add Container Apps Dynamic Sessions samples"
+          },
+          {
+            "number": 9008,
+            "title": ".NET: Enable tool search in Foundry Toolbox samples"
+          },
+          {
+            "number": 9007,
+            "title": ".NET: fix(dotnet): register AG-UI interrupt content in server JSON options"
+          },
+          {
+            "number": 9006,
+            "title": ".NET: Explain DevUI session persistence across requests"
+          },
+          {
+            "number": 9004,
+            "title": ".NET: [BREAKING] Harness: Request concise progress instead of private reasoning"
+          },
+          {
+            "number": 9003,
+            "title": ".NET: Add Copilot Studio agent sample and setup guide"
+          },
+          {
+            "number": 8925,
+            "title": ".NET: document Mem0 memory setup and session scope"
+          },
+          {
+            "number": 8550,
+            "title": ".NET: document reasoning summaries for AG-UI"
+          },
+          {
+            "number": 8494,
+            "title": ".NET: preserve cooperative workflow handler cancellation"
+          },
+          {
+            "number": 8493,
+            "title": ".NET: add SQLite conversation persistence API sample"
+          },
+          {
+            "number": 8492,
+            "title": ".NET: document host-owned telemetry and message content controls"
+          },
+          {
+            "number": 8438,
+            "title": ".NET: show cumulative Harness console session tokens"
+          },
+          {
+            "number": 8437,
+            "title": ".NET: clarify Harness client API selection"
+          },
+          {
+            "number": 8232,
+            "title": ".NET: add container-hosted workflow sample"
+          }
+        ]
+      },
+      {
+        "repo": "webmachinelearning/webmcp",
+        "name": "W3C WebMCP",
+        "focus": "Specification prose for tool lifecycle, dynamic definitions, and execution behavior.",
+        "merged": [
+          {
+            "number": 311,
+            "title": "Clarify execution behavior after tool unregistration"
+          },
+          {
+            "number": 310,
+            "title": "Document dynamic tool definition patterns"
+          },
+          {
+            "number": 264,
+            "title": "Clarify observation context management"
+          }
+        ],
+        "open": []
+      },
+      {
+        "repo": "openai/openai-agents-python",
+        "name": "OpenAI Agents SDK",
+        "focus": "Encrypted session memory in the native SQLite backend.",
+        "merged": [
+          {
+            "number": 5083,
+            "title": "fix(memory): preserve encrypted SQLite history on wrong-key pops"
+          }
+        ],
+        "open": []
+      },
+      {
+        "repo": "mvanhorn/cli-printing-press",
+        "name": "CLI Printing Press",
+        "focus": "CLI specification and extension documentation.",
+        "merged": [
+          {
+            "number": 3947,
+            "title": "docs(cli): correct stale x-pp-tenant-scope-column reference"
+          },
+          {
+            "number": 3946,
+            "title": "docs(cli): document x-pp-default-rate-limit and x-pp-membership-field extensions"
+          }
+        ],
+        "open": []
+      },
+      {
+        "repo": "UiPath/uipath-langchain-python",
+        "name": "UiPath LangChain",
+        "focus": "Coded-agent examples and SDK proposals.",
+        "merged": [
+          {
+            "number": 1110,
+            "title": "docs(samples): add AML alert triage coded agent sample"
+          }
+        ],
+        "open": [
+          {
+            "number": 516,
+            "title": "fix: apply static args after empty array"
+          },
+          {
+            "number": 515,
+            "title": "docs: align python guidance and quickstart output"
+          }
+        ]
+      },
+      {
+        "repo": "google/adk-python",
+        "name": "Google ADK",
+        "focus": "Agent runtime fixes proposed upstream.",
+        "merged": [],
+        "open": [
+          {
+            "number": 7380,
+            "title": "fix: evaluate callback responses without captured agent details"
+          },
+          {
+            "number": 7209,
+            "title": "fix(openapi): let operation parameters override path-level ones"
+          },
+          {
+            "number": 7208,
+            "title": "fix(openapi): honor query parameter style and explode"
+          },
+          {
+            "number": 7167,
+            "title": "fix(application-integration): fail on errored or stuck schema operations"
+          },
+          {
+            "number": 7166,
+            "title": "fix(openapi): serialize non-string header and cookie parameter values"
+          }
+        ]
+      },
+      {
+        "repo": "open-telemetry/semantic-conventions-genai",
+        "name": "OpenTelemetry GenAI",
+        "focus": "Proposals for generative AI observability conventions.",
+        "merged": [],
+        "open": [
+          {
+            "number": 565,
+            "title": "Preserve message roles when capturing tool responses"
+          },
+          {
+            "number": 564,
+            "title": "Share MIME type and modality definitions across media parts"
+          },
+          {
+            "number": 563,
+            "title": "Add a non-normative GenAI glossary"
+          },
+          {
+            "number": 525,
+            "title": "feat(gen-ai): require provider-supplied tool call ID on execute_tool (#489)"
+          },
+          {
+            "number": 524,
+            "title": "docs(gen-ai): clarify remote client vs local internal agent invocations (#493)"
+          }
+        ]
+      },
+      {
+        "repo": "ag-ui-protocol/ag-ui",
+        "name": "AG-UI",
+        "focus": "Agent interaction protocol fixes proposed upstream.",
+        "merged": [],
+        "open": [
+          {
+            "number": 2296,
+            "title": "fix(dotnet): make InternalsVisibleTo work under strong-naming"
+          },
+          {
+            "number": 2295,
+            "title": "fix(dotnet): map reasoning and skip activity in AsChatMessages"
+          },
+          {
+            "number": 2294,
+            "title": "fix(adk): handle None id/args on real FunctionCall objects"
+          }
+        ]
+      },
+      {
+        "repo": "modelcontextprotocol/csharp-sdk",
+        "name": "MCP C# SDK",
+        "focus": "Protocol and transport fixes proposed upstream.",
+        "merged": [],
+        "open": [
+          {
+            "number": 1883,
+            "title": "Retry OAuth token refresh without resource when the authorization server rejects it (Entra AADSTS9010010)"
+          },
+          {
+            "number": 1882,
+            "title": "Add client-side call-tool filters for tool-call policy enforcement"
+          }
+        ]
+      },
+      {
+        "repo": "run-llama/llama_index",
+        "name": "LlamaIndex",
+        "focus": "Integration and data-handling fixes proposed upstream.",
+        "merged": [],
+        "open": [
+          {
+            "number": 23387,
+            "title": "fix(deepinfra): preserve HTTP errors in async embedding requests"
+          },
+          {
+            "number": 23386,
+            "title": "fix(deepinfra): honor embedding normalization in sync and async calls"
+          },
+          {
+            "number": 23385,
+            "title": "fix(google): accept datetime objects when creating calendar events"
+          },
+          {
+            "number": 23384,
+            "title": "fix(wikipedia): select requested language before search"
+          },
+          {
+            "number": 23383,
+            "title": "fix(readers-file): preserve remote DOCX paths on Windows"
+          },
+          {
+            "number": 23382,
+            "title": "fix(core): preserve custom node IDs across HTML and Markdown sections"
+          },
+          {
+            "number": 23381,
+            "title": "fix(core): preserve guideline query transformer across retries"
+          },
+          {
+            "number": 23380,
+            "title": "fix(core): respect source evaluation passing status during retries"
+          },
+          {
+            "number": 23379,
+            "title": "fix(vertex-endpoint): await single query and text embeddings"
+          },
+          {
+            "number": 23378,
+            "title": "fix(jinaai): await single-image embeddings before selecting the result"
+          },
+          {
+            "number": 23169,
+            "title": "fix(mcp): capture tool call logs reliably and restore logger levels"
+          },
+          {
+            "number": 23168,
+            "title": "fix(openapi): prevent RecursionError on circular ref in OpenAPIToolSpec"
+          }
+        ]
+      }
     ],
+    "highlights": [
+      {
+        "project": "OpenAI Agents SDK",
+        "title": "Keep encrypted history recoverable.",
+        "description": "A failed decryption could consume saved conversation history. Authentication now happens inside the native SQLite transaction, preserving ciphertext and row order when the key is wrong.",
+        "url": "https://github.com/openai/openai-agents-python/pull/5083",
+        "number": 5083,
+        "mergedAt": "2026-09-25T20:36:46Z"
+      },
+      {
+        "project": "Microsoft Agent Framework",
+        "title": "Let fast workflows finish faster.",
+        "description": "The Python runner could wait up to 50 ms before noticing a completed step. Event-driven completion removes that polling wait while preserving stream ordering and cancellation cleanup.",
+        "url": "https://github.com/microsoft/agent-framework/pull/8231",
+        "number": 8231,
+        "mergedAt": "2026-09-17T01:23:34Z"
+      },
+      {
+        "project": "Microsoft Agent Governance Toolkit",
+        "title": "Make policy decisions traceable.",
+        "description": "Each sidecar decision now identifies the exact policy set available during evaluation, including files that failed to load, through a content-addressed manifest.",
+        "url": "https://github.com/microsoft/agent-governance-toolkit/pull/3909",
+        "number": 3909,
+        "mergedAt": "2026-09-14T18:27:13Z"
+      },
+      {
+        "project": "W3C WebMCP",
+        "title": "Clarify what happens to a running tool.",
+        "description": "Added specification guidance distinguishing tool unregistration from cancellation: an already invoked callback continues to completion, subject to independent cancellation or document unloading.",
+        "url": "https://github.com/webmachinelearning/webmcp/pull/311",
+        "number": 311,
+        "mergedAt": "2026-09-25T16:01:59Z"
+      },
+      {
+        "project": "Omi",
+        "title": "Preserve speech when a session stops.",
+        "description": "The TypeScript Whisper adapter now delivers accepted audio batches and the final tail in order after stop, with regression coverage for failures and callback errors.",
+        "url": "https://github.com/BasedHardware/omi/pull/20407",
+        "number": 20407,
+        "mergedAt": "2026-10-03T14:44:39Z"
+      },
+      {
+        "project": "Microsoft Agent Governance Toolkit",
+        "title": "Keep audit logs verifiable after rollover.",
+        "description": "Preserved the hash-chain anchor when a bounded audit log rotates, so later governance decisions remain verifiable without accepting tampered or previously truncated logs.",
+        "url": "https://github.com/microsoft/agent-governance-toolkit/pull/3572",
+        "number": 3572,
+        "mergedAt": "2026-09-14T18:25:23Z"
+      },
+      {
+        "project": "Microsoft Agent Governance Toolkit",
+        "title": "Make reliability alerts use the right window.",
+        "description": "Burn-rate alerts declared 24-hour windows but evaluated only one hour. Each alert now uses its own configured window so older qualifying errors can trigger it.",
+        "url": "https://github.com/microsoft/agent-governance-toolkit/pull/4210",
+        "number": 4210,
+        "mergedAt": "2026-10-02T21:51:11Z"
+      }
+    ]
   },
   loanShield: {
     title: "Loan Shield",
@@ -274,7 +749,7 @@ const userData = {
   guestBook: {
     title: "Join the builder’s guest book",
     description:
-      "Enter your name and email to access the UiPath Boost repository.",
+      "Connect with me about open-source AI and automation.",
   },
   socialLinks: {
     twitter: "https://x.com/1aifanatic",

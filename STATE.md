@@ -1,5 +1,13 @@
 # STATE
 
+**Current update — 2026-10-05:** The portfolio now leads with upstream open-source contributions. `/open-source` documents 37 merged PRs across seven independent projects, seven selected fixes, and separately labelled open proposals. The dated snapshot and PR links live in `constants/data.js`; verify GitHub author, ownership, and `merged_at` before refreshing it. Regenerate the social card with `node scripts/generate-og.mjs` when counts change.
+
+The UiPath skills catalogs are retired: the registry is empty, `/skills` and nested URLs redirect permanently to `/open-source`, raw catalog skill endpoints return 404, and discovery retains only `site-overview`. Committed snapshots remain archival source files, not published catalogs. The homepage animation and photograph are preserved. The homepage no longer fetches repository stars.
+
+Validation: production build passed; Chromium checks passed at 1440, 1024, and 390 pixels in light/dark themes, including mobile navigation, retirement redirects, discovery, sitemap, and social image. The entries below describe the earlier catalog release and are historical.
+
+---
+
 **Last updated:** 2026-08-06 — two catalogs shipped and verified live: UiPath Boost and UiPath Coded App Launchpad.
 
 ## What works
