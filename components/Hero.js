@@ -12,10 +12,10 @@ export default function Hero() {
   return (
     <section className="site-container py-4 sm:py-5 lg:h-[calc(100vh-64px)] lg:min-h-[720px] lg:max-h-[840px]">
       <div className="grid gap-4 lg:h-full lg:grid-cols-12 lg:grid-rows-[minmax(0,1.03fr)_minmax(0,.97fr)_74px]">
-        <article className="overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white p-5 shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:p-6 lg:col-span-7 lg:flex lg:flex-col lg:justify-center lg:p-5 2xl:p-7">
+        <article className="overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white p-5 shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:[container-type:inline-size] sm:p-6 lg:col-span-7 lg:flex lg:flex-col lg:justify-center lg:p-5 2xl:p-7">
           <p className="eyebrow">Naveen Chatlapalli · Dallas, Texas</p>
           <RoughNotationGroup show={true}>
-            <h1 className="mt-1.5 max-w-4xl text-[2.2rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:text-[2.5rem] lg:text-[2rem] xl:text-[2.4rem] 2xl:text-[2.8rem]">
+            <h1 className="mt-1.5 max-w-4xl text-[2.2rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:whitespace-nowrap sm:text-[clamp(1.25rem,5cqw,2rem)] sm:leading-tight">
               {homeSnapshot.headline} {" "}
               <RoughNotation
                 type="underline"
