@@ -32,6 +32,7 @@
 - Daily AI Drop pages use `getServerSideProps` with `lib/dailyDrop.js` and a five-minute shared cache. Podcast content comes from the public `navdatascience/daily-ai-drop` repository; audio URLs come from RSS enclosures. The homepage only links to Daily AI Drop through navigation; it does not fetch or display episodes. Keep the feed automatic, independent of the archived skills snapshot. Unit checks: `node --test tests/daily-drop.test.mjs`.
 
 **API and Database**
+- Portfolio chat: `/api/chat` uses MiniMax, requires server-only `MINIMAX_API_KEY` and `DATABASE_URL`, and reads public facts through `lib/portfolioChat.js`. Never send secrets or lead data as context. `lib/chatQuota.js` enforces shared Postgres request limits. Chat transcripts are not persisted. Test with `node --test tests/portfolio-chat.test.mjs`.
 - API routes validate HTTP method and use try/catch with proper status codes.
 - Admin endpoints require `Authorization: Bearer ${ADMIN_SECRET_KEY}`.
 - Tables `leads` and `downloads` are auto-created on first API use.

@@ -67,4 +67,6 @@ a {
 .daily-drop-notes h3 { border-top: 1px solid #d8ddd8; padding-top: 1.5rem; }
 .dark .daily-drop-notes h3 { border-color: #34413d; }
 
+.portfolio-chat { width: min(440px, calc(100vw - 24px)); height: min(660px, calc(100dvh - 24px)); max-height: calc(100dvh - 24px); margin: auto 12px 12px auto; }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }

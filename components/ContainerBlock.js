@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import GuestBookPopup from "./GuestBookPopup";
+import dynamic from "next/dynamic";
+
+const PortfolioChat = dynamic(() => import("./PortfolioChat"), { ssr: false });
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
@@ -55,5 +58,6 @@ export default function ContainerBlock({ children, ...customMeta }) {
     <main id="main-content" tabIndex="-1">{children}</main>
     {!isAdmin && <Footer />}
     {!isAdmin && <GuestBookPopup />}
+    {!isAdmin && <PortfolioChat />}
   </div>;
 }

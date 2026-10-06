@@ -1,5 +1,11 @@
 const userData = {
   githubUsername: "1aifanatic",
+  chat: {
+    title: "Ask about Naveen",
+    welcome: "Explore my open-source contributions, projects, and experience. What would you like to know?",
+    disclosure: "AI answers may make mistakes. Questions are sent to MiniMax; please avoid sharing sensitive information. Check the linked sources for details.",
+    suggestions: ["What has Naveen contributed to open source?", "Tell me about his AI projects", "What is his experience?", "How can I contact him?"],
+  },
   dailyDrop: {
     title: "The Daily AI Drop",
     tagline: "Your daily dose of what matters in AI.",
