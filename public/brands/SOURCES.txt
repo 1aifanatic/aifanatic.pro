@@ -1,0 +1,9 @@
+Organization avatars downloaded from their public GitHub profiles on 2026-10-06.
+Used to identify projects in Naveen's linked contribution record.
+
+microsoft.png https://github.com/microsoft.png?size=128
+openai.png https://github.com/openai.png?size=128
+google.png https://github.com/google.png?size=128
+w3c.png https://github.com/w3c.png?size=128
+uipath.png https://github.com/UiPath.png?size=128
+omi.png https://github.com/BasedHardware.png?size=128

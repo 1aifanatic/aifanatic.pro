@@ -168,6 +168,14 @@ const userData = {
     "focus": "Agent runtimes, trustworthy governance, streaming correctness, and open Web standards.",
     "checkedOn": "October 5, 2026",
     "activityUrl": "https://github.com/search?q=is%3Apr+author%3A1aifanatic&type=pullrequests",
+    brands: [
+      { name: "Microsoft", logo: "/brands/microsoft.png", repos: ["microsoft/agent-governance-toolkit", "microsoft/agent-framework"] },
+      { name: "OpenAI", logo: "/brands/openai.png", repos: ["openai/openai-agents-python"] },
+      { name: "Google", logo: "/brands/google.png", repos: ["google/adk-python"] },
+      { name: "W3C WebMCP", logo: "/brands/w3c.png", repos: ["webmachinelearning/webmcp"] },
+      { name: "UiPath", logo: "/brands/uipath.png", repos: ["UiPath/uipath-langchain-python"] },
+      { name: "Omi", logo: "/brands/omi.png", repos: ["BasedHardware/omi"] },
+    ],
     "projects": [
       {
         "repo": "microsoft/agent-governance-toolkit",

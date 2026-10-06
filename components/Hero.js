@@ -3,6 +3,7 @@ import Link from "next/link";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import userData from "@constants/data";
 import Icon from "./Icon";
+import ContributionBrands from "./ContributionBrands";
 
 export default function Hero() {
   const { contributions, homeSnapshot, nicheFocus } = userData;
@@ -10,21 +11,21 @@ export default function Hero() {
   const projectCount = contributions.projects.filter((project) => project.merged.length).length;
 
   return (
-    <section className="site-container py-4 sm:py-5 lg:h-[calc(100vh-64px)] lg:min-h-[720px] lg:max-h-[840px]">
+    <section className="site-container py-4 sm:py-5 lg:h-[calc(100vh-64px)] lg:min-h-[780px] lg:max-h-[840px]">
       <div className="grid gap-4 lg:h-full lg:grid-cols-12 lg:grid-rows-[minmax(0,1.03fr)_minmax(0,.97fr)_74px]">
         <article className="overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white p-5 shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:[container-type:inline-size] sm:p-6 lg:col-span-7 lg:flex lg:flex-col lg:justify-center lg:p-5 2xl:p-7">
           <p className="eyebrow">Naveen Chatlapalli · Dallas, Texas</p>
           <RoughNotationGroup show={true}>
             <h1 className="mt-1.5 max-w-4xl text-[2.2rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:whitespace-nowrap sm:text-[clamp(1.25rem,5cqw,2rem)] sm:leading-tight">
-              {homeSnapshot.headline} {" "}
               <RoughNotation
                 type="underline"
                 color="#91aed2"
                 strokeWidth={2}
                 padding={2}
               >
-                {homeSnapshot.headlineAccent}
+                {homeSnapshot.headline}
               </RoughNotation>
+              {" "} {homeSnapshot.headlineAccent}
             </h1>
           </RoughNotationGroup>
           <p className="mt-2 max-w-2xl text-sm leading-5 text-[#5f6864] dark:text-[#b7c0bb] xl:text-base xl:leading-6">
@@ -86,14 +87,14 @@ export default function Hero() {
         </aside>
 
         <article className="flex flex-col justify-center rounded-[1.35rem] border border-[#314b65] bg-[#111716] p-5 text-[#eef1ed] shadow-[0_14px_35px_rgba(24,33,31,.12)] sm:p-6 lg:col-span-7">
-          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">Open source · Merged upstream</p>
-          <h2 className="mt-3 text-3xl leading-tight">{contributions.title}</h2>
-          <div className="mt-4 flex flex-wrap gap-x-8 gap-y-3">
-            <div><span className="font-serif text-4xl">{mergedCount}</span><span className="ml-2 text-sm text-[#c5cec8]">merged PRs</span></div>
-            <div><span className="font-serif text-4xl">{projectCount}</span><span className="ml-2 text-sm text-[#c5cec8]">upstream projects</span></div>
+          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">Open-source contributions</p>
+          <h2 className="mt-2 text-2xl leading-tight">{contributions.title}</h2>
+          <div className="mt-3 flex flex-wrap gap-x-8 gap-y-3">
+            <div><span className="font-serif text-3xl">{mergedCount}</span><span className="ml-2 text-sm text-[#c5cec8]">merged PRs</span></div>
+            <div><span className="font-serif text-3xl">{projectCount}</span><span className="ml-2 text-sm text-[#c5cec8]">upstream projects</span></div>
           </div>
-          <p className="mt-3 text-sm leading-6 text-[#c5cec8]">{contributions.focus}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-4">
+          <div className="mt-4"><ContributionBrands /></div>
+          <div className="mt-3 flex flex-wrap items-center gap-4">
             <Link href="/open-source" className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#eef1ed] px-4 py-2 text-sm font-semibold text-[#18211f] hover:bg-[#a8c7ee]">See the fixes <Icon name="arrowRight" /></Link>
             <p className="text-xs text-[#b7c0bb]">Verified {contributions.checkedOn}</p>
           </div>

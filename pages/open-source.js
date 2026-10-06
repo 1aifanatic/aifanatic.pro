@@ -2,6 +2,7 @@ import ContainerBlock from "@components/ContainerBlock";
 import PageIntro from "@components/PageIntro";
 import Icon from "@components/Icon";
 import userData from "@constants/data";
+import ContributionBrands from "@components/ContributionBrands";
 
 const { contributions } = userData;
 const mergedCount = contributions.projects.reduce((sum, project) => sum + project.merged.length, 0);
@@ -14,6 +15,10 @@ export default function OpenSource() {
         {contributions.description}
       </PageIntro>
       <section className="site-container page-section">
+        <div className="mb-10 rounded-[1.35rem] border border-[#d8ddd8] bg-white p-6 dark:border-[#34413d] dark:bg-[#18211f]">
+          <p className="eyebrow mb-6">Contributions across the ecosystem</p>
+          <ContributionBrands />
+        </div>
         <div className="grid gap-6 border-b border-[#d8ddd8] pb-10 dark:border-[#34413d] sm:grid-cols-3">
           <div><p className="text-5xl font-serif">{mergedCount}</p><p className="mt-2 text-sm">Merged pull requests</p></div>
           <div><p className="text-5xl font-serif">{projectCount}</p><p className="mt-2 text-sm">Upstream projects with merged work</p></div>
@@ -36,7 +41,7 @@ export default function OpenSource() {
         <p className="mt-4 max-w-2xl leading-7 text-[#5f6864] dark:text-[#b7c0bb]">Merged work and open proposals are listed separately. Each count links to its recorded pull requests; open proposals may still change or close without merging.</p>
         <div className="mt-8 space-y-4">
           {contributions.projects.map((project) => (
-            <article key={project.repo} className="paper-card grid gap-5 lg:grid-cols-[1fr_2fr]">
+            <article key={project.repo} id={project.repo.replace("/", "-")} className="paper-card grid scroll-mt-24 gap-5 lg:grid-cols-[1fr_2fr]">
               <div><a href={`https://github.com/${project.repo}`} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{project.name} <span aria-hidden="true">↗</span></a><p className="mt-2 text-sm leading-6 text-[#5f6864] dark:text-[#b7c0bb]">{project.focus}</p></div>
               <div className="space-y-3 text-sm">
                 {[['merged', 'Merged'], ['open', 'Open proposals']].map(([key, label]) => project[key].length > 0 && (
