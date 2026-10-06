@@ -1,6 +1,10 @@
 import React from "react";
 
 const paths = {
+  play: <path d="m9 5 11 7-11 7V5Z" fill="currentColor" stroke="none" />,
+  pause: <><path d="M8 5v14M16 5v14" strokeWidth="4" /></>,
+  rewind: <><path d="m11 6-8 6 8 6V6ZM21 6l-8 6 8 6V6Z" /></>,
+  forward: <><path d="m3 6 8 6-8 6V6ZM13 6l8 6-8 6V6Z" /></>,
   arrowRight: <><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></>,
   arrowUpRight: <><path d="M7 17 17 7" /><path d="M7 7h10v10" /></>,
   download: <><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></>,
