@@ -670,6 +670,9 @@ const userData = {
     systemPath: ["Intake", "AI triage", "Decision", "Audit"],
   },
   homeSnapshot: {
+    headline: "Building reliable AI.",
+    headlineAccent: "Improving the tools behind it.",
+    description: "I design enterprise AI systems and contribute fixes, tests, and improvements to the open-source projects that power them.",
     proof: [
       {
         value: "3×",

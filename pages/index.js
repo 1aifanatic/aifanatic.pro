@@ -3,7 +3,7 @@ import Hero from "@components/Hero";
 import userData from "@constants/data";
 
 export default function Home() {
-  return <ContainerBlock title="Naveen Chatlapalli - Open Source & AI Architecture" description={userData.contributions.description} image="/og-open-source.png">
+  return <ContainerBlock title="Naveen Chatlapalli - Open Source & AI Architecture" description={userData.homeSnapshot.description} image="/og-open-source.png">
     <Hero />
   </ContainerBlock>;
 }

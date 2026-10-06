@@ -16,19 +16,19 @@ export default function Hero() {
           <p className="eyebrow">Naveen Chatlapalli · Dallas, Texas</p>
           <RoughNotationGroup show={true}>
             <h1 className="mt-1.5 max-w-4xl text-[2.2rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:text-[2.5rem] lg:text-[2rem] xl:text-[2.4rem] 2xl:text-[2.8rem]">
-              AI agents that work. {" "}
+              {homeSnapshot.headline} {" "}
               <RoughNotation
                 type="underline"
                 color="#91aed2"
                 strokeWidth={2}
                 padding={2}
               >
-                Systems that scale.
+                {homeSnapshot.headlineAccent}
               </RoughNotation>
             </h1>
           </RoughNotationGroup>
           <p className="mt-2 max-w-2xl text-sm leading-5 text-[#5f6864] dark:text-[#b7c0bb] xl:text-base xl:leading-6">
-            {contributions.description}
+            {homeSnapshot.description}
           </p>
           <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Niche focus areas">
             {nicheFocus.map((focus) => (
