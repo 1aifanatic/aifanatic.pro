@@ -8,6 +8,7 @@ const userData = {
     repositoryUrl: "https://github.com/navdatascience/daily-ai-drop",
     sourceBase: "https://raw.githubusercontent.com/navdatascience/daily-ai-drop/main/",
     feedUrl: "https://navdatascience.github.io/daily-ai-drop/feed.xml",
+    mediaBases: ["https://navdatascience.github.io/daily-ai-drop/", "https://muse.ai/podcasts/media/"],
     schedule: "Morning & evening · 7 AM / 7 PM CT",
   },
   name: "Naveen Chatlapalli",

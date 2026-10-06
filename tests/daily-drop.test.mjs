@@ -19,6 +19,15 @@ test("latest is chosen by publication time, with playback from the RSS enclosure
   assert.equal(episodes[1].audioUrl, null);
 });
 
+test("Muse-hosted RSS audio is accepted while unrelated hosts are rejected", async () => {
+  const rows = [row("2026-10-06", "am", "2026-10-06T12:00:00Z")];
+  for (const audioUrl of ["https://muse.ai/podcasts/media/account/show/episode.mp3", "https://muse.ai.example.com/podcasts/media/episode.mp3", "http://127.0.0.1/audio.mp3"]) {
+    globalThis.fetch = async (url) => new Response(String(url).endsWith("episodes.json") ? JSON.stringify(rows) : `<rss><channel><item><guid>2026-10-06-am</guid><enclosure url="${audioUrl}" /></item></channel></rss>`);
+    const [episode] = await getEpisodes();
+    assert.equal(episode.audioUrl, audioUrl === "https://muse.ai/podcasts/media/account/show/episode.mp3" ? audioUrl : null);
+  }
+});
+
 test("remote notes cannot execute HTML or JavaScript and story anchors are unique", async () => {
   globalThis.fetch = async () => new Response('# Episode title\n\n## Stories\n\n### First\n\n[Watch](https://youtube.com/watch?v=abc)\n\n<script>alert(1)</script>\n\n[Unsafe](javascript:alert%281%29)\n\n<img src=x onerror=alert(1)>\n\n### Second\n\nA **useful** note.');
   const notes = await getEpisodeNotes({ notesPath: "episodes/2026-10-06/am/notes.md" });
@@ -44,6 +53,14 @@ test("missing media and HTML fallbacks do not become a broken player", async () 
   globalThis.fetch = async () => { throw new Error("offline"); };
   assert.equal((await withAudioStatus(episode)).audioAvailable, false);
   assert.equal(await withAudioStatus(null), null);
+});
+
+test("playback uses the final media URL after the publisher redirects", async () => {
+  const finalUrl = "https://cdn.fbsbx.com/episode.mp3?signature=current";
+  globalThis.fetch = async () => ({ ok: true, url: finalUrl, headers: new Headers({ "content-type": "audio/mpeg" }) });
+  const result = await withAudioStatus({ audioUrl: "https://muse.ai/podcasts/media/account/show/episode.mp3" });
+  assert.equal(result.audioUrl, finalUrl);
+  assert.equal(result.audioAvailable, true);
 });
 
 test("source failures are explicit, and an empty registry is a valid empty archive", async () => {
