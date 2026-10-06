@@ -1,10 +1,11 @@
 import ContainerBlock from "@components/ContainerBlock";
 import Hero from "@components/Hero";
 import userData from "@constants/data";
+import { getEpisodes, withAudioStatus } from "@lib/dailyDrop";
 
-export default function Home() {
+export default function Home({ latestEpisode }) {
   return <ContainerBlock title="Naveen Chatlapalli - Open Source & AI Architecture" description={userData.contributions.description} image="/og-open-source.png">
-    <Hero />
+    <Hero latestEpisode={latestEpisode} />
   </ContainerBlock>;
 }
 
@@ -19,7 +20,13 @@ export const getServerSideProps = async ({ res }) => {
   res.setHeader("Link", link);
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=300, stale-while-revalidate=3600"
+    "public, s-maxage=300, stale-while-revalidate=600"
   );
-  return { props: {} };
+  try {
+    const episodes = await getEpisodes();
+    return { props: { latestEpisode: await withAudioStatus(episodes[0]) } };
+  } catch {
+    res.setHeader("Cache-Control", "public, s-maxage=30, stale-while-revalidate=60");
+    return { props: { latestEpisode: null } };
+  }
 };

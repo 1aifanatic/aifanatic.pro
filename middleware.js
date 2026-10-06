@@ -47,6 +47,7 @@ export function middleware(request) {
     `- Blog: ${base}/blog`,
     `- Writing: ${base}/writing`,
     `- Open-source contributions: ${base}/open-source`,
+    `- Daily AI Drop episodes and notes: ${base}/daily-ai-drop`,
     `- Work: ${base}/work`,
     `- Experience: ${base}/experience`,
     `- Contact: ${base}/contact`,

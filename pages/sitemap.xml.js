@@ -1,6 +1,7 @@
 import { getSiteBaseUrl } from "../lib/siteUrl";
 import userData from "../constants/data";
 import { getAllCatalogs } from "../lib/skillCatalog";
+import { getEpisodes } from "../lib/dailyDrop";
 
 const STATIC_PATHS = [
   "/",
@@ -11,6 +12,7 @@ const STATIC_PATHS = [
   "/insights",
   "/recognition",
   "/open-source",
+  "/daily-ai-drop",
   "/solopreneur-projects",
   "/speaking",
   "/work",
@@ -28,8 +30,10 @@ export async function getServerSideProps({ req, res }) {
   const base = getSiteBaseUrl(req);
   const blogSlugs = (userData.blogs || []).map((b) => b.slug).filter(Boolean);
   const catalogs = getAllCatalogs();
+  const episodes = await getEpisodes().catch(() => []);
   const urls = [
     ...STATIC_PATHS.map((path) => ({ loc: `${base}${path}` })),
+    ...episodes.map((episode) => ({ loc: `${base}/daily-ai-drop/${episode.slug}` })),
     ...blogSlugs.map((slug) => ({ loc: `${base}/blog/${encodeURIComponent(slug)}` })),
     ...catalogs.flatMap((catalog) => [
       { loc: `${base}/skills/${catalog.slug}` },

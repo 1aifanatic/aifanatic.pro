@@ -1,5 +1,11 @@
 # STATE
 
+**Current update — 2026-10-06:** Daily AI Drop now has a latest-episode homepage feature, a searchable archive at `/daily-ai-drop`, and per-episode listening / notes pages at `/daily-ai-drop/YYYY-MM-DD-am` (or `-pm`). Public metadata and notes are fetched from `navdatascience/daily-ai-drop`; playback URLs come from RSS enclosures in its `feed.xml`. Successful pages use a five-minute shared cache, so future editions need no portfolio deployment. A failed source fetch does not break the homepage. Audio is enabled only when its URL responds with a successful audio content type; inaccessible media is labelled unavailable while episode notes remain readable.
+
+At implementation time the repository contains one morning edition with ten stories and eleven video links. Its GitHub Pages audio enclosure returns 404, and the MP3 is not in the source tree. Publishing that upstream file / host is still required for real playback; the portfolio will detect it automatically. Tests: `node --test tests/daily-drop.test.mjs`; production build; light/dark browser checks at 1440, 1024, 390, and 320 pixels covering the homepage, archive, notes, filters, search, source links, and sitemap.
+
+---
+
 **Current update — 2026-10-05:** The portfolio now leads with upstream open-source contributions. `/open-source` documents 37 merged PRs across seven independent projects, seven selected fixes, and separately labelled open proposals. The dated snapshot and PR links live in `constants/data.js`; verify GitHub author, ownership, and `merged_at` before refreshing it. Regenerate the social card with `node scripts/generate-og.mjs` when counts change.
 
 The UiPath skills catalogs are retired: the registry is empty, `/skills` and nested URLs redirect permanently to `/open-source`, raw catalog skill endpoints return 404, and discovery retains only `site-overview`. Committed snapshots remain archival source files, not published catalogs. The homepage animation and photograph are preserved. The homepage no longer fetches repository stars.

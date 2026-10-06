@@ -11,6 +11,7 @@ Use this skill when you need the same information a human would get from the hom
 
 - Human-readable home: `/`
 - Open-source contributions: `/open-source`
+- Daily AI Drop episodes and show notes: `/daily-ai-drop`
 - Blog index: `/blog`
 - Contact: `/contact`
 

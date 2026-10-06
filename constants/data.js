@@ -1,5 +1,15 @@
 const userData = {
   githubUsername: "1aifanatic",
+  dailyDrop: {
+    title: "The Daily AI Drop",
+    tagline: "Your daily dose of what matters in AI.",
+    description: "Alex and Jordan connect the dots across the latest AI videos, tools, and ideas. A fresh conversation for your morning and evening.",
+    disclosure: "An AI-generated podcast curated by Naveen. Explore the original videos in each episode’s notes.",
+    repositoryUrl: "https://github.com/navdatascience/daily-ai-drop",
+    sourceBase: "https://raw.githubusercontent.com/navdatascience/daily-ai-drop/main/",
+    feedUrl: "https://navdatascience.github.io/daily-ai-drop/feed.xml",
+    schedule: "Morning & evening · 7 AM / 7 PM CT",
+  },
   name: "Naveen Chatlapalli",
   designation: "Manager of Solution Architecture",
   avatarUrl: "/avatar.png",

@@ -29,7 +29,7 @@
 - Update content in `constants/data.js` instead of hardcoding values in components.
 
 **SSR and Data Fetching**
-- Home page uses `getServerSideProps` with `lib/getLatestRepos.js` and `GITHUB_AUTH_TOKEN`.
+- Home and Daily AI Drop pages use `getServerSideProps` with `lib/dailyDrop.js` and a five-minute shared cache. Podcast content comes from the public `navdatascience/daily-ai-drop` repository; audio URLs come from RSS enclosures. Keep the feed automatic, independent of the archived skills snapshot. Unit checks: `node --test tests/daily-drop.test.mjs`.
 
 **API and Database**
 - API routes validate HTTP method and use try/catch with proper status codes.

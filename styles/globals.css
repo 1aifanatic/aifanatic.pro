@@ -62,4 +62,9 @@ a {
 .dark .article-copy h2, .dark .article-copy h3 { color: #eef1ed; }
 .dark .article-copy a { color: #a8c7ee; }
 
+.daily-drop-summary { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.daily-drop-notes { overflow-wrap: anywhere; }
+.daily-drop-notes h3 { border-top: 1px solid #d8ddd8; padding-top: 1.5rem; }
+.dark .daily-drop-notes h3 { border-color: #34413d; }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }

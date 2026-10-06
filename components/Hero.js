@@ -3,8 +3,9 @@ import Link from "next/link";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import userData from "@constants/data";
 import Icon from "./Icon";
+import DailyDropFeature from "./DailyDropFeature";
 
-export default function Hero() {
+export default function Hero({ latestEpisode }) {
   const { contributions, homeSnapshot, nicheFocus } = userData;
   const mergedCount = contributions.projects.reduce((sum, project) => sum + project.merged.length, 0);
   const projectCount = contributions.projects.filter((project) => project.merged.length).length;
@@ -99,18 +100,7 @@ export default function Hero() {
           </div>
         </article>
 
-        <article className="rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5">
-          <p className="eyebrow">Selected merged contributions</p>
-          <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {contributions.highlights.slice(0, 4).map((item) => (
-              <a key={item.url} href={item.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee]">
-                <p className="text-[10px] font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{item.project}</p>
-                <h3 className="mt-1.5 font-sans text-sm font-semibold leading-5">{item.title}</h3>
-                <p className="mt-2 text-xs text-[#5f6864] dark:text-[#b7c0bb]">Merged PR #{item.number} ↗</p>
-              </a>
-            ))}
-          </div>
-        </article>
+        <DailyDropFeature episode={latestEpisode} />
 
         <nav className="overflow-hidden rounded-[1.2rem] border border-[#d8ddd8] bg-white shadow-[0_8px_24px_rgba(24,33,31,.035)] dark:border-[#34413d] dark:bg-[#18211f] lg:col-span-12" aria-label="Public contributions">
           <div className="grid h-full md:grid-cols-[1.1fr_repeat(4,1fr)]">
