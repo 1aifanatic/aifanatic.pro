@@ -1,151 +1,47 @@
-import React from "react";
 import Link from "next/link";
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import userData from "@constants/data";
 import Icon from "./Icon";
-import ContributionBrands from "./ContributionBrands";
+import AgentConstellation, { AGENT_NODES } from "./home/AgentConstellation";
+import { KineticHeadline, Magnetic } from "./home/Kinetic";
 
 export default function Hero() {
-  const { contributions, homeSnapshot, nicheFocus } = userData;
-  const mergedCount = contributions.projects.reduce((sum, project) => sum + project.merged.length, 0);
-  const projectCount = contributions.projects.filter((project) => project.merged.length).length;
-
+  const { homeSnapshot } = userData;
   return (
-    <section className="site-container py-4 sm:py-5 lg:h-[calc(100vh-64px)] lg:min-h-[780px] lg:max-h-[840px]">
-      <div className="grid gap-4 lg:h-full lg:grid-cols-12 lg:grid-rows-[minmax(0,1.03fr)_minmax(0,.97fr)_74px]">
-        <article className="overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white p-5 shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:[container-type:inline-size] sm:p-6 lg:col-span-7 lg:flex lg:flex-col lg:justify-center lg:p-5 2xl:p-7">
-          <p className="eyebrow">Naveen Chatlapalli · Dallas, Texas</p>
-          <RoughNotationGroup show={true}>
-            <h1 className="mt-1.5 max-w-4xl text-[2.2rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:whitespace-nowrap sm:text-[clamp(1.25rem,5cqw,2rem)] sm:leading-tight">
-              <RoughNotation
-                type="underline"
-                color="#91aed2"
-                strokeWidth={2}
-                padding={2}
-              >
-                {homeSnapshot.headline}
-              </RoughNotation>
-              {" "} {homeSnapshot.headlineAccent}
-            </h1>
-          </RoughNotationGroup>
-          <p className="mt-2 max-w-2xl text-sm leading-5 text-[#5f6864] dark:text-[#b7c0bb] xl:text-base xl:leading-6">
-            {homeSnapshot.description}
-          </p>
-          <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Niche focus areas">
-            {nicheFocus.map((focus) => (
-              <li key={focus} className="rounded-full border border-[#c7cfca] px-2 py-0.5 text-[8px] font-semibold uppercase tracking-[.06em] text-[#46514c] dark:border-[#46514c] dark:text-[#c5cec8]">
-                {focus}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-2.5 flex flex-wrap gap-2.5">
-            <Link href="/open-source" className="button-primary px-4 py-2.5">
-              Explore contributions <Icon name="arrowRight" />
-            </Link>
-            <a
-              href={userData.resumeUrl}
-              className="button-secondary px-4 py-2.5"
-              download
-            >
-              Download CV <Icon name="download" />
-            </a>
-          </div>
-        </article>
+    <section className="relative isolate flex min-h-[100svh] pb-64 sm:pb-0 flex-col overflow-hidden" aria-labelledby="hero-title">
+      <AgentConstellation className="absolute inset-0 -z-10" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_45%_at_50%_28%,rgba(5,8,22,.92),rgba(5,8,22,.55)_55%,transparent_80%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-[#05070f]" />
 
-        <figure className="relative overflow-hidden rounded-[1.35rem] border border-[#c9d6e7] bg-[#e9eff8] p-2.5 dark:border-[#314b65] dark:bg-[#172c3c] lg:col-span-3">
-          <img
-            src={userData.avatarUrl}
-            alt={`Portrait of ${userData.name}`}
-            className="h-[360px] w-full rounded-[1rem] object-cover object-top shadow-[0_16px_40px_rgba(24,33,31,.13)] sm:h-[430px] lg:h-[calc(100%-34px)]"
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pt-28 text-center sm:px-8 sm:pt-36 md:pt-40">
+        <p className="ix-mono text-[11px] uppercase tracking-[.28em] text-cyan-200/80">
+          <span className="hidden sm:inline">{userData.name} · </span>Agentic AI Architect · Dallas
+        </p>
+        <div id="hero-title" className="w-full">
+          <KineticHeadline
+            lines={[homeSnapshot.headline, homeSnapshot.headlineAccent]}
+            className="mt-6 w-full text-[clamp(2.3rem,5.3vw,5.6rem)] md:[&>span]:whitespace-nowrap font-semibold leading-[1.02] tracking-[-0.045em] text-white"
           />
-          <figcaption className="flex h-[34px] items-center justify-center pt-2 text-center text-[9px] font-semibold uppercase tracking-[.14em] text-[#5f6864] dark:text-[#b7c0bb]">
-            Enterprise automation · AI agents
-          </figcaption>
-        </figure>
-
-        <aside className="grid overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:grid-cols-3 lg:col-span-2 lg:grid-cols-1" aria-label="Career highlights">
-          <div className="flex flex-col justify-center border-b border-[#d8ddd8] p-5 dark:border-[#34413d] sm:border-b-0 sm:border-r lg:border-b lg:border-r-0 lg:p-2.5 2xl:p-4">
-            <p className="eyebrow">Current</p>
-            <p className="mt-1.5 font-serif text-lg leading-tight text-[#18211f] dark:text-[#eef1ed] lg:text-sm 2xl:text-lg">
-              {userData.designation}
-            </p>
-          </div>
-          {homeSnapshot.proof.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="group flex flex-col justify-center border-b border-[#d8ddd8] p-5 transition last:border-0 hover:bg-[#e9eff8]/70 dark:border-[#34413d] dark:hover:bg-[#203a5a]/50 sm:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b lg:border-r-0 lg:p-2.5 lg:last:border-b-0 2xl:p-4"
-            >
-              <p className="font-serif text-3xl leading-none transition group-hover:text-[#174b8b] dark:group-hover:text-[#a8c7ee] lg:text-2xl 2xl:text-3xl">
-                {item.value}
-              </p>
-              <p className="mt-1.5 text-[10px] font-medium uppercase tracking-[.1em] text-[#5f6864] dark:text-[#b7c0bb]">
-                {item.label}
-              </p>
-            </Link>
-          ))}
-        </aside>
-
-        <article className="flex flex-col justify-center rounded-[1.35rem] border border-[#314b65] bg-[#111716] p-5 text-[#eef1ed] shadow-[0_14px_35px_rgba(24,33,31,.12)] sm:p-6 lg:col-span-7">
-          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">Open-source contributions</p>
-          <h2 className="mt-2 text-2xl leading-tight">{contributions.title}</h2>
-          <div className="mt-3 flex flex-wrap gap-x-8 gap-y-3">
-            <div><span className="font-serif text-3xl">{mergedCount}</span><span className="ml-2 text-sm text-[#c5cec8]">merged PRs</span></div>
-            <div><span className="font-serif text-3xl">{projectCount}</span><span className="ml-2 text-sm text-[#c5cec8]">upstream projects</span></div>
-          </div>
-          <div className="mt-4"><ContributionBrands /></div>
-          <div className="mt-3 flex flex-wrap items-center gap-4">
-            <Link href="/open-source" className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#eef1ed] px-4 py-2 text-sm font-semibold text-[#18211f] hover:bg-[#a8c7ee]">See the fixes <Icon name="arrowRight" /></Link>
-            <p className="text-xs text-[#b7c0bb]">Verified {contributions.checkedOn}</p>
-          </div>
-        </article>
-
-        <article className="rounded-[1.35rem] border border-[#b9cce5] bg-[#e9eff8] p-5 dark:border-[#315169] dark:bg-[#172c3c] sm:p-6 lg:col-span-5">
-          <p className="eyebrow">Selected merged contributions</p>
-          <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {contributions.highlights.slice(0, 4).map((item) => (
-              <a key={item.url} href={item.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee]">
-                <p className="text-[10px] font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{item.project}</p>
-                <h3 className="mt-1.5 font-sans text-sm font-semibold leading-5">{item.title}</h3>
-                <p className="mt-2 text-xs text-[#5f6864] dark:text-[#b7c0bb]">Merged PR #{item.number} ↗</p>
-              </a>
-            ))}
-          </div>
-        </article>
-
-        <nav className="overflow-hidden rounded-[1.2rem] border border-[#d8ddd8] bg-white shadow-[0_8px_24px_rgba(24,33,31,.035)] dark:border-[#34413d] dark:bg-[#18211f] lg:col-span-12" aria-label="Public contributions">
-          <div className="grid h-full md:grid-cols-[1.1fr_repeat(4,1fr)]">
-            <div className="flex items-center border-b border-[#d8ddd8] px-5 py-4 dark:border-[#34413d] md:border-b-0 md:border-r">
-              <div>
-                <p className="eyebrow">Public contribution</p>
-                <p className="mt-1 text-xs text-[#5f6864] dark:text-[#b7c0bb]">
-                  Leadership beyond delivery
-                </p>
-              </div>
-            </div>
-            {homeSnapshot.contributions.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="group flex items-center justify-between gap-3 border-b border-[#d8ddd8] px-5 py-4 transition last:border-0 hover:bg-[#e9eff8]/70 dark:border-[#34413d] dark:hover:bg-[#203a5a]/40 md:border-b-0 md:border-r md:last:border-r-0"
-              >
-                <span>
-                  <span className="block text-xs font-semibold text-[#18211f] dark:text-[#eef1ed]">
-                    {item.label}
-                  </span>
-                  <span className="mt-1 block text-[10px] text-[#5f6864] dark:text-[#b7c0bb]">
-                    {item.detail}
-                  </span>
-                </span>
-                <Icon
-                  name="arrowRight"
-                  className="h-4 w-4 shrink-0 text-[#174b8b] transition group-hover:translate-x-0.5 dark:text-[#a8c7ee] motion-reduce:transform-none"
-                />
-              </Link>
-            ))}
-          </div>
-        </nav>
+        </div>
+        <p className="mt-7 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+          {homeSnapshot.description}
+        </p>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <Magnetic>
+            <Link href="/open-source" className="ix-btn-primary">Explore contributions <Icon name="arrowRight" /></Link>
+          </Magnetic>
+          <Magnetic>
+            <a href={userData.resumeUrl} className="ix-btn-ghost" download>Download CV <Icon name="download" /></a>
+          </Magnetic>
+        </div>
       </div>
+
+      <ul className="sr-only" aria-label="Agent system capabilities shown in the constellation">
+        {AGENT_NODES.map((node) => <li key={node.id}>{node.label}: {node.note}</li>)}
+      </ul>
+      <a href="#manifesto" className="ix-mono mx-auto mb-8 mt-auto hidden min-h-[44px] items-center gap-3 pt-10 sm:flex text-[11px] uppercase tracking-[.24em] text-slate-400 transition hover:text-cyan-200">
+        <span className="relative block h-8 w-px overflow-hidden bg-white/15"><span className="ix-scroll-cue absolute inset-x-0 top-0 h-3 bg-cyan-300" /></span>
+        Move the cursor. Then scroll.
+      </a>
     </section>
   );
 }
