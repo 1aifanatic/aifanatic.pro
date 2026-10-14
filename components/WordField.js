@@ -40,7 +40,7 @@ export default function WordField() {
       const W = innerWidth, H = innerHeight, dpr = Math.min(devicePixelRatio || 1, 2), mobile = W < 768;
       canvas.width = W * dpr; canvas.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const s = mobile ? W / 900 : W / 1600; // source layouts: desktop 1600×900, mobile 900×900
-      const L = mobile ? { size: 30, ls: 5, gap: 28, row: 20, base: 80, sections: 10 } : { size: 21, ls: 9, gap: 42, row: 18, base: 220, sections: 63 };
+      const L = mobile ? { size: 22, ls: 3, gap: 20, row: 16, base: 80, sections: 10 } : { size: 13, ls: 4, gap: 24, row: 12, base: 220, sections: 63 };
       const size = L.size * s, ls = L.ls * s;
       ctx.font = `350 ${size}px ${FONT}`; if (spacing) ctx.letterSpacing = "0px";
       const cw = ctx.measureText("M").width, step = cw + ls, slot = WORD.length * step - ls;
