@@ -165,8 +165,8 @@ const userData = {
   contributions: {
     "title": "Making agent systems more reliable.",
     "description": "I contribute fixes, tests, and specification improvements to the open-source tools behind AI agents, from Microsoft and OpenAI frameworks to Omi and W3C WebMCP.",
-    "focus": "Agent runtimes, trustworthy governance, streaming correctness, and open Web standards.",
-    "checkedOn": "October 5, 2026",
+    "focus": "Agent runtimes, trustworthy governance, streaming correctness, developer tooling, and open Web standards.",
+    "checkedOn": "October 14, 2026",
     "activityUrl": "https://github.com/search?q=is%3Apr+author%3A1aifanatic&type=pullrequests",
     brands: [
       { name: "Microsoft", logo: "/brands/microsoft.png", repos: ["microsoft/agent-governance-toolkit", "microsoft/agent-framework"] },
@@ -309,6 +309,10 @@ const userData = {
             "title": "Python: Demonstrate group chat response filtering before broadcast"
           },
           {
+            "number": 9004,
+            "title": ".NET: [BREAKING] Request concise Harness progress without private reasoning"
+          },
+          {
             "number": 8926,
             "title": "Python: validate non-optional union settings"
           },
@@ -331,12 +335,20 @@ const userData = {
         ],
         "open": [
           {
+            "number": 9114,
+            "title": "Python: Add Container Apps Dynamic Sessions sample"
+          },
+          {
+            "number": 9113,
+            "title": "Python: Enable tool search in the Foundry Toolbox sample"
+          },
+          {
             "number": 9009,
-            "title": ".NET: Add Container Apps Dynamic Sessions samples"
+            "title": ".NET: Add Container Apps Dynamic Sessions sample"
           },
           {
             "number": 9008,
-            "title": ".NET: Enable tool search in Foundry Toolbox samples"
+            "title": ".NET: Enable tool search in the Foundry Toolbox sample"
           },
           {
             "number": 9007,
@@ -345,10 +357,6 @@ const userData = {
           {
             "number": 9006,
             "title": ".NET: Explain DevUI session persistence across requests"
-          },
-          {
-            "number": 9004,
-            "title": ".NET: [BREAKING] Harness: Request concise progress instead of private reasoning"
           },
           {
             "number": 9003,
@@ -385,6 +393,35 @@ const userData = {
           {
             "number": 8232,
             "title": ".NET: add container-hosted workflow sample"
+          }
+        ]
+      },
+      {
+        "repo": "iii-hq/iii",
+        "name": "iii",
+        "focus": "Python schema inference, worker packages, binding lifecycle, and log delivery.",
+        "merged": [
+          {
+            "number": 2317,
+            "title": "fix(python): infer schemas for bare dict and list annotations"
+          }
+        ],
+        "open": [
+          {
+            "number": 2324,
+            "title": "fix(observability): prevent log subscriber lag feedback and warning floods"
+          },
+          {
+            "number": 2323,
+            "title": "fix(engine): tear down removed bindings on their current provider"
+          },
+          {
+            "number": 2322,
+            "title": "docs: consolidate contributor setup prerequisites and commands"
+          },
+          {
+            "number": 2321,
+            "title": "fix(compose): extract ZIP worker packages"
           }
         ]
       },
@@ -468,20 +505,12 @@ const userData = {
             "title": "fix: evaluate callback responses without captured agent details"
           },
           {
-            "number": 7209,
-            "title": "fix(openapi): let operation parameters override path-level ones"
-          },
-          {
             "number": 7208,
             "title": "fix(openapi): honor query parameter style and explode"
           },
           {
             "number": 7167,
             "title": "fix(application-integration): fail on errored or stuck schema operations"
-          },
-          {
-            "number": 7166,
-            "title": "fix(openapi): serialize non-string header and cookie parameter values"
           }
         ]
       },
@@ -604,9 +633,121 @@ const userData = {
             "title": "fix(openapi): prevent RecursionError on circular ref in OpenAPIToolSpec"
           }
         ]
+      },
+      {
+        "repo": "stablyai/orca",
+        "name": "Orca",
+        "focus": "Windows and WSL worktrees, agent orchestration, session history, and computer-use reliability.",
+        "merged": [],
+        "open": [
+          {
+            "number": 28478,
+            "title": "fix: normalize pathspecs for WSL UNC worktrees"
+          },
+          {
+            "number": 28471,
+            "title": "fix: retain larger session history parse caches"
+          },
+          {
+            "number": 26773,
+            "title": "fix(computer): avoid raising apps for accessibility clicks"
+          },
+          {
+            "number": 26772,
+            "title": "feat(computer): let element clicks refuse mouse fallback"
+          },
+          {
+            "number": 26768,
+            "title": "fix(orchestration): teach workers to acknowledge mail batches"
+          },
+          {
+            "number": 26765,
+            "title": "fix(windows): avoid reauthorizing unused watcher cleanup during removal"
+          },
+          {
+            "number": 26762,
+            "title": "fix: preserve settled worker outcomes after late startup errors"
+          },
+          {
+            "number": 26759,
+            "title": "feat: select a parent workspace for worker startup"
+          },
+          {
+            "number": 26756,
+            "title": "feat: record Windows main-thread hangs and active spans"
+          },
+          {
+            "number": 26752,
+            "title": "feat(cli): choose an exact branch on worktree create"
+          },
+          {
+            "number": 26751,
+            "title": "fix: reserve long-poll capacity for worker startup"
+          },
+          {
+            "number": 26750,
+            "title": "fix: save local base refresh preferences on the execution host"
+          },
+          {
+            "number": 26746,
+            "title": "fix: keep pending questions unread after batch acknowledgement"
+          },
+          {
+            "number": 26745,
+            "title": "feat: expose workspace comment and status update time"
+          },
+          {
+            "number": 26744,
+            "title": "test: cover Codex usage refresh with long Windows PATH"
+          },
+          {
+            "number": 26742,
+            "title": "fix: back off failed GitLab authentication probes"
+          },
+          {
+            "number": 26738,
+            "title": "feat: pre-trust Kimi workspaces before launch"
+          },
+          {
+            "number": 26736,
+            "title": "fix: preserve explicit async preferences for managed hooks"
+          },
+          {
+            "number": 26733,
+            "title": "fix: exclude nested worktrees from parent file watchers"
+          }
+        ]
+      },
+      {
+        "repo": "stephengpope/thepopebot",
+        "name": "The Pope Bot",
+        "focus": "Windows skill symlinks and search setup proposed upstream.",
+        "merged": [],
+        "open": [
+          {
+            "number": 169,
+            "title": "fix: repair skills symlinks broken by Windows git + auto-activate brave-search (#156)"
+          }
+        ]
       }
     ],
     "highlights": [
+      {
+        "project": "iii",
+        "title": "Generate schemas for Python containers.",
+        "description": "Bare dict and list annotations produced no function schema. Schema inference now recognizes those containers, including nullable forms, while preserving support for parameterized types.",
+        "url": "https://github.com/iii-hq/iii/pull/2317",
+        "number": 2317,
+        "mergedAt": "2026-10-14T16:36:54Z"
+      },
+      {
+        "project": "Microsoft Agent Framework",
+        "title": "Keep agent progress concise.",
+        "description": "The .NET Harness default instructions requested thought processes. Updated the defaults and data-processing sample to ask for concise progress updates and high-level explanations that keep private reasoning hidden.",
+        "url": "https://github.com/microsoft/agent-framework/pull/9004",
+        "number": 9004,
+        "mergedAt": "2026-10-07T13:17:06Z"
+      },
       {
         "project": "OpenAI Agents SDK",
         "title": "Keep encrypted history recoverable.",
