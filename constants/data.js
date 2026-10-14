@@ -164,7 +164,7 @@ const userData = {
   // Verified public upstream PR snapshot; owned repositories and organizations excluded.
   contributions: {
     "title": "Making agent systems more reliable.",
-    "description": "I contribute fixes, tests, and specification improvements to the open-source tools behind AI agents, from Microsoft and OpenAI frameworks to Omi and W3C WebMCP.",
+    "description": "I contribute fixes, tests, and specification improvements to the open-source tools behind AI agents, from Microsoft, Google, and OpenAI frameworks to Omi and W3C WebMCP.",
     "focus": "Agent runtimes, trustworthy governance, streaming correctness, developer tooling, and open Web standards.",
     "checkedOn": "October 14, 2026",
     "activityUrl": "https://github.com/search?q=is%3Apr+author%3A1aifanatic&type=pullrequests",
@@ -497,8 +497,38 @@ const userData = {
       {
         "repo": "google/adk-python",
         "name": "Google ADK",
-        "focus": "Agent runtime fixes proposed upstream.",
-        "merged": [],
+        "focus": "Credential isolation, OpenAPI parameter handling, and HTTP error decoding.",
+        "mergeNote": "Google imported these four contributions into main through Copybara. The source PRs are marked closed rather than merged; their links below point to the import confirmations and upstream commits.",
+        "merged": [
+          {
+            "number": 7210,
+            "title": "fix(openapi): decode error bodies with the declared charset",
+            "mergeMethod": "Copybara",
+            "mergeCommit": "962fe9bdad6f8d91c03d53ff928de7c409c7251a",
+            "evidenceUrl": "https://github.com/google/adk-python/pull/7210#issuecomment-5963134301"
+          },
+          {
+            "number": 7209,
+            "title": "fix(openapi): let operation parameters override path-level ones",
+            "mergeMethod": "Copybara",
+            "mergeCommit": "6563a09ed649084867b981c27fe26f43e4875365",
+            "evidenceUrl": "https://github.com/google/adk-python/pull/7209#issuecomment-6154992449"
+          },
+          {
+            "number": 7166,
+            "title": "fix(openapi): serialize non-string header and cookie parameter values",
+            "mergeMethod": "Copybara",
+            "mergeCommit": "b4cf70ca6d5e88be5e4f56e9961eb3e17f538408",
+            "evidenceUrl": "https://github.com/google/adk-python/pull/7166#issuecomment-6129100226"
+          },
+          {
+            "number": 7163,
+            "title": "fix(tools): keep auth credentials out of the caller's tool args",
+            "mergeMethod": "Copybara",
+            "mergeCommit": "d8483a098760a6c8bfe21a462e67ed9d1e6f9a29",
+            "evidenceUrl": "https://github.com/google/adk-python/pull/7163#issuecomment-5962774610"
+          }
+        ],
         "open": [
           {
             "number": 7380,
@@ -732,6 +762,16 @@ const userData = {
       }
     ],
     "highlights": [
+      {
+        "project": "Google ADK",
+        "title": "Keep credentials out of tool traces.",
+        "description": "Authentication added API keys and OAuth tokens to the same argument dictionaries used by callbacks and tracing. The tools now copy arguments before adding credentials, and the integration connector excludes its auth configuration from logs.",
+        "url": "https://github.com/google/adk-python/pull/7163",
+        "evidenceUrl": "https://github.com/google/adk-python/pull/7163#issuecomment-5962774610",
+        "number": 7163,
+        "mergeMethod": "Copybara",
+        "mergedAt": "2026-10-02T22:57:14Z"
+      },
       {
         "project": "iii",
         "title": "Generate schemas for Python containers.",

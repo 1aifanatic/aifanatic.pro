@@ -91,7 +91,7 @@ export default function Hero() {
           <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">Open-source contributions</p>
           <h2 className="mt-2 text-2xl leading-tight">{contributions.title}</h2>
           <div className="mt-3 flex flex-wrap gap-x-8 gap-y-3">
-            <div><span className="font-serif text-3xl">{mergedCount}</span><span className="ml-2 text-sm text-[#c5cec8]">merged PRs</span></div>
+            <div><span className="font-serif text-3xl">{mergedCount}</span><span className="ml-2 text-sm text-[#c5cec8]">merged contributions</span></div>
             <div><span className="font-serif text-3xl">{projectCount}</span><span className="ml-2 text-sm text-[#c5cec8]">upstream projects</span></div>
           </div>
           <div className="mt-4"><ContributionBrands /></div>
@@ -105,10 +105,10 @@ export default function Hero() {
           <p className="eyebrow">Selected merged contributions</p>
           <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {contributions.highlights.slice(0, 4).map((item) => (
-              <a key={item.url} href={item.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee]">
+              <a key={item.url} href={item.evidenceUrl || item.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee]">
                 <p className="text-[10px] font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{item.project}</p>
                 <h3 className="mt-1.5 font-sans text-sm font-semibold leading-5">{item.title}</h3>
-                <p className="mt-2 text-xs text-[#5f6864] dark:text-[#b7c0bb]">Merged PR #{item.number} ↗</p>
+                <p className="mt-2 text-xs text-[#5f6864] dark:text-[#b7c0bb]">{item.mergeMethod ? `Merged via ${item.mergeMethod}` : "Merged PR"} #{item.number} ↗</p>
               </a>
             ))}
           </div>
