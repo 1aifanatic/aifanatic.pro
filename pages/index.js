@@ -1,24 +1,10 @@
 import ContainerBlock from "@components/ContainerBlock";
 import Hero from "@components/Hero";
-import { Manifesto, ProofBento, BrandMarquee, SelectedFixes, FinalCta } from "@components/home/Sections";
-import ImpactUniverse from "@components/home/ImpactUniverse";
-import OrchestrationPlayground from "@components/home/OrchestrationPlayground";
-import CareerTimeline from "@components/home/CareerTimeline";
 import userData from "@constants/data";
 
 export default function Home() {
-  return <ContainerBlock immersive title="Naveen Chatlapalli - Agentic AI Architect, Open Source & AI Architecture" description={userData.homeSnapshot.description} image="/og-open-source.png">
-    <div className="ix-home-body">
-      <Hero />
-      <Manifesto />
-      <BrandMarquee />
-      <ProofBento />
-      <ImpactUniverse />
-      <OrchestrationPlayground />
-      <SelectedFixes />
-      <CareerTimeline />
-      <FinalCta />
-    </div>
+  return <ContainerBlock title="Naveen Chatlapalli - Open Source & AI Architecture" description={userData.homeSnapshot.description} image="/og-open-source.png">
+    <Hero />
   </ContainerBlock>;
 }
 

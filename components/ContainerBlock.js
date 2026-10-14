@@ -23,8 +23,6 @@ export default function ContainerBlock({ children, ...customMeta }) {
     "@type": "Person",
     name: "Naveen Chatlapalli",
     jobTitle: "Manager of Solution Architecture",
-    description: "Agentic AI architect designing enterprise AI agents and contributing to open-source agent frameworks.",
-    knowsAbout: ["Agentic AI", "Multi-agent orchestration", "Human-in-the-loop systems", "AI governance", "Observability", "Enterprise automation"],
     url: "https://naveen.aifanatic.pro/",
     sameAs: [
       "https://sessionize.com/aifanatic/",
@@ -33,7 +31,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
       "https://x.com/1aifanatic",
     ],
   };
-  return <div className={customMeta.immersive ? "site-surface dark ix-home" : "site-surface"}>
+  return <div className="site-surface">
     <Head>
       <title>{meta.title}</title>
       <meta
@@ -56,7 +54,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
     </Head>
     <a href="#main-content" className="skip-link">Skip to content</a>
-    {!isAdmin && <Navbar immersive={customMeta.immersive} />}
+    {!isAdmin && <Navbar />}
     <main id="main-content" tabIndex="-1">{children}</main>
     {!isAdmin && <Footer />}
     {!isAdmin && <GuestBookPopup />}
