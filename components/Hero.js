@@ -5,7 +5,6 @@ import userData from "@constants/data";
 import Icon from "./Icon";
 import ContributionBrands from "./ContributionBrands";
 import KineticText from "./KineticText";
-import StepRepeat from "./StepRepeat";
 
 export default function Hero() {
   const { contributions, homeSnapshot, nicheFocus } = userData;
@@ -89,7 +88,6 @@ export default function Hero() {
         </aside>
 
         <article className="relative isolate flex flex-col justify-center overflow-hidden rounded-[1.35rem] border border-[#314b65] bg-[#111716] p-5 text-[#eef1ed] shadow-[0_14px_35px_rgba(24,33,31,.12)] sm:p-6 lg:col-span-7">
-          <StepRepeat />
           <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">Open-source contributions</p>
           <h2 className="mt-2 text-2xl leading-tight">{contributions.title}</h2>
           <div className="mt-3 flex flex-wrap gap-x-8 gap-y-3">

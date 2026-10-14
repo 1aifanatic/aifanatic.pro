@@ -1,5 +1,7 @@
 # STATE
 
+**Word field background — 2026-10-14:** Replaced the card-only step-and-repeat grid with a sitewide Muse Wonder-style background, `components/WordField.js`, mounted once in `ContainerBlock.js` (not on /admin). It is one fixed canvas behind content (`site-surface` is now `relative isolate`) and adds no page height; the homepage still fits one screen. At the top of a page, faint tan "RELIABLE" words appear in clusters (~15% of cells, `DENSITY`) with glyph flicker; on scroll they fade and only sparse marks remain in the gutters outside the 1280px column. Dark mode uses a lower opacity; reduced motion shows a static grid. `StepRepeat.js` deleted. Hero headline decode unchanged. Tune via `WORD`, `DENSITY`, `peak` in WordField.js.
+
 **Kinetic headline — 2026-10-14:** The immersive dark redesign (f8185ab) was rolled back; the site is the previous editorial design. Additions only, inspired by Meta's Muse Wonder page: `components/KineticText.js` on the hero h1 (staggered spring entry with a glyph decode, hovering a word re-decodes it, letters drift up to 7px from the cursor and spring back, one letter occasionally glitches; letter widths locked in em so nothing reflows) and `components/StepRepeat.js`, a faint 7% step-and-repeat word grid behind the dark open-source card. h1 carries the accessible name; effects off under reduced motion. Remove the grid by deleting the `<StepRepeat />` line in Hero.js. New dependency: gsap.
 
 

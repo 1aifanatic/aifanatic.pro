@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import GuestBookPopup from "./GuestBookPopup";
+import WordField from "./WordField";
 import dynamic from "next/dynamic";
 
 const PortfolioChat = dynamic(() => import("./PortfolioChat"), { ssr: false });
@@ -31,7 +32,8 @@ export default function ContainerBlock({ children, ...customMeta }) {
       "https://x.com/1aifanatic",
     ],
   };
-  return <div className="site-surface">
+  return <div className="site-surface relative isolate">
+    {!isAdmin && <WordField />}
     <Head>
       <title>{meta.title}</title>
       <meta
