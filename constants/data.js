@@ -960,6 +960,50 @@ const userData = {
     description:
       "Connect with me about open-source AI and automation.",
   },
+  // Creator media kit (/media-kit). Follower counts supplied Nov 1, 2026; post stats from the LinkedIn engagement
+  // tracker (original posts only, reposts excluded); contribution counts from the GitHub API on Nov 1, 2026.
+  mediaKit: {
+    updated: "November 2026",
+    role: "Agentic AI Architect and Manager of Solution Architecture at Ashling Partners",
+    niche: "Tests new AI tools against real enterprise workflows, then shows what holds up in production.",
+    intro: "Naveen breaks agentic AI down for the people who have to ship it: enterprise architects, automation developers, and technical leaders. Each piece starts from something he built or ran, with the trade-offs left in.",
+    channels: [
+      { name: "LinkedIn", count: "5,630", unit: "followers", url: "https://www.linkedin.com/in/1aifanatic/", note: "Primary channel" },
+      { name: "YouTube", count: "305", unit: "subscribers", url: "https://www.youtube.com/@1aifanatic", note: "Long-form builds, growing" },
+    ],
+    engagement: { posts: 47, medianReactions: 25, averageReactions: 40, best: 197, through: "October 1, 2026" },
+    topPosts: [
+      { title: "AI agent benchmark: 15x faster AML triage with a split architecture", reactions: 197, comments: 13, url: "https://www.linkedin.com/feed/update/urn:li:activity:7508152224351617024/" },
+      { title: "Benchmark: two agent approaches compared on card disputes", reactions: 80, comments: 7, url: "https://www.linkedin.com/feed/update/urn:li:activity:7508514827871375360/" },
+      { title: "UiPath Maestro Flow build, part 3: an inline AI agent for policy review", reactions: 77, comments: 3, url: "https://www.linkedin.com/feed/update/urn:li:activity:7503547366252158976/" },
+      { title: "BuildCast episode 1: testing Claude Code for enterprise automation", reactions: 47, comments: 7, url: "https://www.linkedin.com/feed/update/urn:li:activity:7511122905364156416/" },
+    ],
+    formats: [
+      { name: "BuildCast", text: "His answer to the talk-only podcast. Two people build something real in 30 to 40 minutes, then cover what worked and what didn't.", url: "https://www.linkedin.com/feed/update/urn:li:activity:7511122905364156416/" },
+      { name: "Build walkthroughs", text: "Narrated video demos of working agents and automations, often in multi-part series." },
+      { name: "Benchmarks and explainers", text: "LinkedIn posts that compare tools with measured results or explain a new release in plain terms." },
+      { name: "Newsletter", text: "AIFanatic Blueprint on Substack, covering AI agents and agentic architecture.", url: "https://aifanatic.substack.com" },
+    ],
+    topics: ["AI agents and orchestration", "coding agents and developer tools", "agent governance and reliability", "enterprise automation"],
+    contributions: { merged: 62, projects: 12, inReview: 143, checked: "November 1, 2026" },
+    projects: [
+      { name: "Microsoft Agent Governance Toolkit", count: 15 },
+      { name: "Microsoft Agent Framework", count: 14 },
+      { name: "Omi", count: 10 },
+      { name: "Orca", count: 6 },
+      { name: "Google ADK", count: 5 },
+      { name: "W3C WebMCP", count: 3 },
+    ],
+    credentials: ["UiPath MVP, 2024, 2025, and 2026", "UiPath Coded Agents Hackathon, top 7 finalist", "Community Lead, UiPath Dallas", "Awards judge, Globee and hackathon panels"],
+    logistics: [
+      ["Based in", "Dallas-Fort Worth, Texas"],
+      ["Campaign formats", "LinkedIn posts and YouTube video"],
+      ["Travel", "Limited for the next 12 months; remote campaigns preferred"],
+      ["Reporting", "Native post metrics shared after each post goes live"],
+      ["Disclosure", "Opinions are his own and don't represent Ashling Partners"],
+    ],
+    bio: "Naveen Chatlapalli is an Agentic AI Architect and Manager of Solution Architecture at Ashling Partners, where he designs enterprise AI-agent systems. A three-time UiPath MVP, he contributes to the open-source projects behind those systems, including Microsoft Agent Framework, the OpenAI Agents SDK, Google ADK, and the W3C WebMCP specification.",
+  },
   socialLinks: {
     twitter: "https://x.com/1aifanatic",
     linkedin: "https://www.linkedin.com/in/1aifanatic/",
