@@ -30,7 +30,8 @@ export default function Hero() {
             </h1>
           </RoughNotationGroup>
           <p className="mt-2 max-w-2xl text-sm leading-5 text-[#5f6864] dark:text-[#b7c0bb] xl:text-base xl:leading-6">
-            {homeSnapshot.description}
+            {homeSnapshot.description} I also host{" "}
+            <a href={userData.buildcast.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#174b8b] underline underline-offset-2 dark:text-[#a8c7ee]">BuildCast ↗</a>, where a guest and I build something real, live, on one shared screen.
           </p>
           <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Niche focus areas">
             {nicheFocus.map((focus) => (

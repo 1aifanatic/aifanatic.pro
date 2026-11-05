@@ -13,7 +13,7 @@ export default function DailyDrop({ episodes, latest, unavailable }) {
   const [edition, setEdition] = useState("All");
   const filtered = episodes.filter((episode) => (edition === "All" || episode.edition === edition) && `${episode.title} ${episode.description}`.toLowerCase().includes(query.toLowerCase().trim()));
 
-  return <ContainerBlock title={`${dailyDrop.title} - Naveen Chatlapalli`} description={dailyDrop.description}>
+  return <ContainerBlock title={`${dailyDrop.title} - Naveen Chatlapalli`} description={dailyDrop.description} noIndex>
     <section className="site-container page-section">
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#d8ddd8] pb-5 dark:border-[#34413d]"><p className="eyebrow">The listening desk / AI, in perspective</p><p className="text-xs font-semibold text-[#5f6864] dark:text-[#b7c0bb]">{dailyDrop.schedule}</p></div>
       <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-end"><div><h1 className="display-title !mt-0">The Daily<br /><span className="italic">AI Drop.</span></h1><p className="page-lede">{dailyDrop.description}</p></div><p className="max-w-sm border-l border-[#c9b894] pl-5 text-sm leading-6 text-[#5f6864] dark:border-[#665a43] dark:text-[#b7c0bb]">{dailyDrop.disclosure}</p></div>

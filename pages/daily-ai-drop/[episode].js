@@ -7,7 +7,7 @@ import { getEpisodes, getEpisodeNotes, withAudioStatus } from "@lib/dailyDrop";
 
 export default function Episode({ episode, notes, previous, next }) {
   if (!episode) return <ContainerBlock title="Episode unavailable - The Daily AI Drop" noIndex><section className="site-container page-section"><h1 className="display-title">A brief interruption.</h1><p className="page-lede">This episode could not be loaded. Please try again shortly.</p><Link href="/daily-ai-drop" className="source-label mt-6">Back to all episodes <Icon name="arrowRight" /></Link></section></ContainerBlock>;
-  return <ContainerBlock title={`${episode.title} - Naveen Chatlapalli`} description={episode.description}>
+  return <ContainerBlock title={`${episode.title} - Naveen Chatlapalli`} description={episode.description} noIndex>
     <section className="site-container page-section">
       <Link href="/daily-ai-drop" className="source-label">← All episodes</Link>
       <div className="mt-7 grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-start">

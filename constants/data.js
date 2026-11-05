@@ -75,6 +75,11 @@ const userData = {
     //   imgUrl: "/PracticalAI2023.png",
     // },
   ],
+  buildcast: {
+    name: "BuildCast",
+    url: "https://buildcast.aifanatic.pro",
+    tagline: "a technical podcast where two people share one screen and build something real, live, in 30 to 40 minutes, then talk through what worked and what broke.",
+  },
   about: {
     title1: "I design enterprise-grade AI agents for business process automation.",
     title2:
@@ -84,7 +89,7 @@ const userData = {
   },
     bio: {
     description: [
-      "I am Naveen Chatlapalli, Manager of Solution Architecture, Gen AI Engineer, and tech writer based in Dallas, Texas. I lead solution architecture for automation and AI programs and design systems for enterprise teams.",
+      "I am Naveen Chatlapalli, Manager of Solution Architecture, Gen AI Engineer, and tech writer based in Dallas, Texas. I lead solution architecture for automation and AI programs and design systems for enterprise teams. I also host BuildCast (buildcast.aifanatic.pro), a technical podcast where a guest and I share one screen and build something real, live, instead of just talking about it.",
       "Education: M.S. in Computer Science from San Francisco Bay University, with undergraduate studies at Jawaharlal Nehru Technological University, Kakinada.",
       "Career: Started as a .NET developer, discovered UiPath, won a hackathon, and grew from RPA Developer to Lead RPA Developer to Agentic AI Architect, and now Manager of Solution Architecture at Ashling Partners.",
       "Community: 3-time UiPath MVP and Top Contributor (2024). I lead the UiPath Dallas Chapter, serve as VP of PR for Texas Dragon Toastmasters, and volunteer as a Telugu teacher at Silicon Andhra Manabadi.",
@@ -166,10 +171,10 @@ const userData = {
     "title": "Making agent systems more reliable.",
     "description": "I contribute fixes, tests, and specification improvements to the open-source tools behind AI agents, from Microsoft, Google, and OpenAI frameworks to Omi and W3C WebMCP.",
     "focus": "Agent runtimes, trustworthy governance, streaming correctness, developer tooling, and open Web standards.",
-    "checkedOn": "October 14, 2026",
+    "checkedOn": "November 5, 2026",
     "activityUrl": "https://github.com/search?q=is%3Apr+author%3A1aifanatic&type=pullrequests",
     brands: [
-      { name: "Microsoft", logo: "/brands/microsoft.png", repos: ["microsoft/agent-governance-toolkit", "microsoft/agent-framework"] },
+      { name: "Microsoft", logo: "/brands/microsoft.png", repos: ["microsoft/agent-governance-toolkit", "microsoft/agent-framework", "microsoft/TokenEconomizer", "microsoft/scope"] },
       { name: "OpenAI", logo: "/brands/openai.png", repos: ["openai/openai-agents-python"] },
       { name: "Google", logo: "/brands/google.png", repos: ["google/adk-python"] },
       { name: "W3C WebMCP", logo: "/brands/w3c.png", repos: ["webmachinelearning/webmcp"] },
@@ -256,6 +261,10 @@ const userData = {
         "focus": "Transcription lifecycle, SDK correctness, and developer tooling.",
         "merged": [
           {
+            "number": 20411,
+            "title": "feat(web): clarify desktop BYOK key scope in account settings"
+          },
+          {
             "number": 20407,
             "title": "fix(device-ts): preserve accepted Whisper batches after stop"
           },
@@ -292,18 +301,41 @@ const userData = {
             "title": "fix(python-sdk): stop audio sender before Parakeet finalization"
           }
         ],
-        "open": [
-          {
-            "number": 20411,
-            "title": "feat(web): clarify desktop BYOK key scope in account settings"
-          }
-        ]
+        "open": []
       },
       {
         "repo": "microsoft/agent-framework",
         "name": "Microsoft Agent Framework",
         "focus": "Workflow runtime reliability, configuration validation, and Python / .NET documentation.",
         "merged": [
+          {
+            "number": 9600,
+            "title": ".NET: Point Foundry-migrated sample READMEs at FOUNDRY_* settings"
+          },
+          {
+            "number": 9599,
+            "title": "Python: Restore Semantic Kernel model arguments in Magentic migration sample"
+          },
+          {
+            "number": 9580,
+            "title": "Python: Fix sample README run commands that reference missing files"
+          },
+          {
+            "number": 9579,
+            "title": "Python: Fix ChatKit integration sample startup and weather widgets"
+          },
+          {
+            "number": 9577,
+            "title": "Python: Fix TypeError in Copilot Studio SK migration samples"
+          },
+          {
+            "number": 9576,
+            "title": "Python: Pass judge model in evaluate_traces sample"
+          },
+          {
+            "number": 9113,
+            "title": "Python: Enable tool search in the Foundry Toolbox sample"
+          },
           {
             "number": 9005,
             "title": "Python: Demonstrate group chat response filtering before broadcast"
@@ -335,12 +367,112 @@ const userData = {
         ],
         "open": [
           {
-            "number": 9114,
-            "title": "Python: Add Container Apps Dynamic Sessions sample"
+            "number": 10085,
+            "title": "Python: Select all other participants in the group chat debate sample"
           },
           {
-            "number": 9113,
-            "title": "Python: Enable tool search in the Foundry Toolbox sample"
+            "number": 10084,
+            "title": "Python: Read orchestration outputs as agent responses in tool approval samples"
+          },
+          {
+            "number": 10083,
+            "title": ".NET: Fix sample READMEs that don't match the DevUI and SessionFilesClient code"
+          },
+          {
+            "number": 10082,
+            "title": "Python: Point multimodal and declarative MCP samples at FOUNDRY_* settings"
+          },
+          {
+            "number": 10081,
+            "title": "Python: Fix custom client, fan-in, and executor docstring examples"
+          },
+          {
+            "number": 10080,
+            "title": "Python: Show mcp 2.x Server handler registration in the hosting-mcp README"
+          },
+          {
+            "number": 10079,
+            "title": "Python: Use a real chat client in Purview chat middleware examples"
+          },
+          {
+            "number": 10078,
+            "title": "Python: Fix serialization docstring examples"
+          },
+          {
+            "number": 10076,
+            "title": "Python: Register declarative workflow types for checkpoint restore"
+          },
+          {
+            "number": 9762,
+            "title": "Python: Remove the stale hosted toolbox endpoint sample test"
+          },
+          {
+            "number": 9760,
+            "title": ".NET: Point remaining Foundry-migrated sample READMEs at FOUNDRY_* settings"
+          },
+          {
+            "number": 9759,
+            "title": "Python: Point Foundry-migrated sample READMEs at the settings the code reads"
+          },
+          {
+            "number": 9756,
+            "title": "Python: Move the TypeSafe MCP sample to mcp 2.x"
+          },
+          {
+            "number": 9755,
+            "title": "Python: Fix AG-UI examples server import and getting-started client calls"
+          },
+          {
+            "number": 9754,
+            "title": "Python: Replace references to removed ChatAgent and Responses client classes"
+          },
+          {
+            "number": 9753,
+            "title": "Python: Fix declarative external-input docstring examples"
+          },
+          {
+            "number": 9752,
+            "title": "Python: Fix group chat docstring examples"
+          },
+          {
+            "number": 9751,
+            "title": "Python: Fix core docstring examples that use missing APIs"
+          },
+          {
+            "number": 9750,
+            "title": "Python: Declare every lazy namespace export in its type stub"
+          },
+          {
+            "number": 9732,
+            "title": ".NET: Correct sample READMEs about missing environment variables"
+          },
+          {
+            "number": 9731,
+            "title": "Python: Fix Copilot Studio explicit-settings sample dependency"
+          },
+          {
+            "number": 9730,
+            "title": "Python: fix(declarative): treat omitted workflow inputs as blank in PowerFx"
+          },
+          {
+            "number": 9601,
+            "title": "Python: Fix stale run commands in sample headers"
+          },
+          {
+            "number": 9598,
+            "title": "Python: Fix M365 agent sample startup and anonymous mode"
+          },
+          {
+            "number": 9597,
+            "title": "Python: Fix claw step 3 Foundry Toolbox connection for mcp 2.x"
+          },
+          {
+            "number": 9581,
+            "title": ".NET: Fix sample README paths that point to missing directories"
+          },
+          {
+            "number": 9114,
+            "title": "Python: Add Container Apps Dynamic Sessions sample"
           },
           {
             "number": 9009,
@@ -402,15 +534,15 @@ const userData = {
         "focus": "Python schema inference, worker packages, binding lifecycle, and log delivery.",
         "merged": [
           {
+            "number": 2321,
+            "title": "fix(compose): extract ZIP worker packages"
+          },
+          {
             "number": 2317,
             "title": "fix(python): infer schemas for bare dict and list annotations"
           }
         ],
         "open": [
-          {
-            "number": 2324,
-            "title": "fix(observability): prevent log subscriber lag feedback and warning floods"
-          },
           {
             "number": 2323,
             "title": "fix(engine): tear down removed bindings on their current provider"
@@ -418,10 +550,6 @@ const userData = {
           {
             "number": 2322,
             "title": "docs: consolidate contributor setup prerequisites and commands"
-          },
-          {
-            "number": 2321,
-            "title": "fix(compose): extract ZIP worker packages"
           }
         ]
       },
@@ -498,7 +626,7 @@ const userData = {
         "repo": "google/adk-python",
         "name": "Google ADK",
         "focus": "Credential isolation, OpenAPI parameter handling, and HTTP error decoding.",
-        "mergeNote": "Google imported these four contributions into main through Copybara. The source PRs are marked closed rather than merged; their links below point to the import confirmations and upstream commits.",
+        "mergeNote": "Google imported these 5 contributions into main through Copybara. The source PRs are marked closed rather than merged; their links below point to the import confirmations and upstream commits.",
         "merged": [
           {
             "number": 7210,
@@ -513,6 +641,13 @@ const userData = {
             "mergeMethod": "Copybara",
             "mergeCommit": "6563a09ed649084867b981c27fe26f43e4875365",
             "evidenceUrl": "https://github.com/google/adk-python/pull/7209#issuecomment-6154992449"
+          },
+          {
+            "number": 7208,
+            "title": "fix(openapi): honor query parameter style and explode",
+            "mergeMethod": "Copybara",
+            "mergeCommit": "1d81896aa081e7b2e50b3a4a227f7c6933805752",
+            "evidenceUrl": "https://github.com/google/adk-python/pull/7208#issuecomment-6462289410"
           },
           {
             "number": 7166,
@@ -535,10 +670,6 @@ const userData = {
             "title": "fix: evaluate callback responses without captured agent details"
           },
           {
-            "number": 7208,
-            "title": "fix(openapi): honor query parameter style and explode"
-          },
-          {
             "number": 7167,
             "title": "fix(application-integration): fail on errored or stuck schema operations"
           }
@@ -548,8 +679,21 @@ const userData = {
         "repo": "open-telemetry/semantic-conventions-genai",
         "name": "OpenTelemetry GenAI",
         "focus": "Proposals for generative AI observability conventions.",
-        "merged": [],
+        "merged": [
+          {
+            "number": 525,
+            "title": "feat(gen-ai): require provider-supplied tool call ID on execute_tool (#489)"
+          },
+          {
+            "number": 524,
+            "title": "docs(gen-ai): clarify remote client vs local internal agent invocations (#493)"
+          }
+        ],
         "open": [
+          {
+            "number": 631,
+            "title": "Clarify retrieval documents without IDs or scores"
+          },
           {
             "number": 565,
             "title": "Preserve message roles when capturing tool responses"
@@ -561,14 +705,6 @@ const userData = {
           {
             "number": 563,
             "title": "Add a non-normative GenAI glossary"
-          },
-          {
-            "number": 525,
-            "title": "feat(gen-ai): require provider-supplied tool call ID on execute_tool (#489)"
-          },
-          {
-            "number": 524,
-            "title": "docs(gen-ai): clarify remote client vs local internal agent invocations (#493)"
           }
         ]
       },
@@ -599,10 +735,6 @@ const userData = {
         "merged": [],
         "open": [
           {
-            "number": 1883,
-            "title": "Retry OAuth token refresh without resource when the authorization server rejects it (Entra AADSTS9010010)"
-          },
-          {
             "number": 1882,
             "title": "Add client-side call-tool filters for tool-call policy enforcement"
           }
@@ -614,6 +746,46 @@ const userData = {
         "focus": "Integration and data-handling fixes proposed upstream.",
         "merged": [],
         "open": [
+          {
+            "number": 23952,
+            "title": "fix(tei): preserve HTTP errors in embedding requests"
+          },
+          {
+            "number": 23951,
+            "title": "fix(dashscope): forward embedding request parameters"
+          },
+          {
+            "number": 23950,
+            "title": "fix(mistralai): use async client for single text embeddings"
+          },
+          {
+            "number": 23949,
+            "title": "fix(core): reject RetrieverTool calls without inputs"
+          },
+          {
+            "number": 23948,
+            "title": "fix(core): honor structured reranker prediction failure policy"
+          },
+          {
+            "number": 23947,
+            "title": "fix(core): honor disabled early stopping in MultiStepQueryEngine"
+          },
+          {
+            "number": 23946,
+            "title": "fix(github): apply every issue label filter"
+          },
+          {
+            "number": 23945,
+            "title": "fix(notion): paginate block children using start_cursor"
+          },
+          {
+            "number": 23944,
+            "title": "fix(slack): honor explicit latest timestamps when reading messages"
+          },
+          {
+            "number": 23943,
+            "title": "fix(duckdb): honor node and document constraints in queries"
+          },
           {
             "number": 23387,
             "title": "fix(deepinfra): preserve HTTP errors in async embedding requests"
@@ -668,16 +840,33 @@ const userData = {
         "repo": "stablyai/orca",
         "name": "Orca",
         "focus": "Windows and WSL worktrees, agent orchestration, session history, and computer-use reliability.",
-        "merged": [],
+        "merged": [
+          {
+            "number": 26768,
+            "title": "fix(orchestration): teach workers to acknowledge and drain mail batches"
+          },
+          {
+            "number": 26765,
+            "title": "fix(windows): skip watcher-process auth when closing file watchers during worktree removal"
+          },
+          {
+            "number": 26762,
+            "title": "fix(orchestration): keep a settled worker report when startup fails late"
+          },
+          {
+            "number": 26752,
+            "title": "feat(cli): add --branch to orca worktree create to name the Git branch"
+          },
+          {
+            "number": 26742,
+            "title": "fix: back off failed GitLab authentication probes"
+          },
+          {
+            "number": 26736,
+            "title": "fix(claude): keep a user-set async flag on Orca-managed hooks across reinstalls"
+          }
+        ],
         "open": [
-          {
-            "number": 28478,
-            "title": "fix: normalize pathspecs for WSL UNC worktrees"
-          },
-          {
-            "number": 28471,
-            "title": "fix: retain larger session history parse caches"
-          },
           {
             "number": 26773,
             "title": "fix(computer): avoid raising apps for accessibility clicks"
@@ -687,28 +876,12 @@ const userData = {
             "title": "feat(computer): let element clicks refuse mouse fallback"
           },
           {
-            "number": 26768,
-            "title": "fix(orchestration): teach workers to acknowledge mail batches"
-          },
-          {
-            "number": 26765,
-            "title": "fix(windows): avoid reauthorizing unused watcher cleanup during removal"
-          },
-          {
-            "number": 26762,
-            "title": "fix: preserve settled worker outcomes after late startup errors"
-          },
-          {
             "number": 26759,
             "title": "feat: select a parent workspace for worker startup"
           },
           {
             "number": 26756,
             "title": "feat: record Windows main-thread hangs and active spans"
-          },
-          {
-            "number": 26752,
-            "title": "feat(cli): choose an exact branch on worktree create"
           },
           {
             "number": 26751,
@@ -731,18 +904,6 @@ const userData = {
             "title": "test: cover Codex usage refresh with long Windows PATH"
           },
           {
-            "number": 26742,
-            "title": "fix: back off failed GitLab authentication probes"
-          },
-          {
-            "number": 26738,
-            "title": "feat: pre-trust Kimi workspaces before launch"
-          },
-          {
-            "number": 26736,
-            "title": "fix: preserve explicit async preferences for managed hooks"
-          },
-          {
             "number": 26733,
             "title": "fix: exclude nested worktrees from parent file watchers"
           }
@@ -757,6 +918,402 @@ const userData = {
           {
             "number": 169,
             "title": "fix: repair skills symlinks broken by Windows git + auto-activate brave-search (#156)"
+          }
+        ]
+      },
+      {
+        "repo": "microsoft/TokenEconomizer",
+        "name": "Microsoft TokenEconomizer",
+        "focus": "Configuration validation and safe state files for coding-agent cost control.",
+        "merged": [
+          {
+            "number": 21,
+            "title": "Clean up temporary state files after failed writes"
+          },
+          {
+            "number": 15,
+            "title": "Reject non-finite numeric configuration values"
+          }
+        ],
+        "open": []
+      },
+      {
+        "repo": "microsoft/scope",
+        "name": "Microsoft Scope",
+        "focus": "CLI update safety, API range handling, and catalog correctness for agent evaluation.",
+        "merged": [],
+        "open": [
+          {
+            "number": 1624,
+            "title": "fix(cli): validate downloaded updates before replacing the CLI"
+          },
+          {
+            "number": 1623,
+            "title": "fix(cli): select published stable releases for updates"
+          },
+          {
+            "number": 1622,
+            "title": "fix(cli): avoid blocking on capped response-log cancellation"
+          },
+          {
+            "number": 1621,
+            "title": "fix(api): clear unavailable defaults after model catalog sync"
+          },
+          {
+            "number": 1620,
+            "title": "fix(api): handle suffix and out-of-bounds video ranges"
+          },
+          {
+            "number": 1619,
+            "title": "fix(api): treat catalog search punctuation as literal text"
+          },
+          {
+            "number": 1618,
+            "title": "fix(tooling): finish Cosmos archive writes before verification"
+          },
+          {
+            "number": 1617,
+            "title": "fix(dev): honor effective dotenv values in Portal URL helpers"
+          },
+          {
+            "number": 1616,
+            "title": "fix(tooling): clean up Cosmos pods after readiness failure"
+          },
+          {
+            "number": 1615,
+            "title": "fix(scheduler): preserve newer attempts on dispatch rollback"
+          },
+          {
+            "number": 1589,
+            "title": "fix: guard mid-run writes behind run ownership"
+          },
+          {
+            "number": 1588,
+            "title": "feat: central value-based secret redaction in the log publishers"
+          },
+          {
+            "number": 1587,
+            "title": "refactor: move run.workerVersion into run.worker.version"
+          },
+          {
+            "number": 1586,
+            "title": "feat: record and show workspace snapshot sizes per iteration"
+          },
+          {
+            "number": 1585,
+            "title": "feat: add an optional human-readable name to task prompts"
+          },
+          {
+            "number": 1583,
+            "title": "fix(shared): keep gateway HAR temp files in a per-run scratch dir"
+          },
+          {
+            "number": 1582,
+            "title": "fix(shared): read token usage from WebSocket frames and warn when missing"
+          },
+          {
+            "number": 1581,
+            "title": "feat(portal): show WebSocket messages in the HAR network viewer"
+          },
+          {
+            "number": 1580,
+            "title": "refactor(shared): extract skills from each config's own ref"
+          },
+          {
+            "number": 1579,
+            "title": "feat(api): mint submission, run and report IDs as UUIDv7"
+          },
+          {
+            "number": 1577,
+            "title": "feat(portal): search the project switcher and first-run picker"
+          },
+          {
+            "number": 1576,
+            "title": "fix(report-generator): wait for an evaluable run before generating"
+          },
+          {
+            "number": 1575,
+            "title": "refactor(api): drive run archive artifacts from a spec table"
+          },
+          {
+            "number": 1574,
+            "title": "fix(api): reject scoped writes to unknown or deleted projects"
+          },
+          {
+            "number": 1573,
+            "title": "fix(portal): keep the criteria dropdown below its input"
+          },
+          {
+            "number": 1572,
+            "title": "fix(portal): keep the skill import wizard usable on small windows"
+          },
+          {
+            "number": 1571,
+            "title": "test(shared): cover DependencyGraph and FileSystemCriteriaProvider"
+          },
+          {
+            "number": 1570,
+            "title": "fix(api): soft-delete a run's reports when the run is deleted"
+          },
+          {
+            "number": 1569,
+            "title": "fix(judge): fail closed when an evaluation has no project scope"
+          },
+          {
+            "number": 1568,
+            "title": "fix(shared): time out hung queue visibility extensions"
+          },
+          {
+            "number": 1555,
+            "title": "refactor: remove client HAR fallback from Tool Calls tab"
+          },
+          {
+            "number": 1554,
+            "title": "fix: remove redundant profile composition graph"
+          },
+          {
+            "number": 1552,
+            "title": "perf: fetch terminal run and report logs as JSON"
+          },
+          {
+            "number": 1551,
+            "title": "Use the searchable profile picker for variations"
+          },
+          {
+            "number": 1550,
+            "title": "Explain mean and variation in Statistics results"
+          },
+          {
+            "number": 1549,
+            "title": "Explain request and attempt IDs in downloaded run YAML"
+          },
+          {
+            "number": 1548,
+            "title": "Document model discovery and retirement lifecycle"
+          },
+          {
+            "number": 1547,
+            "title": "List independent criteria outside the dependency graph"
+          },
+          {
+            "number": 1546,
+            "title": "Show full profile names when the picker has room"
+          },
+          {
+            "number": 1545,
+            "title": "Document the project-scoped API migration and update acceptance script"
+          },
+          {
+            "number": 1544,
+            "title": "Explain zero matching report templates on run detail"
+          },
+          {
+            "number": 1543,
+            "title": "Show the full submission ID on run detail"
+          },
+          {
+            "number": 1542,
+            "title": "Configure Portal authentication at container startup"
+          },
+          {
+            "number": 1541,
+            "title": "Pin stdio MCP package versions through the CLI and gateway"
+          },
+          {
+            "number": 1540,
+            "title": "fix(portal): retain iteration comparison before value entry"
+          },
+          {
+            "number": 1539,
+            "title": "fix(post-processor): isolate updates to the queued run attempt"
+          },
+          {
+            "number": 1538,
+            "title": "fix(cli): name direct run input --task"
+          },
+          {
+            "number": 1537,
+            "title": "fix(cli): identify CLI HTTP requests with a User-Agent"
+          },
+          {
+            "number": 1536,
+            "title": "fix(shared): identify queue re-defer failures in logs"
+          },
+          {
+            "number": 1535,
+            "title": "fix(shared): skip secret hydration for MCP servers without secrets"
+          }
+        ]
+      },
+      {
+        "repo": "paper-instruments/feather-train",
+        "name": "Feather",
+        "focus": "Agent harness input validation, UTF-8 handling, and evaluation reliability.",
+        "merged": [],
+        "open": [
+          {
+            "number": 68,
+            "title": "fix(harness): require positive max_tokens in model settings"
+          },
+          {
+            "number": 66,
+            "title": "fix(harness): skip Exa sources the web tools cannot render"
+          },
+          {
+            "number": 64,
+            "title": "fix(harness): pass empty tool arguments as an empty object"
+          },
+          {
+            "number": 54,
+            "title": "fix(harness): refuse edits that would rewrite undecodable bytes"
+          },
+          {
+            "number": 52,
+            "title": "fix(train): reject existing eval output before loading tasks"
+          },
+          {
+            "number": 50,
+            "title": "fix(harness): match git exclude prefixes literally"
+          },
+          {
+            "number": 48,
+            "title": "fix(eval): use UTF-8 for Harbor agent text files"
+          },
+          {
+            "number": 46,
+            "title": "fix(harness): read packaged prompts as UTF-8"
+          },
+          {
+            "number": 36,
+            "title": "fix(harness): reject blank model IDs"
+          },
+          {
+            "number": 35,
+            "title": "fix(train): validate grader timing bounds"
+          },
+          {
+            "number": 34,
+            "title": "fix(train): reject duplicate task IDs"
+          },
+          {
+            "number": 33,
+            "title": "fix(harness): enforce model retry cap"
+          },
+          {
+            "number": 32,
+            "title": "fix(train): reject overlapping capture roots"
+          },
+          {
+            "number": 31,
+            "title": "fix(train): reject directory artifact paths"
+          },
+          {
+            "number": 24,
+            "title": "docs: add contributor guide"
+          },
+          {
+            "number": 23,
+            "title": "feat: add CLI version flags"
+          },
+          {
+            "number": 22,
+            "title": "fix(eval): preserve grader ATIF usage"
+          },
+          {
+            "number": 21,
+            "title": "fix(eval): remove stale ATIF exports"
+          }
+        ]
+      },
+      {
+        "repo": "scaledown-team/DietCode",
+        "name": "ScaleDown DietCode",
+        "focus": "Claude Code hook contracts, opt-in updates, and honest savings reporting.",
+        "merged": [],
+        "open": [
+          {
+            "number": 34,
+            "title": "Document data flows and add per-stage cloud controls (#21)"
+          },
+          {
+            "number": 33,
+            "title": "Align hooks with Claude Code's documented output contract (#15)"
+          },
+          {
+            "number": 32,
+            "title": "fix: book proxy savings only for accepted generations and label them as estimates"
+          },
+          {
+            "number": 31,
+            "title": "fix: stop forcing autocompact to 50% and stop reconcile overwriting user hooks"
+          },
+          {
+            "number": 30,
+            "title": "chore: add the full MIT license and package license metadata"
+          },
+          {
+            "number": 28,
+            "title": "feat: make automatic updates opt-in and add maintenance controls"
+          },
+          {
+            "number": 27,
+            "title": "fix: preserve the status line when context usage exceeds 100%"
+          },
+          {
+            "number": 26,
+            "title": "fix: restore ESM test execution and cover proxy tests in CI"
+          }
+        ]
+      },
+      {
+        "repo": "scaledown-team/ScaleBench",
+        "name": "ScaleDown ScaleBench",
+        "focus": "Benchmark scoring correctness and reproducible sampling.",
+        "merged": [],
+        "open": [
+          {
+            "number": 22,
+            "title": "Isolate dataset sampling from global random state"
+          },
+          {
+            "number": 21,
+            "title": "Average retrieval F1 per example across batches"
+          },
+          {
+            "number": 20,
+            "title": "Fix QA reference matching and repeated-token F1 scoring"
+          }
+        ]
+      },
+      {
+        "repo": "scaledown-team/langchain-scaledown",
+        "name": "ScaleDown for LangChain",
+        "focus": "State validation and metadata preservation when rewriting messages.",
+        "merged": [],
+        "open": [
+          {
+            "number": 18,
+            "title": "fix: preserve metadata when rewriting system messages"
+          },
+          {
+            "number": 16,
+            "title": "fix: validate classification choices before updating state"
+          },
+          {
+            "number": 14,
+            "title": "fix: reject invalid summaries before replacing history"
+          }
+        ]
+      },
+      {
+        "repo": "bee-computer/bee-cli",
+        "name": "Bee CLI",
+        "focus": "Windows support for the bundled client.",
+        "merged": [],
+        "open": [
+          {
+            "number": 30,
+            "title": "fix(lib): default to the bundled binary so createBeeClient() works on Windows"
           }
         ]
       }
@@ -869,7 +1426,7 @@ const userData = {
         href: "/recognition#distinctions",
       },
       {
-        value: "10+",
+        value: "14+",
         label: "Years in technology",
         href: "/experience",
       },
@@ -979,13 +1536,13 @@ const userData = {
       { title: "BuildCast episode 1: testing Claude Code for enterprise automation", reactions: 47, comments: 7, url: "https://www.linkedin.com/feed/update/urn:li:activity:7511122905364156416/" },
     ],
     formats: [
-      { name: "BuildCast", text: "His answer to the talk-only podcast. Two people build something real in 30 to 40 minutes, then cover what worked and what didn't.", url: "https://www.linkedin.com/feed/update/urn:li:activity:7511122905364156416/" },
+      { name: "BuildCast", text: "His answer to the talk-only podcast. Two people build something real in 30 to 40 minutes, then cover what worked and what didn't.", url: "https://buildcast.aifanatic.pro" },
       { name: "Build walkthroughs", text: "Narrated video demos of working agents and automations, often in multi-part series." },
       { name: "Benchmarks and explainers", text: "LinkedIn posts that compare tools with measured results or explain a new release in plain terms." },
       { name: "Newsletter", text: "AIFanatic Blueprint on Substack, covering AI agents and agentic architecture.", url: "https://aifanatic.substack.com" },
     ],
     topics: ["AI agents and orchestration", "coding agents and developer tools", "agent governance and reliability", "enterprise automation"],
-    contributions: { merged: 62, projects: 12, inReview: 143, checked: "November 1, 2026" },
+    contributions: { merged: 63, projects: 12, inReview: 171, checked: "November 5, 2026" },
     projects: [
       { name: "Microsoft Agent Governance Toolkit", count: 15 },
       { name: "Microsoft Agent Framework", count: 14 },

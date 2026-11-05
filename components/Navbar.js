@@ -7,7 +7,7 @@ import Icon from "./Icon";
 
 const links = [
   { href: "/open-source", label: "Open Source" },
-  { href: "/daily-ai-drop", label: "AI Drop" },
+  { href: userData.buildcast.url, label: "BuildCast" }, // ponytail: AI Drop moved to its own app; its pages stay up but are unlisted
   { href: "/work", label: "Work" },
   { href: "/experience", label: "Experience" },
   { href: "/recognition", label: "Recognition" },
