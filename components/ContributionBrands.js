@@ -15,7 +15,7 @@ export default function ContributionBrands() {
             <img src={brand.logo} alt="" width="40" height="32" className="h-8 w-10 object-contain" />
           </span>
           <span className="mt-2 whitespace-nowrap text-[11px] font-semibold">{brand.name}</span>
-          <span className="mt-0.5 text-[10px] opacity-80">{status}</span>
+          <span className="mt-0.5 text-[11px] opacity-80">{status}</span>
         </Link>
       </li>;
     })}

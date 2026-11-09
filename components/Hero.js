@@ -17,7 +17,7 @@ export default function Hero() {
         <article className="overflow-hidden rounded-[1.35rem] border border-[#d8ddd8] bg-white p-5 shadow-[0_10px_30px_rgba(24,33,31,.04)] dark:border-[#34413d] dark:bg-[#18211f] sm:[container-type:inline-size] sm:p-6 lg:col-span-7 lg:flex lg:flex-col lg:justify-center lg:p-5 2xl:p-7">
           <p className="eyebrow">Naveen Chatlapalli · Dallas, Texas</p>
           <RoughNotationGroup show={true}>
-            <h1 aria-label={`${homeSnapshot.headline} ${homeSnapshot.headlineAccent}`} className="mt-1.5 max-w-4xl text-[2.2rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:whitespace-nowrap sm:text-[clamp(1.25rem,5cqw,2rem)] sm:leading-tight">
+            <h1 aria-label={`${homeSnapshot.headline} ${homeSnapshot.headlineAccent}`} className="mt-1.5 max-w-4xl [text-wrap:wrap] text-[2.2rem] leading-[.98] text-[#18211f] dark:text-[#eef1ed] sm:whitespace-nowrap sm:text-[clamp(1.25rem,5cqw,2rem)] sm:leading-tight">
               <RoughNotation
                 type="underline"
                 color="#91aed2"
@@ -35,7 +35,7 @@ export default function Hero() {
           </p>
           <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Niche focus areas">
             {nicheFocus.map((focus) => (
-              <li key={focus} className="rounded-full border border-[#c7cfca] px-2 py-0.5 text-[8px] font-semibold uppercase tracking-[.06em] text-[#46514c] dark:border-[#46514c] dark:text-[#c5cec8]">
+              <li key={focus} className="rounded-full border border-[#c7cfca] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[.06em] text-[#46514c] dark:border-[#46514c] dark:text-[#c5cec8]">
                 {focus}
               </li>
             ))}
@@ -60,7 +60,7 @@ export default function Hero() {
             alt={`Portrait of ${userData.name}`}
             className="h-[360px] w-full rounded-[1rem] object-cover object-top shadow-[0_16px_40px_rgba(24,33,31,.13)] sm:h-[430px] lg:h-[calc(100%-34px)]"
           />
-          <figcaption className="flex h-[34px] items-center justify-center pt-2 text-center text-[9px] font-semibold uppercase tracking-[.14em] text-[#5f6864] dark:text-[#b7c0bb]">
+          <figcaption className="flex h-[34px] items-center justify-center pt-2 text-center text-[10px] font-semibold uppercase tracking-[.14em] text-[#5f6864] dark:text-[#b7c0bb]">
             Enterprise automation · AI agents
           </figcaption>
         </figure>
@@ -81,7 +81,7 @@ export default function Hero() {
               <p className="font-serif text-3xl leading-none transition group-hover:text-[#174b8b] dark:group-hover:text-[#a8c7ee] lg:text-2xl 2xl:text-3xl">
                 {item.value}
               </p>
-              <p className="mt-1.5 text-[10px] font-medium uppercase tracking-[.1em] text-[#5f6864] dark:text-[#b7c0bb]">
+              <p className="mt-1.5 text-[11px] font-medium uppercase tracking-[.1em] text-[#5f6864] dark:text-[#b7c0bb]">
                 {item.label}
               </p>
             </Link>
@@ -89,7 +89,7 @@ export default function Hero() {
         </aside>
 
         <article className="relative isolate flex flex-col justify-center overflow-hidden rounded-[1.35rem] border border-[#314b65] bg-[#111716] p-5 text-[#eef1ed] shadow-[0_14px_35px_rgba(24,33,31,.12)] sm:p-6 lg:col-span-7">
-          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">Open-source contributions</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[.18em] text-[#a8c7ee]">Open-source contributions</p>
           <h2 className="mt-2 text-2xl leading-tight">{contributions.title}</h2>
           <div className="mt-3 flex flex-wrap gap-x-8 gap-y-3">
             <div><span className="font-serif text-3xl">{mergedCount}</span><span className="ml-2 text-sm text-[#c5cec8]">merged contributions</span></div>
@@ -107,7 +107,7 @@ export default function Hero() {
           <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {contributions.highlights.slice(0, 4).map((item) => (
               <a key={item.url} href={item.evidenceUrl || item.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#b9cce5] bg-white/70 p-3 transition hover:border-[#174b8b] dark:border-[#315169] dark:bg-[#18211f]/70 dark:hover:border-[#a8c7ee]">
-                <p className="text-[10px] font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{item.project}</p>
+                <p className="text-[11px] font-semibold text-[#174b8b] dark:text-[#a8c7ee]">{item.project}</p>
                 <h3 className="mt-1.5 font-sans text-sm font-semibold leading-5">{item.title}</h3>
                 <p className="mt-2 text-xs text-[#5f6864] dark:text-[#b7c0bb]">{item.mergeMethod ? `Merged via ${item.mergeMethod}` : "Merged PR"} #{item.number} ↗</p>
               </a>
@@ -135,7 +135,7 @@ export default function Hero() {
                   <span className="block text-xs font-semibold text-[#18211f] dark:text-[#eef1ed]">
                     {item.label}
                   </span>
-                  <span className="mt-1 block text-[10px] text-[#5f6864] dark:text-[#b7c0bb]">
+                  <span className="mt-1 block text-[11px] text-[#5f6864] dark:text-[#b7c0bb]">
                     {item.detail}
                   </span>
                 </span>

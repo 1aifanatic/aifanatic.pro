@@ -51,9 +51,9 @@ export default function PortfolioChat() {
   }
 
   return <>
-    <button ref={launcher} type="button" onClick={() => dialog.current.showModal()} aria-haspopup="dialog" className="button-primary fixed bottom-5 right-5 z-40 gap-2 border border-[#aeb8b1] shadow-lg">
+    <button ref={launcher} type="button" onClick={() => dialog.current.showModal()} aria-haspopup="dialog" className="button-primary fixed bottom-5 right-5 z-40 gap-2 border border-[#aeb8b1] p-3.5 shadow-lg sm:px-5 sm:py-3">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-1 1V11.5a9 9 0 0 1 18 0Z"/><path d="M7 9h10M7 13h7"/></svg>
-      {chat.title}
+      <span className="sr-only sm:not-sr-only">{chat.title}</span>
     </button>
     <dialog ref={dialog} onClose={() => launcher.current?.focus()} aria-labelledby="portfolio-chat-title" className="portfolio-chat rounded-2xl border border-[#c7cfca] bg-[#f8f7f3] p-0 text-[#18211f] shadow-2xl backdrop:bg-black/30 dark:border-[#46514c] dark:bg-[#18211f] dark:text-[#eef1ed]">
       <div className="flex h-full flex-col">
